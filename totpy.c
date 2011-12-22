@@ -207,7 +207,10 @@ int challenge_response(YK_KEY *yk, int slot, int digits, int step,
 		printf("digits power[%d]: %d\n", digits, digits_power[digits]);
 	}
 
-	printf("otp: %d\n", otp);
+	memset(output_buf, 0, sizeof(output_buf));
+
+	sprintf(output_buf, "%%0%dd\n", digits); // create a print mask to zero padding to the right number of digits
+	printf(output_buf, otp);
 
 	return 1;
 }
