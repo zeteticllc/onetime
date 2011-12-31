@@ -1,0 +1,467 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		90EA691E14AF8AFC00547F20 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90EA691D14AF8AFC00547F20 /* Cocoa.framework */; };
+		90EA692814AF8AFC00547F20 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 90EA692614AF8AFC00547F20 /* InfoPlist.strings */; };
+		90EA692A14AF8AFC00547F20 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 90EA692914AF8AFC00547F20 /* main.m */; };
+		90EA692E14AF8AFC00547F20 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 90EA692C14AF8AFC00547F20 /* Credits.rtf */; };
+		90EA693114AF8AFC00547F20 /* ZETAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 90EA693014AF8AFC00547F20 /* ZETAppDelegate.m */; };
+		90EA693414AF8AFC00547F20 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90EA693214AF8AFC00547F20 /* MainMenu.xib */; };
+		90EA693C14AF8AFC00547F20 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90EA693B14AF8AFC00547F20 /* SenTestingKit.framework */; };
+		90EA693D14AF8AFC00547F20 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90EA691D14AF8AFC00547F20 /* Cocoa.framework */; };
+		90EA694514AF8AFC00547F20 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 90EA694314AF8AFC00547F20 /* InfoPlist.strings */; };
+		90EA694814AF8AFC00547F20 /* totpykTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 90EA694714AF8AFC00547F20 /* totpykTests.m */; };
+		90EA695414AF8B6700547F20 /* ZETMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90EA695214AF8B6700547F20 /* ZETMenuController.m */; };
+		90EA695514AF8B6700547F20 /* ZETMenuController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90EA695314AF8B6700547F20 /* ZETMenuController.xib */; };
+		90EA695814AF8C0700547F20 /* MenuHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 90EA695614AF8C0700547F20 /* MenuHighlighted.png */; };
+		90EA695914AF8C0700547F20 /* Menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 90EA695714AF8C0700547F20 /* Menu.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		90EA693E14AF8AFC00547F20 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 90EA691014AF8AFC00547F20 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 90EA691814AF8AFC00547F20;
+			remoteInfo = totpyk;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		90EA691914AF8AFC00547F20 /* totpyk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = totpyk.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		90EA691D14AF8AFC00547F20 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		90EA692014AF8AFC00547F20 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		90EA692114AF8AFC00547F20 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		90EA692214AF8AFC00547F20 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		90EA692514AF8AFC00547F20 /* totpyk-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "totpyk-Info.plist"; sourceTree = "<group>"; };
+		90EA692714AF8AFC00547F20 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		90EA692914AF8AFC00547F20 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		90EA692B14AF8AFC00547F20 /* totpyk-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "totpyk-Prefix.pch"; sourceTree = "<group>"; };
+		90EA692D14AF8AFC00547F20 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		90EA692F14AF8AFC00547F20 /* ZETAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZETAppDelegate.h; sourceTree = "<group>"; };
+		90EA693014AF8AFC00547F20 /* ZETAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZETAppDelegate.m; sourceTree = "<group>"; };
+		90EA693314AF8AFC00547F20 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		90EA693A14AF8AFC00547F20 /* totpykTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = totpykTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		90EA693B14AF8AFC00547F20 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		90EA694214AF8AFC00547F20 /* totpykTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "totpykTests-Info.plist"; sourceTree = "<group>"; };
+		90EA694414AF8AFC00547F20 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		90EA694614AF8AFC00547F20 /* totpykTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = totpykTests.h; sourceTree = "<group>"; };
+		90EA694714AF8AFC00547F20 /* totpykTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = totpykTests.m; sourceTree = "<group>"; };
+		90EA695114AF8B6700547F20 /* ZETMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZETMenuController.h; sourceTree = "<group>"; };
+		90EA695214AF8B6700547F20 /* ZETMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZETMenuController.m; sourceTree = "<group>"; };
+		90EA695314AF8B6700547F20 /* ZETMenuController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZETMenuController.xib; sourceTree = "<group>"; };
+		90EA695614AF8C0700547F20 /* MenuHighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MenuHighlighted.png; sourceTree = "<group>"; };
+		90EA695714AF8C0700547F20 /* Menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Menu.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		90EA691614AF8AFC00547F20 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90EA691E14AF8AFC00547F20 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		90EA693614AF8AFC00547F20 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90EA693C14AF8AFC00547F20 /* SenTestingKit.framework in Frameworks */,
+				90EA693D14AF8AFC00547F20 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		90EA690E14AF8AFC00547F20 = {
+			isa = PBXGroup;
+			children = (
+				90EA692314AF8AFC00547F20 /* totpyk */,
+				90EA694014AF8AFC00547F20 /* totpykTests */,
+				90EA691C14AF8AFC00547F20 /* Frameworks */,
+				90EA691A14AF8AFC00547F20 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		90EA691A14AF8AFC00547F20 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				90EA691914AF8AFC00547F20 /* totpyk.app */,
+				90EA693A14AF8AFC00547F20 /* totpykTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		90EA691C14AF8AFC00547F20 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				90EA691D14AF8AFC00547F20 /* Cocoa.framework */,
+				90EA693B14AF8AFC00547F20 /* SenTestingKit.framework */,
+				90EA691F14AF8AFC00547F20 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		90EA691F14AF8AFC00547F20 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				90EA692014AF8AFC00547F20 /* AppKit.framework */,
+				90EA692114AF8AFC00547F20 /* CoreData.framework */,
+				90EA692214AF8AFC00547F20 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		90EA692314AF8AFC00547F20 /* totpyk */ = {
+			isa = PBXGroup;
+			children = (
+				90EA692F14AF8AFC00547F20 /* ZETAppDelegate.h */,
+				90EA693014AF8AFC00547F20 /* ZETAppDelegate.m */,
+				90EA693214AF8AFC00547F20 /* MainMenu.xib */,
+				90EA692414AF8AFC00547F20 /* Supporting Files */,
+				90EA695114AF8B6700547F20 /* ZETMenuController.h */,
+				90EA695214AF8B6700547F20 /* ZETMenuController.m */,
+				90EA695314AF8B6700547F20 /* ZETMenuController.xib */,
+			);
+			path = totpyk;
+			sourceTree = "<group>";
+		};
+		90EA692414AF8AFC00547F20 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				90EA695614AF8C0700547F20 /* MenuHighlighted.png */,
+				90EA695714AF8C0700547F20 /* Menu.png */,
+				90EA692514AF8AFC00547F20 /* totpyk-Info.plist */,
+				90EA692614AF8AFC00547F20 /* InfoPlist.strings */,
+				90EA692914AF8AFC00547F20 /* main.m */,
+				90EA692B14AF8AFC00547F20 /* totpyk-Prefix.pch */,
+				90EA692C14AF8AFC00547F20 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		90EA694014AF8AFC00547F20 /* totpykTests */ = {
+			isa = PBXGroup;
+			children = (
+				90EA694614AF8AFC00547F20 /* totpykTests.h */,
+				90EA694714AF8AFC00547F20 /* totpykTests.m */,
+				90EA694114AF8AFC00547F20 /* Supporting Files */,
+			);
+			path = totpykTests;
+			sourceTree = "<group>";
+		};
+		90EA694114AF8AFC00547F20 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				90EA694214AF8AFC00547F20 /* totpykTests-Info.plist */,
+				90EA694314AF8AFC00547F20 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		90EA691814AF8AFC00547F20 /* totpyk */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 90EA694B14AF8AFC00547F20 /* Build configuration list for PBXNativeTarget "totpyk" */;
+			buildPhases = (
+				90EA691514AF8AFC00547F20 /* Sources */,
+				90EA691614AF8AFC00547F20 /* Frameworks */,
+				90EA691714AF8AFC00547F20 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = totpyk;
+			productName = totpyk;
+			productReference = 90EA691914AF8AFC00547F20 /* totpyk.app */;
+			productType = "com.apple.product-type.application";
+		};
+		90EA693914AF8AFC00547F20 /* totpykTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 90EA694E14AF8AFC00547F20 /* Build configuration list for PBXNativeTarget "totpykTests" */;
+			buildPhases = (
+				90EA693514AF8AFC00547F20 /* Sources */,
+				90EA693614AF8AFC00547F20 /* Frameworks */,
+				90EA693714AF8AFC00547F20 /* Resources */,
+				90EA693814AF8AFC00547F20 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				90EA693F14AF8AFC00547F20 /* PBXTargetDependency */,
+			);
+			name = totpykTests;
+			productName = totpykTests;
+			productReference = 90EA693A14AF8AFC00547F20 /* totpykTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		90EA691014AF8AFC00547F20 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "Zetetic LLC";
+			};
+			buildConfigurationList = 90EA691314AF8AFC00547F20 /* Build configuration list for PBXProject "totpyk" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 90EA690E14AF8AFC00547F20;
+			productRefGroup = 90EA691A14AF8AFC00547F20 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				90EA691814AF8AFC00547F20 /* totpyk */,
+				90EA693914AF8AFC00547F20 /* totpykTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		90EA691714AF8AFC00547F20 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90EA692814AF8AFC00547F20 /* InfoPlist.strings in Resources */,
+				90EA692E14AF8AFC00547F20 /* Credits.rtf in Resources */,
+				90EA693414AF8AFC00547F20 /* MainMenu.xib in Resources */,
+				90EA695514AF8B6700547F20 /* ZETMenuController.xib in Resources */,
+				90EA695814AF8C0700547F20 /* MenuHighlighted.png in Resources */,
+				90EA695914AF8C0700547F20 /* Menu.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		90EA693714AF8AFC00547F20 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90EA694514AF8AFC00547F20 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		90EA693814AF8AFC00547F20 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		90EA691514AF8AFC00547F20 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90EA692A14AF8AFC00547F20 /* main.m in Sources */,
+				90EA693114AF8AFC00547F20 /* ZETAppDelegate.m in Sources */,
+				90EA695414AF8B6700547F20 /* ZETMenuController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		90EA693514AF8AFC00547F20 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90EA694814AF8AFC00547F20 /* totpykTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		90EA693F14AF8AFC00547F20 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 90EA691814AF8AFC00547F20 /* totpyk */;
+			targetProxy = 90EA693E14AF8AFC00547F20 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		90EA692614AF8AFC00547F20 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				90EA692714AF8AFC00547F20 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		90EA692C14AF8AFC00547F20 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				90EA692D14AF8AFC00547F20 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		90EA693214AF8AFC00547F20 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				90EA693314AF8AFC00547F20 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		90EA694314AF8AFC00547F20 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				90EA694414AF8AFC00547F20 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		90EA694914AF8AFC00547F20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		90EA694A14AF8AFC00547F20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		90EA694C14AF8AFC00547F20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "totpyk/totpyk-Prefix.pch";
+				INFOPLIST_FILE = "totpyk/totpyk-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		90EA694D14AF8AFC00547F20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "totpyk/totpyk-Prefix.pch";
+				INFOPLIST_FILE = "totpyk/totpyk-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		90EA694F14AF8AFC00547F20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/totpyk.app/Contents/MacOS/totpyk";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "totpyk/totpyk-Prefix.pch";
+				INFOPLIST_FILE = "totpykTests/totpykTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		90EA695014AF8AFC00547F20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/totpyk.app/Contents/MacOS/totpyk";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "totpyk/totpyk-Prefix.pch";
+				INFOPLIST_FILE = "totpykTests/totpykTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		90EA691314AF8AFC00547F20 /* Build configuration list for PBXProject "totpyk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				90EA694914AF8AFC00547F20 /* Debug */,
+				90EA694A14AF8AFC00547F20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		90EA694B14AF8AFC00547F20 /* Build configuration list for PBXNativeTarget "totpyk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				90EA694C14AF8AFC00547F20 /* Debug */,
+				90EA694D14AF8AFC00547F20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		90EA694E14AF8AFC00547F20 /* Build configuration list for PBXNativeTarget "totpykTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				90EA694F14AF8AFC00547F20 /* Debug */,
+				90EA695014AF8AFC00547F20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 90EA691014AF8AFC00547F20 /* Project object */;
+}
