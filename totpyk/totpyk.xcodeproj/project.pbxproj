@@ -21,6 +21,24 @@
 		90EA695514AF8B6700547F20 /* ZETMenuController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90EA695314AF8B6700547F20 /* ZETMenuController.xib */; };
 		90EA695814AF8C0700547F20 /* MenuHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 90EA695614AF8C0700547F20 /* MenuHighlighted.png */; };
 		90EA695914AF8C0700547F20 /* Menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 90EA695714AF8C0700547F20 /* Menu.png */; };
+		90EA696314AFEA9A00547F20 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90EA696214AFEA9A00547F20 /* Carbon.framework */; };
+		90EA696D14AFF0DA00547F20 /* SGHotKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 90EA696614AFF0DA00547F20 /* SGHotKey.m */; };
+		90EA696E14AFF0DA00547F20 /* SGHotKeyCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 90EA696814AFF0DA00547F20 /* SGHotKeyCenter.m */; };
+		90EA696F14AFF0DA00547F20 /* SGKeyCodeTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = 90EA696A14AFF0DA00547F20 /* SGKeyCodeTranslator.m */; };
+		90EA697014AFF0DA00547F20 /* SGKeyCombo.m in Sources */ = {isa = PBXBuildFile; fileRef = 90EA696C14AFF0DA00547F20 /* SGKeyCombo.m */; };
+		90EA697714B00BDC00547F20 /* ykpers.c in Sources */ = {isa = PBXBuildFile; fileRef = 90EA697414B00BDC00547F20 /* ykpers.c */; };
+		90EA697814B00BDC00547F20 /* ykpbkdf2.c in Sources */ = {isa = PBXBuildFile; fileRef = 90EA697614B00BDC00547F20 /* ykpbkdf2.c */; };
+		90EA697E14B00C0B00547F20 /* ykstatus.c in Sources */ = {isa = PBXBuildFile; fileRef = 90EA697A14B00C0B00547F20 /* ykstatus.c */; };
+		90EA697F14B00C0B00547F20 /* ykcore.c in Sources */ = {isa = PBXBuildFile; fileRef = 90EA697C14B00C0B00547F20 /* ykcore.c */; };
+		90EA698014B00C0B00547F20 /* ykcore_osx.c in Sources */ = {isa = PBXBuildFile; fileRef = 90EA697D14B00C0B00547F20 /* ykcore_osx.c */; };
+		90EA698914B00CA700547F20 /* usha.c in Sources */ = {isa = PBXBuildFile; fileRef = 90EA698214B00CA700547F20 /* usha.c */; };
+		90EA698A14B00CA700547F20 /* sha384-512.c in Sources */ = {isa = PBXBuildFile; fileRef = 90EA698314B00CA700547F20 /* sha384-512.c */; };
+		90EA698B14B00CA700547F20 /* sha224-256.c in Sources */ = {isa = PBXBuildFile; fileRef = 90EA698414B00CA700547F20 /* sha224-256.c */; };
+		90EA698C14B00CA700547F20 /* sha1.c in Sources */ = {isa = PBXBuildFile; fileRef = 90EA698514B00CA700547F20 /* sha1.c */; };
+		90EA698D14B00CA700547F20 /* hmac.c in Sources */ = {isa = PBXBuildFile; fileRef = 90EA698814B00CA700547F20 /* hmac.c */; };
+		90EA698F14B00DF900547F20 /* libyubikey.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90EA698E14B00DF900547F20 /* libyubikey.a */; };
+		90EA699114B00E3000547F20 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90EA699014B00E3000547F20 /* IOKit.framework */; };
+		90EA699314B00E3E00547F20 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90EA699214B00E3E00547F20 /* CoreFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +76,28 @@
 		90EA695314AF8B6700547F20 /* ZETMenuController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZETMenuController.xib; sourceTree = "<group>"; };
 		90EA695614AF8C0700547F20 /* MenuHighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MenuHighlighted.png; sourceTree = "<group>"; };
 		90EA695714AF8C0700547F20 /* Menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Menu.png; sourceTree = "<group>"; };
+		90EA696214AFEA9A00547F20 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		90EA696514AFF0DA00547F20 /* SGHotKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGHotKey.h; sourceTree = "<group>"; };
+		90EA696614AFF0DA00547F20 /* SGHotKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGHotKey.m; sourceTree = "<group>"; };
+		90EA696714AFF0DA00547F20 /* SGHotKeyCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGHotKeyCenter.h; sourceTree = "<group>"; };
+		90EA696814AFF0DA00547F20 /* SGHotKeyCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGHotKeyCenter.m; sourceTree = "<group>"; };
+		90EA696914AFF0DA00547F20 /* SGKeyCodeTranslator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKeyCodeTranslator.h; sourceTree = "<group>"; };
+		90EA696A14AFF0DA00547F20 /* SGKeyCodeTranslator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKeyCodeTranslator.m; sourceTree = "<group>"; };
+		90EA696B14AFF0DA00547F20 /* SGKeyCombo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKeyCombo.h; sourceTree = "<group>"; };
+		90EA696C14AFF0DA00547F20 /* SGKeyCombo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKeyCombo.m; sourceTree = "<group>"; };
+		90EA697414B00BDC00547F20 /* ykpers.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ykpers.c; sourceTree = "<group>"; };
+		90EA697614B00BDC00547F20 /* ykpbkdf2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ykpbkdf2.c; sourceTree = "<group>"; };
+		90EA697A14B00C0B00547F20 /* ykstatus.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ykstatus.c; path = ykcore/ykstatus.c; sourceTree = "<group>"; };
+		90EA697C14B00C0B00547F20 /* ykcore.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ykcore.c; path = ykcore/ykcore.c; sourceTree = "<group>"; };
+		90EA697D14B00C0B00547F20 /* ykcore_osx.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ykcore_osx.c; path = ykcore/ykcore_osx.c; sourceTree = "<group>"; };
+		90EA698214B00CA700547F20 /* usha.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = usha.c; path = rfc4634/usha.c; sourceTree = "<group>"; };
+		90EA698314B00CA700547F20 /* sha384-512.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "sha384-512.c"; path = "rfc4634/sha384-512.c"; sourceTree = "<group>"; };
+		90EA698414B00CA700547F20 /* sha224-256.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "sha224-256.c"; path = "rfc4634/sha224-256.c"; sourceTree = "<group>"; };
+		90EA698514B00CA700547F20 /* sha1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = sha1.c; path = rfc4634/sha1.c; sourceTree = "<group>"; };
+		90EA698814B00CA700547F20 /* hmac.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = hmac.c; path = rfc4634/hmac.c; sourceTree = "<group>"; };
+		90EA698E14B00DF900547F20 /* libyubikey.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libyubikey.a; path = ../libyubikey.a; sourceTree = "<group>"; };
+		90EA699014B00E3000547F20 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		90EA699214B00E3E00547F20 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +105,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90EA699314B00E3E00547F20 /* CoreFoundation.framework in Frameworks */,
+				90EA699114B00E3000547F20 /* IOKit.framework in Frameworks */,
+				90EA698F14B00DF900547F20 /* libyubikey.a in Frameworks */,
+				90EA696314AFEA9A00547F20 /* Carbon.framework in Frameworks */,
 				90EA691E14AF8AFC00547F20 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -84,6 +128,9 @@
 		90EA690E14AF8AFC00547F20 = {
 			isa = PBXGroup;
 			children = (
+				90EA699214B00E3E00547F20 /* CoreFoundation.framework */,
+				90EA699014B00E3000547F20 /* IOKit.framework */,
+				90EA698E14B00DF900547F20 /* libyubikey.a */,
 				90EA692314AF8AFC00547F20 /* totpyk */,
 				90EA694014AF8AFC00547F20 /* totpykTests */,
 				90EA691C14AF8AFC00547F20 /* Frameworks */,
@@ -103,6 +150,7 @@
 		90EA691C14AF8AFC00547F20 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				90EA696214AFEA9A00547F20 /* Carbon.framework */,
 				90EA691D14AF8AFC00547F20 /* Cocoa.framework */,
 				90EA693B14AF8AFC00547F20 /* SenTestingKit.framework */,
 				90EA691F14AF8AFC00547F20 /* Other Frameworks */,
@@ -123,6 +171,8 @@
 		90EA692314AF8AFC00547F20 /* totpyk */ = {
 			isa = PBXGroup;
 			children = (
+				90EA697114B00B3700547F20 /* yubikey-personalization */,
+				90EA696414AFF0DA00547F20 /* SGHotKeysLib */,
 				90EA692F14AF8AFC00547F20 /* ZETAppDelegate.h */,
 				90EA693014AF8AFC00547F20 /* ZETAppDelegate.m */,
 				90EA693214AF8AFC00547F20 /* MainMenu.xib */,
@@ -165,6 +215,56 @@
 				90EA694314AF8AFC00547F20 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		90EA696414AFF0DA00547F20 /* SGHotKeysLib */ = {
+			isa = PBXGroup;
+			children = (
+				90EA696514AFF0DA00547F20 /* SGHotKey.h */,
+				90EA696614AFF0DA00547F20 /* SGHotKey.m */,
+				90EA696714AFF0DA00547F20 /* SGHotKeyCenter.h */,
+				90EA696814AFF0DA00547F20 /* SGHotKeyCenter.m */,
+				90EA696914AFF0DA00547F20 /* SGKeyCodeTranslator.h */,
+				90EA696A14AFF0DA00547F20 /* SGKeyCodeTranslator.m */,
+				90EA696B14AFF0DA00547F20 /* SGKeyCombo.h */,
+				90EA696C14AFF0DA00547F20 /* SGKeyCombo.m */,
+			);
+			name = SGHotKeysLib;
+			path = ../SGHotKeysLib/SGHotKeysLib;
+			sourceTree = SOURCE_ROOT;
+		};
+		90EA697114B00B3700547F20 /* yubikey-personalization */ = {
+			isa = PBXGroup;
+			children = (
+				90EA698114B00C7800547F20 /* rfc4634 */,
+				90EA697414B00BDC00547F20 /* ykpers.c */,
+				90EA697614B00BDC00547F20 /* ykpbkdf2.c */,
+				90EA697214B00B9900547F20 /* ykcore */,
+			);
+			name = "yubikey-personalization";
+			path = "../yubikey-personalization";
+			sourceTree = SOURCE_ROOT;
+		};
+		90EA697214B00B9900547F20 /* ykcore */ = {
+			isa = PBXGroup;
+			children = (
+				90EA697A14B00C0B00547F20 /* ykstatus.c */,
+				90EA697C14B00C0B00547F20 /* ykcore.c */,
+				90EA697D14B00C0B00547F20 /* ykcore_osx.c */,
+			);
+			name = ykcore;
+			sourceTree = "<group>";
+		};
+		90EA698114B00C7800547F20 /* rfc4634 */ = {
+			isa = PBXGroup;
+			children = (
+				90EA698214B00CA700547F20 /* usha.c */,
+				90EA698314B00CA700547F20 /* sha384-512.c */,
+				90EA698414B00CA700547F20 /* sha224-256.c */,
+				90EA698514B00CA700547F20 /* sha1.c */,
+				90EA698814B00CA700547F20 /* hmac.c */,
+			);
+			name = rfc4634;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,6 +381,20 @@
 				90EA692A14AF8AFC00547F20 /* main.m in Sources */,
 				90EA693114AF8AFC00547F20 /* ZETAppDelegate.m in Sources */,
 				90EA695414AF8B6700547F20 /* ZETMenuController.m in Sources */,
+				90EA696D14AFF0DA00547F20 /* SGHotKey.m in Sources */,
+				90EA696E14AFF0DA00547F20 /* SGHotKeyCenter.m in Sources */,
+				90EA696F14AFF0DA00547F20 /* SGKeyCodeTranslator.m in Sources */,
+				90EA697014AFF0DA00547F20 /* SGKeyCombo.m in Sources */,
+				90EA697714B00BDC00547F20 /* ykpers.c in Sources */,
+				90EA697814B00BDC00547F20 /* ykpbkdf2.c in Sources */,
+				90EA697E14B00C0B00547F20 /* ykstatus.c in Sources */,
+				90EA697F14B00C0B00547F20 /* ykcore.c in Sources */,
+				90EA698014B00C0B00547F20 /* ykcore_osx.c in Sources */,
+				90EA698914B00CA700547F20 /* usha.c in Sources */,
+				90EA698A14B00CA700547F20 /* sha384-512.c in Sources */,
+				90EA698B14B00CA700547F20 /* sha224-256.c in Sources */,
+				90EA698C14B00CA700547F20 /* sha1.c in Sources */,
+				90EA698D14B00CA700547F20 /* hmac.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +472,12 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					../SGHotKeysLib/SGHotKeysLib,
+					"../yubikey-personalization",
+					"../yubikey-personalization/ykcore",
+					"../yubikey-personalization/rfc4634",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -378,6 +498,12 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					../SGHotKeysLib/SGHotKeysLib,
+					"../yubikey-personalization",
+					"../yubikey-personalization/ykcore",
+					"../yubikey-personalization/rfc4634",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				SDKROOT = macosx;
 			};
@@ -389,6 +515,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "totpyk/totpyk-Prefix.pch";
 				INFOPLIST_FILE = "totpyk/totpyk-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/..\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -400,6 +530,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "totpyk/totpyk-Prefix.pch";
 				INFOPLIST_FILE = "totpyk/totpyk-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/..\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

@@ -18,5 +18,6 @@
 @property (nonatomic, retain) NSStatusItem *statusItem;
 
 - (IBAction)insert:(id)sender;
+- (void)insertHotKey:(id)sender;
 
 @end

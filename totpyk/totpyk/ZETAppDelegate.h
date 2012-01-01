@@ -7,13 +7,15 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "SGHotKey.h"
 #import "ZETMenuController.h"
 
 @interface ZETAppDelegate : NSObject <NSApplicationDelegate> {
-@private
-    ZETMenuController *_menuController;
+    ZETMenuController *menuController;
+    SGHotKey *hotKey;
 }
 
 @property (nonatomic, retain) ZETMenuController *menuController;
+@property (nonatomic, retain) SGHotKey *hotKey;
 
 @end

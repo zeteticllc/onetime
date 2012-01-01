@@ -7,19 +7,30 @@
 //
 
 #import "ZETAppDelegate.h"
+#import "SGKeyCombo.h"
+#import "SGHotKeyCenter.h"
+
+NSString *kGlobalHotKey = @"Global Hot Key";
 
 @implementation ZETAppDelegate
 
-@synthesize menuController = _menuController;
+@synthesize menuController,hotKey;
 - (void)dealloc
 {
-    [_menuController release];
+    [menuController release];
+    [hotKey release];
     [super dealloc];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     [self.menuController = [[ZETMenuController alloc] init] release];
+    
+    [[SGHotKeyCenter sharedCenter] unregisterHotKey:hotKey];	
+    
+	SGKeyCombo *keyCombo = [[[SGKeyCombo alloc] initWithKeyCode:kVK_Space modifiers:(kCommandUnicode|kShiftUnicode)] autorelease];
+	hotKey = [[SGHotKey alloc] initWithIdentifier:kGlobalHotKey keyCombo:keyCombo target:menuController action:@selector(insertHotKey:)];
+	[[SGHotKeyCenter sharedCenter] registerHotKey:hotKey];
 }
 
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender
