@@ -1,10 +1,10 @@
 ## $Id: Makefile.in,v 1.5 2001/08/21 13:36:27 lombards Exp $
 
 YKPDIR = yubikey-personalization
-APP = totpy
+APP = main
 TARGET = $(APP)
 
-LIBS = /usr/local/lib/libyubikey.a
+LIBS = libyubikey.a
 INCS = -I$(YKPDIR) -I$(YKPDIR)/ykcore -I$(YKPDIR)/rfc4634
 CFLAGS = -g -O2  
 #DEFS = 
@@ -12,6 +12,7 @@ LDFLAGS = -framework IOKit -framework CoreFoundation
 CC = gcc 
 
 SRC = $(APP).c \
+	totp.c \
 	$(YKPDIR)/ykcore/ykcore_osx.c \
 	$(YKPDIR)/ykcore/ykcore.c \
 	$(YKPDIR)/ykcore/ykstatus.c \
