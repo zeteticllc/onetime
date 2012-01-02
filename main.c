@@ -84,11 +84,16 @@ int main(int argc, char **argv)
 	/* Options */
 	bool verbose = false;
 	bool may_block = true;
+
+	char *otp_fmt_raw = "%%0%uu\n";
+	char otp_fmt_str[6];
 	
 	int slot = 1;
 
 	int digits = 6; // default to 6 digit OTP output
         int step = 30; // defaultto 30 second step 
+
+	unsigned int result;
 
 	ykp_errno = 0;
 	yk_errno = 0;
@@ -115,10 +120,13 @@ int main(int argc, char **argv)
 	}
 
 	if (! totp_challenge(yk, slot, digits, step,
-				 may_block, verbose)) {
+				 may_block, verbose, &result)) {
 		exit_code = 1;
 		goto err;
 	}
+
+	sprintf(otp_fmt_str, otp_fmt_raw, digits); // create a print mask to zero padding to the right number of digits
+	printf(otp_fmt_str, result);
 
 	exit_code = 0;
 	error = false;

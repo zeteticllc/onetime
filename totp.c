@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <unistd.h>
-
+#include <time.h>
 #include "totp.h"
 
 //                            0 1  2   3    4     5      6       7        8
@@ -35,7 +35,7 @@ int check_firmware(YK_KEY *yk, bool verbose)
 	return 1;
 }
 
-inline void to_big_endian(unsigned long *xp)
+void to_big_endian(unsigned long *xp)
 {
     *xp = (*xp>>56) | 
         ((*xp<<40) & 0x00FF000000000000) |
@@ -48,7 +48,7 @@ inline void to_big_endian(unsigned long *xp)
 }
 
 int totp_challenge(YK_KEY *yk, int slot, int digits, int step,
-		       bool may_block, bool verbose)
+		       bool may_block, bool verbose, unsigned int *result)
 {
 	unsigned char response[64];
 	unsigned char output_buf[(SHA1_MAX_BLOCK_SIZE * 2) + 1];
@@ -56,7 +56,6 @@ int totp_challenge(YK_KEY *yk, int slot, int digits, int step,
 	unsigned int flags = 0;
 	unsigned int response_len = 0;
 	unsigned int expect_bytes = 0;
-	int interval = 30;
 	unsigned int offset, raw_otp, otp;
 	unsigned char challenge[SHA1_MAX_BLOCK_SIZE];
 	unsigned int challenge_len;
@@ -129,14 +128,12 @@ int totp_challenge(YK_KEY *yk, int slot, int digits, int step,
 		yubikey_hex_encode(output_buf, (char *)response, response_len);
 		printf("raw hmac: %s\n", output_buf);
 		printf("offset: %d\n", offset);
-		printf("raw otp: %d\n", otp);
+		printf("raw otp: %u\n", otp);
 		printf("digits power[%d]: %d\n", digits, digits_power[digits]);
 	}
 
 	memset(output_buf, 0, sizeof(output_buf));
 
-	sprintf(output_buf, "%%0%dd\n", digits); // create a print mask to zero padding to the right number of digits
-	printf(output_buf, otp);
-
+	*result = otp;
 	return 1;
 }
