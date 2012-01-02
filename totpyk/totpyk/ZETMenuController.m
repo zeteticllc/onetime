@@ -7,8 +7,9 @@
 //
 
 #import <Carbon/Carbon.h>
-#import "ZETMenuController.h"
 #include <ApplicationServices/ApplicationServices.h>
+#include "ZETYkTOTP.h"
+#import "ZETMenuController.h"
 
 /*
 #define kVK_Command 0x37
@@ -24,7 +25,7 @@
     if (self) {
         statusItem = [[[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength] retain];
         statusItem.highlightMode = YES;
-        statusItem.title = @"blarf";
+        //statusItem.title = @"TOTPYk";
         statusItem.enabled = YES;
         statusItem.image = [NSImage imageNamed:@"Menu"];
         statusItem.alternateImage = [NSImage imageNamed:@"MenuHighlighted"];
@@ -49,8 +50,11 @@
     
     [pb clearContents];
     
+    ZETYkTOTP *totp = [[[ZETYkTOTP alloc] init] autorelease];
+    
+    NSString *otp = [totp totpChallenge];
     // set the new data into the pasteboard
-    [pb setString:@"This is a test!" forType:NSStringPboardType];
+    [pb setString:otp forType:NSStringPboardType];
     
     // post virtual keyboard events for command-v to paste in current location
     // http://classicteck.com/rbarticles/mackeyboard.php
@@ -65,6 +69,11 @@
     err = AXUIElementPostKeyboardEvent(axSystemWideElement, 0, kVK_Command, NO);
     
     usleep(100000);// sleep for a bit to give the paste time to process
+    
+    // press enter to submit form
+    err = AXUIElementPostKeyboardEvent(axSystemWideElement, 0, kVK_Return, YES);
+    err = AXUIElementPostKeyboardEvent(axSystemWideElement, 0, kVK_Return, NO);
+    
     // clear OTP from clipboard
     
     [pb clearContents];

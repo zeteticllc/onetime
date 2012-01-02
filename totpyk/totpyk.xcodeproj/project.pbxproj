@@ -39,6 +39,8 @@
 		90EA698F14B00DF900547F20 /* libyubikey.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90EA698E14B00DF900547F20 /* libyubikey.a */; };
 		90EA699114B00E3000547F20 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90EA699014B00E3000547F20 /* IOKit.framework */; };
 		90EA699314B00E3E00547F20 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90EA699214B00E3E00547F20 /* CoreFoundation.framework */; };
+		90EA699714B0130A00547F20 /* totp.c in Sources */ = {isa = PBXBuildFile; fileRef = 90EA699514B0130A00547F20 /* totp.c */; };
+		90EA699A14B0170800547F20 /* ZETYkTOTP.m in Sources */ = {isa = PBXBuildFile; fileRef = 90EA699914B0170600547F20 /* ZETYkTOTP.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +100,10 @@
 		90EA698E14B00DF900547F20 /* libyubikey.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libyubikey.a; path = ../libyubikey.a; sourceTree = "<group>"; };
 		90EA699014B00E3000547F20 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		90EA699214B00E3E00547F20 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		90EA699514B0130A00547F20 /* totp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = totp.c; sourceTree = "<group>"; };
+		90EA699614B0130A00547F20 /* totp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = totp.h; sourceTree = "<group>"; };
+		90EA699814B0170500547F20 /* ZETYkTOTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZETYkTOTP.h; sourceTree = "<group>"; };
+		90EA699914B0170600547F20 /* ZETYkTOTP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZETYkTOTP.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +177,7 @@
 		90EA692314AF8AFC00547F20 /* totpyk */ = {
 			isa = PBXGroup;
 			children = (
+				90EA699414B012C800547F20 /* totp */,
 				90EA697114B00B3700547F20 /* yubikey-personalization */,
 				90EA696414AFF0DA00547F20 /* SGHotKeysLib */,
 				90EA692F14AF8AFC00547F20 /* ZETAppDelegate.h */,
@@ -180,6 +187,8 @@
 				90EA695114AF8B6700547F20 /* ZETMenuController.h */,
 				90EA695214AF8B6700547F20 /* ZETMenuController.m */,
 				90EA695314AF8B6700547F20 /* ZETMenuController.xib */,
+				90EA699814B0170500547F20 /* ZETYkTOTP.h */,
+				90EA699914B0170600547F20 /* ZETYkTOTP.m */,
 			);
 			path = totpyk;
 			sourceTree = "<group>";
@@ -266,6 +275,16 @@
 			);
 			name = rfc4634;
 			sourceTree = "<group>";
+		};
+		90EA699414B012C800547F20 /* totp */ = {
+			isa = PBXGroup;
+			children = (
+				90EA699514B0130A00547F20 /* totp.c */,
+				90EA699614B0130A00547F20 /* totp.h */,
+			);
+			name = totp;
+			path = ..;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -395,6 +414,8 @@
 				90EA698B14B00CA700547F20 /* sha224-256.c in Sources */,
 				90EA698C14B00CA700547F20 /* sha1.c in Sources */,
 				90EA698D14B00CA700547F20 /* hmac.c in Sources */,
+				90EA699714B0130A00547F20 /* totp.c in Sources */,
+				90EA699A14B0170800547F20 /* ZETYkTOTP.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,6 +494,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
+					..,
 					../SGHotKeysLib/SGHotKeysLib,
 					"../yubikey-personalization",
 					"../yubikey-personalization/ykcore",
@@ -499,6 +521,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
+					..,
 					../SGHotKeysLib/SGHotKeysLib,
 					"../yubikey-personalization",
 					"../yubikey-personalization/ykcore",
