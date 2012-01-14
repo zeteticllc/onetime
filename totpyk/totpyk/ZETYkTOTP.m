@@ -30,33 +30,30 @@
 	ykp_errno = 0;
 	yk_errno = 0;
         
-	if (!yk_init()) {
-        // error checking
-	}
-    
-	if (!(yk = yk_open_first_key())) {
-        // error checking
-	}
-    
-	if (! check_firmware(yk, verbose)) {
-        // error checking
-	}
-    
-	if (! totp_challenge(yk, (int)slot, (int)digits, (int)step,
-                         (int)mayBlock, (int)verbose, &rawResult)) {
-        // error checking
-	}
-    
-    _result = rawResult;
+	if (yk_init() && (yk = yk_open_first_key())) {
+        if (check_firmware(yk, verbose)) {
+            if (totp_challenge(yk, (int)slot, (int)digits, (int)step,
+                                 (int)mayBlock, (int)verbose, &rawResult)) {
+                _result = rawResult;
+            } else {
+               return @"totp failed"; 
+            }
+            
+        } else {
+            return @"incorrect firmware version";
+        }
+	} else {
+        return @"unable to open key";
+    }
     
 	if (yk && !yk_close_key(yk)) {
-		// error checking
+        return @"close failed";
 	}
     
-	if (!yk_release()) {
-        // error checking
-	}
-    
+    if(!yk_release()) {
+        return @"release failed";
+    }
+
     return [NSString stringWithFormat:[NSString stringWithFormat:otpFormat, digits], rawResult];
 }
 
