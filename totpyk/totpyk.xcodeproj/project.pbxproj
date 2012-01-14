@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9033B9B414C1ADED00551445 /* ZETPrefsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9033B9B314C1ADED00551445 /* ZETPrefsController.xib */; };
+		9033B9C114C1AFB600551445 /* SRCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 9033B9B814C1AFB600551445 /* SRCommon.m */; };
+		9033B9C214C1AFB600551445 /* SRKeyCodeTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9033B9BA14C1AFB600551445 /* SRKeyCodeTransformer.m */; };
+		9033B9C314C1AFB600551445 /* SRRecorderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9033B9BC14C1AFB600551445 /* SRRecorderCell.m */; };
+		9033B9C414C1AFB600551445 /* SRRecorderControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9033B9BE14C1AFB600551445 /* SRRecorderControl.m */; };
+		9033B9C514C1AFB600551445 /* SRValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9033B9C014C1AFB600551445 /* SRValidator.m */; };
+		9033B9C814C1B11300551445 /* ZETPrefsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9033B9C714C1B11300551445 /* ZETPrefsController.m */; };
 		90EA691E14AF8AFC00547F20 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90EA691D14AF8AFC00547F20 /* Cocoa.framework */; };
 		90EA692814AF8AFC00547F20 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 90EA692614AF8AFC00547F20 /* InfoPlist.strings */; };
 		90EA692A14AF8AFC00547F20 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 90EA692914AF8AFC00547F20 /* main.m */; };
@@ -54,6 +61,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9033B9B314C1ADED00551445 /* ZETPrefsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZETPrefsController.xib; sourceTree = "<group>"; };
+		9033B9B714C1AFB600551445 /* SRCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRCommon.h; sourceTree = "<group>"; };
+		9033B9B814C1AFB600551445 /* SRCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRCommon.m; sourceTree = "<group>"; };
+		9033B9B914C1AFB600551445 /* SRKeyCodeTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRKeyCodeTransformer.h; sourceTree = "<group>"; };
+		9033B9BA14C1AFB600551445 /* SRKeyCodeTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRKeyCodeTransformer.m; sourceTree = "<group>"; };
+		9033B9BB14C1AFB600551445 /* SRRecorderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRRecorderCell.h; sourceTree = "<group>"; };
+		9033B9BC14C1AFB600551445 /* SRRecorderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRRecorderCell.m; sourceTree = "<group>"; };
+		9033B9BD14C1AFB600551445 /* SRRecorderControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRRecorderControl.h; sourceTree = "<group>"; };
+		9033B9BE14C1AFB600551445 /* SRRecorderControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRRecorderControl.m; sourceTree = "<group>"; };
+		9033B9BF14C1AFB600551445 /* SRValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRValidator.h; sourceTree = "<group>"; };
+		9033B9C014C1AFB600551445 /* SRValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRValidator.m; sourceTree = "<group>"; };
+		9033B9C614C1B11300551445 /* ZETPrefsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZETPrefsController.h; sourceTree = "<group>"; };
+		9033B9C714C1B11300551445 /* ZETPrefsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZETPrefsController.m; sourceTree = "<group>"; };
 		90EA691914AF8AFC00547F20 /* totpyk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = totpyk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90EA691D14AF8AFC00547F20 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		90EA692014AF8AFC00547F20 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -131,6 +151,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9033B9B514C1AF7600551445 /* ShortcutRecorder */ = {
+			isa = PBXGroup;
+			children = (
+				9033B9B614C1AFB600551445 /* Source */,
+			);
+			name = ShortcutRecorder;
+			sourceTree = "<group>";
+		};
+		9033B9B614C1AFB600551445 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				9033B9B714C1AFB600551445 /* SRCommon.h */,
+				9033B9B814C1AFB600551445 /* SRCommon.m */,
+				9033B9B914C1AFB600551445 /* SRKeyCodeTransformer.h */,
+				9033B9BA14C1AFB600551445 /* SRKeyCodeTransformer.m */,
+				9033B9BB14C1AFB600551445 /* SRRecorderCell.h */,
+				9033B9BC14C1AFB600551445 /* SRRecorderCell.m */,
+				9033B9BD14C1AFB600551445 /* SRRecorderControl.h */,
+				9033B9BE14C1AFB600551445 /* SRRecorderControl.m */,
+				9033B9BF14C1AFB600551445 /* SRValidator.h */,
+				9033B9C014C1AFB600551445 /* SRValidator.m */,
+			);
+			name = Source;
+			path = ../../ShortcutRecorder/Source;
+			sourceTree = "<group>";
+		};
 		90EA690E14AF8AFC00547F20 = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +223,7 @@
 		90EA692314AF8AFC00547F20 /* totpyk */ = {
 			isa = PBXGroup;
 			children = (
+				9033B9B514C1AF7600551445 /* ShortcutRecorder */,
 				90EA699414B012C800547F20 /* totp */,
 				90EA697114B00B3700547F20 /* yubikey-personalization */,
 				90EA696414AFF0DA00547F20 /* SGHotKeysLib */,
@@ -189,6 +236,9 @@
 				90EA695314AF8B6700547F20 /* ZETMenuController.xib */,
 				90EA699814B0170500547F20 /* ZETYkTOTP.h */,
 				90EA699914B0170600547F20 /* ZETYkTOTP.m */,
+				9033B9B314C1ADED00551445 /* ZETPrefsController.xib */,
+				9033B9C614C1B11300551445 /* ZETPrefsController.h */,
+				9033B9C714C1B11300551445 /* ZETPrefsController.m */,
 			);
 			path = totpyk;
 			sourceTree = "<group>";
@@ -363,6 +413,7 @@
 				90EA695514AF8B6700547F20 /* ZETMenuController.xib in Resources */,
 				90EA695814AF8C0700547F20 /* MenuHighlighted.png in Resources */,
 				90EA695914AF8C0700547F20 /* Menu.png in Resources */,
+				9033B9B414C1ADED00551445 /* ZETPrefsController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +467,12 @@
 				90EA698D14B00CA700547F20 /* hmac.c in Sources */,
 				90EA699714B0130A00547F20 /* totp.c in Sources */,
 				90EA699A14B0170800547F20 /* ZETYkTOTP.m in Sources */,
+				9033B9C114C1AFB600551445 /* SRCommon.m in Sources */,
+				9033B9C214C1AFB600551445 /* SRKeyCodeTransformer.m in Sources */,
+				9033B9C314C1AFB600551445 /* SRRecorderCell.m in Sources */,
+				9033B9C414C1AFB600551445 /* SRRecorderControl.m in Sources */,
+				9033B9C514C1AFB600551445 /* SRValidator.m in Sources */,
+				9033B9C814C1B11300551445 /* ZETPrefsController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -609,6 +666,7 @@
 				90EA694D14AF8AFC00547F20 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		90EA694E14AF8AFC00547F20 /* Build configuration list for PBXNativeTarget "totpykTests" */ = {
 			isa = XCConfigurationList;
@@ -617,6 +675,7 @@
 				90EA695014AF8AFC00547F20 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

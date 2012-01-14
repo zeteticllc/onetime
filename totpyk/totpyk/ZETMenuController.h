@@ -7,17 +7,22 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ZETPrefsController.h"
 
 @interface ZETMenuController : NSObject {
 @private
     IBOutlet NSMenu *statusMenu;
     NSStatusItem *statusItem;
+    ZETPrefsController *prefsController;
 }
 
 @property (nonatomic, retain) IBOutlet NSMenu *statusMenu;
 @property (nonatomic, retain) NSStatusItem *statusItem;
+@property (nonatomic, retain) ZETPrefsController *prefsController;
+
 
 - (IBAction)insert:(id)sender;
 - (void)insertHotKey:(id)sender;
+- (IBAction)showPrefWindow:(id)sender;
 
 @end

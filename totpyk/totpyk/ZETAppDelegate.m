@@ -9,6 +9,7 @@
 #import "ZETAppDelegate.h"
 #import "SGKeyCombo.h"
 #import "SGHotKeyCenter.h"
+#import "SRCommon.h"
 
 NSString *kGlobalHotKey = @"Global Hot Key";
 
@@ -26,17 +27,21 @@ NSString *kGlobalHotKey = @"Global Hot Key";
 {
     [self.menuController = [[ZETMenuController alloc] init] release];
     
-    [[SGHotKeyCenter sharedCenter] unregisterHotKey:hotKey];	
-    
-	SGKeyCombo *keyCombo = [[[SGKeyCombo alloc] initWithKeyCode:kVK_Space modifiers:(kCommandUnicode|kShiftUnicode)] autorelease];
-	hotKey = [[SGHotKey alloc] initWithIdentifier:kGlobalHotKey keyCombo:keyCombo target:menuController action:@selector(insertHotKey:)];
-	[[SGHotKeyCenter sharedCenter] registerHotKey:hotKey];
+    [self registerHotKey:kVK_Space modifiers:(kCommandUnicode|kShiftUnicode)];
 }
 
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender
 {
     self.menuController = nil;
     return NSTerminateNow;
+}
+
+- (void) registerHotKey:(NSInteger)theKeyCode modifiers:(NSUInteger)theModifiers {
+    SGKeyCombo *keyCombo = [SGKeyCombo keyComboWithKeyCode:theKeyCode modifiers:theModifiers];
+    [[SGHotKeyCenter sharedCenter] unregisterHotKey:hotKey];	
+    self.hotKey = [[SGHotKey alloc] initWithIdentifier:kGlobalHotKey 
+                                                keyCombo:keyCombo target:menuController action:@selector(insertHotKey:)];
+	[[SGHotKeyCenter sharedCenter] registerHotKey:hotKey];
 }
 
 @end

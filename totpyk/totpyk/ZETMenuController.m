@@ -17,7 +17,7 @@
 */
 
 @implementation ZETMenuController
-@synthesize statusMenu, statusItem;
+@synthesize statusMenu, statusItem, prefsController;
 
 - (id)init
 {
@@ -89,12 +89,19 @@
     [self insert:sender];
 }
 
+- (IBAction)showPrefWindow:(id)sender {
+	if (!prefsController) {
+		prefsController = [[ZETPrefsController alloc] init];
+	}
+    [prefsController showWindow:nil];
+}
 
 - (void)dealloc
 {
     [[NSStatusBar systemStatusBar] removeStatusItem:statusItem];
     [statusItem release];
     [statusMenu release];
+    [prefsController release];
     [super dealloc];
 }
 
