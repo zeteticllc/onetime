@@ -8,8 +8,9 @@
 
 #import <Carbon/Carbon.h>
 #include <ApplicationServices/ApplicationServices.h>
-#include "ZETYkTOTP.h"
+#import "ZETYkTOTP.h"
 #import "ZETMenuController.h"
+#import "ZETAppDelegate.h"
 
 /*
 #define kVK_Command 0x37
@@ -50,7 +51,12 @@
     
     [pb clearContents];
     
+    
     ZETYkTOTP *totp = [[[ZETYkTOTP alloc] init] autorelease];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    totp.step = [defaults integerForKey:kTimeStep];
+    totp.digits = [defaults integerForKey:kDigits];
+    totp.slot = [defaults integerForKey:kKeySlot];
     
     NSString *otp = [totp totpChallenge];
     // set the new data into the pasteboard
