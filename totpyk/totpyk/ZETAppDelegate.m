@@ -11,7 +11,7 @@
 #import "SGHotKeyCenter.h"
 #import "SRCommon.h"
 
-NSString *kGlobalHotKey = @"Global Hot Key";
+NSString *kGlobalHotKey = @"GlobalHotKey";
 
 @implementation ZETAppDelegate
 
@@ -27,7 +27,13 @@ NSString *kGlobalHotKey = @"Global Hot Key";
 {
     [self.menuController = [[ZETMenuController alloc] init] release];
     
-    [self registerHotKey:kVK_Space modifiers:(kCommandUnicode|kShiftUnicode)];
+    id hotKeyPlist = [[NSUserDefaults standardUserDefaults] objectForKey:kGlobalHotKey];
+    
+    if(hotKeyPlist) {
+        [self registerHotKeyCombo:[[[SGKeyCombo alloc] initWithPlistRepresentation:hotKeyPlist] autorelease]];
+    } else {
+        [self registerHotKey:kVK_Space modifiers:(kCommandUnicode|kShiftUnicode)];
+    }
 }
 
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender
@@ -37,11 +43,16 @@ NSString *kGlobalHotKey = @"Global Hot Key";
 }
 
 - (void) registerHotKey:(NSInteger)theKeyCode modifiers:(NSUInteger)theModifiers {
-    SGKeyCombo *keyCombo = [SGKeyCombo keyComboWithKeyCode:theKeyCode modifiers:theModifiers];
+    [self registerHotKeyCombo:[SGKeyCombo keyComboWithKeyCode:theKeyCode modifiers:theModifiers]];
+}
+       
+- (void) registerHotKeyCombo:(SGKeyCombo *)keyCombo {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [[SGHotKeyCenter sharedCenter] unregisterHotKey:hotKey];	
     self.hotKey = [[SGHotKey alloc] initWithIdentifier:kGlobalHotKey 
-                                                keyCombo:keyCombo target:menuController action:@selector(insertHotKey:)];
-	[[SGHotKeyCenter sharedCenter] registerHotKey:hotKey];
+                                             keyCombo:keyCombo target:menuController action:@selector(insertHotKey:)];
+    [[SGHotKeyCenter sharedCenter] registerHotKey:hotKey];
+    [defaults setObject:[keyCombo plistRepresentation] forKey:kGlobalHotKey];
 }
 
 @end

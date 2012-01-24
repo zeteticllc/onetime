@@ -19,4 +19,5 @@
 @property (nonatomic, retain) SGHotKey *hotKey;
 
 - (void) registerHotKey:(NSInteger)theKeyCode modifiers:(NSUInteger)theModifiers;
+- (void) registerHotKeyCombo:(SGKeyCombo *)keyCombo;
 @end
