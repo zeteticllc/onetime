@@ -90,9 +90,8 @@
 }
 
 - (IBAction)showPrefWindow:(id)sender {
-	if (!prefsController) {
-		prefsController = [[ZETPrefsController alloc] init];
-	}
+    [prefsController release];
+	prefsController = [[ZETPrefsController alloc] init];
     [prefsController showWindow:nil];
 }
 
