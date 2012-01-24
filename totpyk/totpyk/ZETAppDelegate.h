@@ -10,6 +10,11 @@
 #import "SGHotKey.h"
 #import "ZETMenuController.h"
 
+#define kGlobalHotKey @"GlobalHotKey"
+#define kTimeStep @"TimeStep"
+#define kDigits @"Digits"
+#define kKeySlot @"KeySlot"
+
 @interface ZETAppDelegate : NSObject <NSApplicationDelegate> {
     ZETMenuController *menuController;
     SGHotKey *hotKey;

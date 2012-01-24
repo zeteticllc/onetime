@@ -11,32 +11,40 @@
 
 @implementation ZETPrefsController
 
-@synthesize recorderControl, stepTextField;
+@synthesize recorderControl, stepTextField, digitsTextField, digitsStepper, keySlotPopUp;
+
+- (void)dealloc
+{
+    [recorderControl release];
+    [stepTextField release];
+    [digitsTextField release];
+    [digitsStepper release];
+    [keySlotPopUp release];
+    [super dealloc];
+}
 
 - (id)init
 {
     self = [super initWithWindowNibName:@"ZETPrefsController"];
-    if (self) {
-        // Initialization code here.
-    }
     return self;
 }
 
 - (id)initWithWindow:(NSWindow *)window
 {
     self = [super initWithWindow:window];
-    if (self) {
-        // Initialization code here.
-    }
-    
+    if (self) { }
     return self;
 }
 
 - (void)windowDidLoad
 {
     [super windowDidLoad];
-    
-    // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
+    [self loadUserDefaults];
+}
+
+- (void) windowWillClose:(NSNotification *)notification
+{
+    [self saveUserDefaults];
 }
 
 - (BOOL)shortcutRecorder:(SRRecorderControl *)aRecorder 
@@ -48,12 +56,52 @@
     return NO;
 }
 
-- (void)shortcutRecorder:(SRRecorderControl *)aRecorder keyComboDidChange:(KeyCombo)newKeyCombo {
+- (void)shortcutRecorder:(SRRecorderControl *)aRecorder keyComboDidChange:(KeyCombo)newKeyCombo 
+{
     NSLog(@"shortcutRecorder keyComboDidChange");
     ZETAppDelegate *delegate = (ZETAppDelegate *)[NSApp delegate];
     NSUInteger flags = [aRecorder cocoaToCarbonFlags:newKeyCombo.flags];
     [delegate registerHotKey:newKeyCombo.code modifiers:flags];
 }
 
+- (IBAction)preferenceChanged:(id)sender
+{
+    [self saveUserDefaults];
+}
+
+- (IBAction)digitsChanged:(id)sender
+{
+    int value = [sender intValue];
+    [digitsTextField setIntValue:value];
+    [digitsStepper setIntValue:value];
+    [self preferenceChanged:sender];
+}
+
+- (void) loadUserDefaults
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [stepTextField setIntValue:(int)[defaults integerForKey:kTimeStep]];
+    [digitsTextField setIntValue:(int)[defaults integerForKey:kDigits]];
+    [digitsStepper setIntValue:(int)[defaults integerForKey:kDigits]];
+    [keySlotPopUp selectItemAtIndex:(int)([defaults integerForKey:kKeySlot] - 1)];
+}
+
+- (void) saveUserDefaults
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    int value = [digitsTextField intValue];
+    if(value > 0 && value < 9) {
+        [defaults setInteger:value forKey:kDigits];
+    }
+    
+    value = [stepTextField intValue];
+    if(value > 0 && value < 3600) {
+        [defaults setInteger:value forKey:kTimeStep];
+    }
+    
+    [defaults setInteger:[keySlotPopUp indexOfSelectedItem]+1 forKey:kKeySlot];
+    [self loadUserDefaults]; // load back settings we just saved, in case there were any preference changes that were ignored
+}
 
 @end

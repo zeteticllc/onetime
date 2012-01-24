@@ -11,7 +11,6 @@
 #import "SGHotKeyCenter.h"
 #import "SRCommon.h"
 
-NSString *kGlobalHotKey = @"GlobalHotKey";
 
 @implementation ZETAppDelegate
 
@@ -25,13 +24,20 @@ NSString *kGlobalHotKey = @"GlobalHotKey";
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
     [self.menuController = [[ZETMenuController alloc] init] release];
     
-    id hotKeyPlist = [[NSUserDefaults standardUserDefaults] objectForKey:kGlobalHotKey];
-    
+    id hotKeyPlist = [defaults objectForKey:kGlobalHotKey];
     if(hotKeyPlist) {
         [self registerHotKeyCombo:[[[SGKeyCombo alloc] initWithPlistRepresentation:hotKeyPlist] autorelease]];
     } else {
+        // first run no preferences set
+        
+        [defaults setInteger:30 forKey:kTimeStep];
+        [defaults setInteger:6 forKey:kDigits];
+        [defaults setInteger:2 forKey:kKeySlot];
+        
         [self registerHotKey:kVK_Space modifiers:(kCommandUnicode|kShiftUnicode)];
     }
 }
