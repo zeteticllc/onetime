@@ -4,3 +4,6 @@
 [submodule "totpyk/SGHotKeysLib"]
 	path = totpyk/SGHotKeysLib
 	url = https://github.com/secondgear/SGHotKeysLib.git
+[submodule "totpyk/LaunchAtLoginController"]
+	path = totpyk/LaunchAtLoginController
+	url = https://github.com/Mozketo/LaunchAtLoginController.git

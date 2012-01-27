@@ -14,6 +14,8 @@
 		9033B9C414C1AFB600551445 /* SRRecorderControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9033B9BE14C1AFB600551445 /* SRRecorderControl.m */; };
 		9033B9C514C1AFB600551445 /* SRValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9033B9C014C1AFB600551445 /* SRValidator.m */; };
 		9033B9C814C1B11300551445 /* ZETPrefsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9033B9C714C1B11300551445 /* ZETPrefsController.m */; };
+		9068FE4C14D31ADD0089EF06 /* LaunchAtLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9068FE4A14D31ADD0089EF06 /* LaunchAtLoginController.m */; };
+		9068FE4D14D31ADD0089EF06 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9068FE4B14D31ADD0089EF06 /* README.md */; };
 		90EA691E14AF8AFC00547F20 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90EA691D14AF8AFC00547F20 /* Cocoa.framework */; };
 		90EA692814AF8AFC00547F20 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 90EA692614AF8AFC00547F20 /* InfoPlist.strings */; };
 		90EA692A14AF8AFC00547F20 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 90EA692914AF8AFC00547F20 /* main.m */; };
@@ -74,6 +76,9 @@
 		9033B9C014C1AFB600551445 /* SRValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRValidator.m; sourceTree = "<group>"; };
 		9033B9C614C1B11300551445 /* ZETPrefsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZETPrefsController.h; sourceTree = "<group>"; };
 		9033B9C714C1B11300551445 /* ZETPrefsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZETPrefsController.m; sourceTree = "<group>"; };
+		9068FE4914D31ADD0089EF06 /* LaunchAtLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchAtLoginController.h; sourceTree = "<group>"; };
+		9068FE4A14D31ADD0089EF06 /* LaunchAtLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchAtLoginController.m; sourceTree = "<group>"; };
+		9068FE4B14D31ADD0089EF06 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		90EA691914AF8AFC00547F20 /* totpyk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = totpyk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90EA691D14AF8AFC00547F20 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		90EA692014AF8AFC00547F20 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -177,12 +182,27 @@
 			path = ShortcutRecorder/Source;
 			sourceTree = SOURCE_ROOT;
 		};
+		9068FE4814D31ADD0089EF06 /* LaunchAtLoginController */ = {
+			isa = PBXGroup;
+			children = (
+				9068FE4914D31ADD0089EF06 /* LaunchAtLoginController.h */,
+				9068FE4A14D31ADD0089EF06 /* LaunchAtLoginController.m */,
+				9068FE4B14D31ADD0089EF06 /* README.md */,
+			);
+			path = LaunchAtLoginController;
+			sourceTree = SOURCE_ROOT;
+		};
 		90EA690E14AF8AFC00547F20 = {
 			isa = PBXGroup;
 			children = (
 				90EA699214B00E3E00547F20 /* CoreFoundation.framework */,
 				90EA699014B00E3000547F20 /* IOKit.framework */,
 				90EA698E14B00DF900547F20 /* libyubikey.a */,
+				9068FE4814D31ADD0089EF06 /* LaunchAtLoginController */,
+				90EA699414B012C800547F20 /* totp */,
+				90EA696414AFF0DA00547F20 /* SGHotKeysLib */,
+				90EA697114B00B3700547F20 /* yubikey-personalization */,
+				9033B9B514C1AF7600551445 /* ShortcutRecorder */,
 				90EA692314AF8AFC00547F20 /* totpyk */,
 				90EA694014AF8AFC00547F20 /* totpykTests */,
 				90EA691C14AF8AFC00547F20 /* Frameworks */,
@@ -223,10 +243,6 @@
 		90EA692314AF8AFC00547F20 /* totpyk */ = {
 			isa = PBXGroup;
 			children = (
-				9033B9B514C1AF7600551445 /* ShortcutRecorder */,
-				90EA699414B012C800547F20 /* totp */,
-				90EA697114B00B3700547F20 /* yubikey-personalization */,
-				90EA696414AFF0DA00547F20 /* SGHotKeysLib */,
 				90EA693214AF8AFC00547F20 /* MainMenu.xib */,
 				90EA692414AF8AFC00547F20 /* Supporting Files */,
 				90EA692F14AF8AFC00547F20 /* ZETAppDelegate.h */,
@@ -414,6 +430,7 @@
 				90EA695814AF8C0700547F20 /* MenuHighlighted.png in Resources */,
 				90EA695914AF8C0700547F20 /* Menu.png in Resources */,
 				9033B9B414C1ADED00551445 /* ZETPrefsController.xib in Resources */,
+				9068FE4D14D31ADD0089EF06 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,6 +490,7 @@
 				9033B9C414C1AFB600551445 /* SRRecorderControl.m in Sources */,
 				9033B9C514C1AFB600551445 /* SRValidator.m in Sources */,
 				9033B9C814C1B11300551445 /* ZETPrefsController.m in Sources */,
+				9068FE4C14D31ADD0089EF06 /* LaunchAtLoginController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
