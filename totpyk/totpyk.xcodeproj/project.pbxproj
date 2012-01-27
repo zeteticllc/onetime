@@ -156,8 +156,8 @@
 			children = (
 				9033B9B614C1AFB600551445 /* Source */,
 			);
-			name = ShortcutRecorder;
-			sourceTree = "<group>";
+			path = ShortcutRecorder;
+			sourceTree = SOURCE_ROOT;
 		};
 		9033B9B614C1AFB600551445 /* Source */ = {
 			isa = PBXGroup;
@@ -174,8 +174,8 @@
 				9033B9C014C1AFB600551445 /* SRValidator.m */,
 			);
 			name = Source;
-			path = ../../ShortcutRecorder/Source;
-			sourceTree = "<group>";
+			path = ShortcutRecorder/Source;
+			sourceTree = SOURCE_ROOT;
 		};
 		90EA690E14AF8AFC00547F20 = {
 			isa = PBXGroup;
@@ -289,7 +289,7 @@
 				90EA696C14AFF0DA00547F20 /* SGKeyCombo.m */,
 			);
 			name = SGHotKeysLib;
-			path = ../SGHotKeysLib/SGHotKeysLib;
+			path = SGHotKeysLib/SGHotKeysLib;
 			sourceTree = SOURCE_ROOT;
 		};
 		90EA697114B00B3700547F20 /* yubikey-personalization */ = {

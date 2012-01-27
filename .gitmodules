@@ -1,6 +1,6 @@
 [submodule "yubikey-personalization"]
 	path = yubikey-personalization
 	url = https://github.com/Yubico/yubikey-personalization.git
-[submodule "SGHotKeysLib"]
-	path = SGHotKeysLib
+[submodule "totpyk/SGHotKeysLib"]
+	path = totpyk/SGHotKeysLib
 	url = https://github.com/secondgear/SGHotKeysLib.git
