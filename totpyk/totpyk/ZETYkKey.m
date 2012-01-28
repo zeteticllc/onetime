@@ -75,7 +75,41 @@
     return [NSData dataWithBytes:response length:response_len];
 }
 
-
+-(BOOL)writeConfig:(NSString *)key buttonTrigger:(BOOL)buttonTrigger {
+	ykp_errno = yk_errno = 0;
+    YKP_CONFIG *cfg = ykp_create_config();
+    
+    if (!yk_get_status(yk, st)) {
+        error = YES;
+        errorMessage = @"unable to get status from Yubikey before configuration write";
+    }
+    
+    struct config_st *ycfg = (struct config_st *) ykp_core_config(cfg);
+    ycfg->tktFlags = ycfg->cfgFlags = ycfg->extFlags =  0; // clear flags
+    
+    ykp_configure_for(cfg, (int)slot, st);
+    
+    ykp_set_tktflag_CHAL_RESP(cfg, 1);
+    ykp_set_cfgflag_CHAL_HMAC(cfg, 1);
+    ykp_set_cfgflag_HMAC_LT64(cfg, 1);
+    
+    if (buttonTrigger) {
+        ykp_set_cfgflag_CHAL_BTN_TRIG(cfg, 1);
+    }
+    
+    if(ykp_HMAC_key_from_hex(cfg, [key UTF8String])) {
+        error = YES;
+        errorMessage = @"invalid key data provided";
+    } else  {
+        if (!yk_write_config(yk, ykp_core_config(cfg), ykp_config_num(cfg), NULL)) {
+            error = YES;
+            errorMessage = @"failed to write from Yubikey before configuration write";
+        }
+    }
+    
+    free(cfg);
+    return error;
+}
 
 +(unsigned long) toBigEndian:(unsigned long)value
 {

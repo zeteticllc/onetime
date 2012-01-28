@@ -51,6 +51,7 @@
 		90EA699714B0130A00547F20 /* totp.c in Sources */ = {isa = PBXBuildFile; fileRef = 90EA699514B0130A00547F20 /* totp.c */; };
 		90EA699A14B0170800547F20 /* ZETYkTOTP.m in Sources */ = {isa = PBXBuildFile; fileRef = 90EA699914B0170600547F20 /* ZETYkTOTP.m */; };
 		90F668B614D493F000EA9D34 /* ZETYkKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 90F668B514D493F000EA9D34 /* ZETYkKey.m */; };
+		90F668BB14D4A78500EA9D34 /* NSData+ToHex.m in Sources */ = {isa = PBXBuildFile; fileRef = 90F668BA14D4A78400EA9D34 /* NSData+ToHex.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +133,8 @@
 		90EA699914B0170600547F20 /* ZETYkTOTP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZETYkTOTP.m; sourceTree = "<group>"; };
 		90F668B414D493F000EA9D34 /* ZETYkKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZETYkKey.h; sourceTree = "<group>"; };
 		90F668B514D493F000EA9D34 /* ZETYkKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZETYkKey.m; sourceTree = "<group>"; };
+		90F668B914D4A78400EA9D34 /* NSData+ToHex.h */ = {isa = PBXFileReference; fileEncoding = 4; path = "NSData+ToHex.h"; sourceTree = "<group>"; };
+		90F668BA14D4A78400EA9D34 /* NSData+ToHex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+ToHex.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,6 +263,8 @@
 				9033B9C714C1B11300551445 /* ZETPrefsController.m */,
 				90F668B414D493F000EA9D34 /* ZETYkKey.h */,
 				90F668B514D493F000EA9D34 /* ZETYkKey.m */,
+				90F668B914D4A78400EA9D34 /* NSData+ToHex.h */,
+				90F668BA14D4A78400EA9D34 /* NSData+ToHex.m */,
 			);
 			path = totpyk;
 			sourceTree = "<group>";
@@ -497,6 +502,7 @@
 				9033B9C814C1B11300551445 /* ZETPrefsController.m in Sources */,
 				9068FE4C14D31ADD0089EF06 /* LaunchAtLoginController.m in Sources */,
 				90F668B614D493F000EA9D34 /* ZETYkKey.m in Sources */,
+				90F668BB14D4A78500EA9D34 /* NSData+ToHex.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
