@@ -11,4 +11,5 @@
 
 @interface NSData (ToHex)
     - (NSString*) toHex;
+    + (NSData*) fromHex:(NSString*)hex;
 @end

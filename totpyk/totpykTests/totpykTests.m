@@ -8,7 +8,7 @@
 
 #import "totpykTests.h"
 #import "ZETYkKey.h"
-#import "NSData+ToHex.h"
+#import "NSData+Hex.h"
 
 @implementation totpykTests
 
@@ -50,8 +50,9 @@
 {
     //http://tools.ietf.org/html/rfc2202
     
-    NSData *keyData = [NSData dataWithBytes:"12345678901234567890" length:20];
-    NSString *hexKey = [keyData toHexString];
+    
+    NSData *keyData = [NSData fromHex:@"0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b"];
+    NSString *hexKey = [keyData toHex];
     
     ZETYkKey *ykKey = [[ZETYkKey alloc] init];
     
@@ -59,15 +60,12 @@
     
     STAssertFalse(ykKey.error, @"error opening key");
     STAssertNil(ykKey.errorMessage, @"errorMessage should be nil");
+        
     
-    unsigned long long challengeLong = 1;
+    NSData *response = [ykKey hmacChallenge:[@"Hi There" dataUsingEncoding:NSASCIIStringEncoding] challengeLength:8];
     
-    NSData *challenge = [NSData dataWithBytes:&challengeLong length:sizeof(challengeLong)];
-    
-    NSData *response = [ykKey hmacChallenge:challenge challengeLength:challege.lenth];
-    
-    STAssertEquals(<#a1#>, <#a2#>, <#description#>, <#...#>)
-    [key release];
+    STAssertEqualObjects([response toHex], @"b617318655057264e28bc0b6fb378c8ef146be00", @"response %@ doesn't match %@", [response toHex], @"b617318655057264e28bc0b6fb378c8ef146be00");
+    [ykKey release];
 }
 
 @end
