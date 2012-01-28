@@ -16,6 +16,7 @@
     IBOutlet NSTextField *digitsTextField;
     IBOutlet NSStepper *digitsStepper;
     IBOutlet NSPopUpButton *keySlotPopUp;
+    BOOL requireKeyPress;
 }
 
 @property (nonatomic, retain) IBOutlet SRRecorderControl *recorderControl;
@@ -23,6 +24,7 @@
 @property (nonatomic, retain) IBOutlet NSTextField *digitsTextField;
 @property (nonatomic, retain) IBOutlet NSStepper *digitsStepper;
 @property (nonatomic, retain) IBOutlet NSPopUpButton *keySlotPopUp;
+@property (nonatomic) BOOL requireKeyPress;
 
 - (BOOL) shortcutRecorder:(SRRecorderControl *)aRecorder 
                 isKeyCode:(signed short)keyCode 
@@ -35,4 +37,6 @@
 
 - (void) loadUserDefaults;
 - (void) saveUserDefaults;
+
+- (IBAction)writeConfig:(id)sender;
 @end

@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ZETYkKey.h"
 
 @interface ZETYkTOTP : NSObject {
-    NSInteger slot;
+    ZETYkKey *key;
     NSInteger digits;
     NSInteger step;
     NSInteger mayBlock;
@@ -19,7 +20,7 @@
     NSUInteger _result;
 }
 
-@property (nonatomic) NSInteger slot;
+@property (nonatomic,retain) ZETYkKey *key;
 @property (nonatomic) NSInteger digits;
 @property (nonatomic) NSInteger step;
 @property (nonatomic) NSInteger mayBlock;

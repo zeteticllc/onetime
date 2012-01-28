@@ -56,7 +56,7 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     totp.step = [defaults integerForKey:kTimeStep];
     totp.digits = [defaults integerForKey:kDigits];
-    totp.slot = [defaults integerForKey:kKeySlot];
+    totp.key.slot = [defaults integerForKey:kKeySlot];
     
     NSString *otp = [totp totpChallenge];
     // set the new data into the pasteboard

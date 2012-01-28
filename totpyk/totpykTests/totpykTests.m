@@ -7,6 +7,7 @@
 //
 
 #import "totpykTests.h"
+#import "ZETYkKey.h"
 
 @implementation totpykTests
 
@@ -24,9 +25,22 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testYkKeyOpen
 {
-    STFail(@"Unit tests are not implemented yet in totpykTests");
+    ZETYkKey *key = [[ZETYkKey alloc] init];
+    STAssertFalse(key.error, @"error opening key");
+    STAssertNil(key.errorMessage, @"errorMessage should be nil");
+    STAssertTrue(2 == key.versionMajor, @"major version number %d is not 2", key.versionMajor);
+    STAssertTrue(2 == key.versionMinor, @"minor version number %d is not 2", key.versionMinor);
+    [key release];
+}
+
+- (void)testYkHmac
+{
+    ZETYkKey *key = [[ZETYkKey alloc] init];
+    
+    
+    [key release];
 }
 
 @end

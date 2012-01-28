@@ -10,12 +10,16 @@
 #import "ZETYkTOTP.h"
 
 @implementation ZETYkTOTP
-@synthesize slot, digits, step, mayBlock, verbose;
+@synthesize key, digits, step, mayBlock, verbose;
 @synthesize result = _result;
+
+- (void)dealloc {
+    [key release];
+    [super dealloc];
+}
 
 - (id)init {
     self = [super init];
-    slot = 2;
     digits = 6;
     step = 30;
     mayBlock = 1;
@@ -32,7 +36,7 @@
         
 	if (yk_init() && (yk = yk_open_first_key())) {
         if (check_firmware(yk, verbose)) {
-            if (totp_challenge(yk, (int)slot, (int)digits, (int)step,
+            if (totp_challenge(yk, (int)key.slot, (int)digits, (int)step,
                                  (int)mayBlock, (int)verbose, &rawResult)) {
                 _result = rawResult;
             } else {

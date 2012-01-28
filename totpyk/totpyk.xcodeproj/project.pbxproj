@@ -50,6 +50,7 @@
 		90EA699314B00E3E00547F20 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90EA699214B00E3E00547F20 /* CoreFoundation.framework */; };
 		90EA699714B0130A00547F20 /* totp.c in Sources */ = {isa = PBXBuildFile; fileRef = 90EA699514B0130A00547F20 /* totp.c */; };
 		90EA699A14B0170800547F20 /* ZETYkTOTP.m in Sources */ = {isa = PBXBuildFile; fileRef = 90EA699914B0170600547F20 /* ZETYkTOTP.m */; };
+		90F668B614D493F000EA9D34 /* ZETYkKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 90F668B514D493F000EA9D34 /* ZETYkKey.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +130,8 @@
 		90EA699614B0130A00547F20 /* totp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = totp.h; sourceTree = "<group>"; };
 		90EA699814B0170500547F20 /* ZETYkTOTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZETYkTOTP.h; sourceTree = "<group>"; };
 		90EA699914B0170600547F20 /* ZETYkTOTP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZETYkTOTP.m; sourceTree = "<group>"; };
+		90F668B414D493F000EA9D34 /* ZETYkKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZETYkKey.h; sourceTree = "<group>"; };
+		90F668B514D493F000EA9D34 /* ZETYkKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZETYkKey.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,6 +258,8 @@
 				9033B9B314C1ADED00551445 /* ZETPrefsController.xib */,
 				9033B9C614C1B11300551445 /* ZETPrefsController.h */,
 				9033B9C714C1B11300551445 /* ZETPrefsController.m */,
+				90F668B414D493F000EA9D34 /* ZETYkKey.h */,
+				90F668B514D493F000EA9D34 /* ZETYkKey.m */,
 			);
 			path = totpyk;
 			sourceTree = "<group>";
@@ -491,6 +496,7 @@
 				9033B9C514C1AFB600551445 /* SRValidator.m in Sources */,
 				9033B9C814C1B11300551445 /* ZETPrefsController.m in Sources */,
 				9068FE4C14D31ADD0089EF06 /* LaunchAtLoginController.m in Sources */,
+				90F668B614D493F000EA9D34 /* ZETYkKey.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
