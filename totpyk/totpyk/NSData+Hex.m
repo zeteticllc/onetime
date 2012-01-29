@@ -43,13 +43,7 @@ static inline int hex2byte(char c) {
 		*bin++ = (unsigned char) (hex2byte(hbyte)<<4 | hex2byte(lbyte));
 	}
     
-    for(int i = 0; i<len; i++) {
-        char hbyte = *hex++;
-        char lbyte = *hex++;
-        *bin++ = (unsigned char) (hex2byte(hbyte)<<4 | hex2byte(lbyte));
-    }
-    
-    return [NSData dataWithData:binData];
+    return [[binData copy] autorelease];
 }
 
 @end

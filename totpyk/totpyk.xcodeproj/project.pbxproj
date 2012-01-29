@@ -16,6 +16,7 @@
 		9033B9C814C1B11300551445 /* ZETPrefsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9033B9C714C1B11300551445 /* ZETPrefsController.m */; };
 		9068FE4C14D31ADD0089EF06 /* LaunchAtLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9068FE4A14D31ADD0089EF06 /* LaunchAtLoginController.m */; };
 		9068FE4D14D31ADD0089EF06 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9068FE4B14D31ADD0089EF06 /* README.md */; };
+		90A92B7B14D58A880078E2E5 /* NSDataHexTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 90A92B7A14D58A880078E2E5 /* NSDataHexTests.m */; };
 		90D59E7314D58230000343B2 /* NSStringPaddingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 90D59E7214D58230000343B2 /* NSStringPaddingTests.m */; };
 		90EA691E14AF8AFC00547F20 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90EA691D14AF8AFC00547F20 /* Cocoa.framework */; };
 		90EA692814AF8AFC00547F20 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 90EA692614AF8AFC00547F20 /* InfoPlist.strings */; };
@@ -83,6 +84,8 @@
 		9068FE4914D31ADD0089EF06 /* LaunchAtLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchAtLoginController.h; sourceTree = "<group>"; };
 		9068FE4A14D31ADD0089EF06 /* LaunchAtLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchAtLoginController.m; sourceTree = "<group>"; };
 		9068FE4B14D31ADD0089EF06 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		90A92B7914D58A880078E2E5 /* NSDataHexTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataHexTests.h; sourceTree = "<group>"; };
+		90A92B7A14D58A880078E2E5 /* NSDataHexTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataHexTests.m; sourceTree = "<group>"; };
 		90D59E7114D58230000343B2 /* NSStringPaddingTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSStringPaddingTests.h; sourceTree = "<group>"; };
 		90D59E7214D58230000343B2 /* NSStringPaddingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringPaddingTests.m; sourceTree = "<group>"; };
 		90EA691914AF8AFC00547F20 /* totpyk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = totpyk.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -298,6 +301,8 @@
 				90EA694714AF8AFC00547F20 /* totpykTests.m */,
 				90D59E7114D58230000343B2 /* NSStringPaddingTests.h */,
 				90D59E7214D58230000343B2 /* NSStringPaddingTests.m */,
+				90A92B7914D58A880078E2E5 /* NSDataHexTests.h */,
+				90A92B7A14D58A880078E2E5 /* NSDataHexTests.m */,
 				90EA694114AF8AFC00547F20 /* Supporting Files */,
 			);
 			path = totpykTests;
@@ -523,6 +528,7 @@
 			files = (
 				90EA694814AF8AFC00547F20 /* totpykTests.m in Sources */,
 				90D59E7314D58230000343B2 /* NSStringPaddingTests.m in Sources */,
+				90A92B7B14D58A880078E2E5 /* NSDataHexTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
