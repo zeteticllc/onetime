@@ -31,7 +31,9 @@
 
 
 -(NSData *)hmacChallenge:(NSData *)challenge challengeLength:(NSInteger)length;
--(BOOL)writeConfig:(NSString *)key buttonTrigger:(BOOL)buttonTrigger;
+-(BOOL)writeHmacCRConfig:(NSString *)key buttonTrigger:(BOOL)buttonTrigger;
+
+-(void)setErrorState:(NSString *)message;
 
 +(unsigned long) toBigEndian:(unsigned long)value;
 

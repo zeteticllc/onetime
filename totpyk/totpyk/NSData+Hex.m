@@ -16,9 +16,9 @@ static inline int hex2byte(char c) {
     (c>=_T('a') && c<=_T('f')) ? (c)-_T('a')+10 : 0;
 }
 
-@implementation NSData (ToHex)
+@implementation NSData (Hex)
 
-- (NSString*) toHex {
+- (NSString*) dataToHex {
     NSMutableString *hex = [NSMutableString stringWithCapacity:([self length] * 2)];
     
     for (int i = 0; i < [self length]; i++) {
@@ -27,7 +27,7 @@ static inline int hex2byte(char c) {
     return [[hex copy] autorelease];
 }
 
-+ (NSData *)fromHex:(NSString *)hexString {
++ (NSData *)dataFromHex:(NSString *)hexString {
     NSData *hexData = [[hexString lowercaseString] dataUsingEncoding:NSASCIIStringEncoding];
     unsigned char *hex = (unsigned char*) [hexData bytes];
     

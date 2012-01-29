@@ -18,6 +18,12 @@
         yk_close_key(yk);
         yk_release();
     }
+    [errorMessage release];
+}
+
+-(void)setErrorState:(NSString *)message {
+    error = TRUE;
+    errorMessage = [message retain];
 }
 
 - (id) init {
@@ -30,21 +36,18 @@
         
         if (yk_init() && (yk = yk_open_first_key())) {
             if (!yk_get_status(yk, st)) {
-                error = YES;
-                errorMessage = @"Unable to get status from Yubikey";
+                [self setErrorState:@"Unable to get status from Yubikey"];
             } else {
                 versionMajor = ykds_version_major(st);
                 versionMinor = ykds_version_minor(st);
                 versionBuild = ykds_version_build(st); 
                 if (versionMajor < 2 || (versionMajor == 2 && versionMinor < 2)) {
-                    error = YES;
-                    errorMessage = [NSString stringWithFormat:@"Incorrect firmware version: HMAC challenge-response not supported with YubiKey %d.%d.%d", 
-                                    versionMajor, versionMinor, versionBuild];
+                    [self setErrorState:[NSString stringWithFormat:@"Incorrect firmware version: HMAC challenge-response not supported with YubiKey %d.%d.%d", 
+                                    versionMajor, versionMinor, versionBuild]];
                 }
             }
         } else {
-            error = YES;
-            errorMessage = @"Unable to get status from Yubikey";
+            [self setErrorState:@"Unable to get status from Yubikey"];
         }
     }
     return self;
@@ -56,11 +59,11 @@
 	unsigned int response_len = 0;
 	unsigned int expect_bytes = 20;
 	
+    if(!yk || error) return nil;
+       
 	if (!yk_write_to_key(yk, yk_cmd, [challenge bytes], (int)length)) {
-        error = YES;
-        errorMessage = @"Error writing HMAC challenge to Yubikey";
+        [self setErrorState:@"Error writing HMAC challenge to Yubikey"];
     }
-    
     
 	if (!yk_read_response_from_key(
             yk, slot, YK_FLAG_MAYBLOCK, // use selected slot and allow the yubikey to block for button press
@@ -75,13 +78,14 @@
     return [NSData dataWithBytes:response length:response_len];
 }
 
--(BOOL)writeConfig:(NSString *)key buttonTrigger:(BOOL)buttonTrigger {
+-(BOOL)writeHmacCRConfig:(NSString *)key buttonTrigger:(BOOL)buttonTrigger {
 	ykp_errno = yk_errno = 0;
     YKP_CONFIG *cfg = ykp_create_config();
     
+    if(!yk || error) return false;
+    
     if (!yk_get_status(yk, st)) {
-        error = YES;
-        errorMessage = @"unable to get status from Yubikey before configuration write";
+        [self setErrorState:@"unable to get status from Yubikey before configuration write"];
     }
     
     struct config_st *ycfg = (struct config_st *) ykp_core_config(cfg);
@@ -98,12 +102,10 @@
     }
     
     if(ykp_HMAC_key_from_hex(cfg, [key UTF8String])) {
-        error = YES;
-        errorMessage = @"invalid key data provided";
+        [self setErrorState:@"invalid key data provided"];
     } else  {
         if (!yk_write_config(yk, ykp_core_config(cfg), ykp_config_num(cfg), NULL)) {
-            error = YES;
-            errorMessage = @"failed to write from Yubikey before configuration write";
+            [self setErrorState:@"failed to write from Yubikey before configuration write"];
         }
     }
     

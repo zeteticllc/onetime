@@ -9,7 +9,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSData (ToHex)
-    - (NSString*) toHex;
-    + (NSData*) fromHex:(NSString*)hex;
+@interface NSData (Hex)
+    - (NSString*) dataToHex;
+    + (NSData*) dataFromHex:(NSString*)hex;
 @end

@@ -16,6 +16,7 @@
 		9033B9C814C1B11300551445 /* ZETPrefsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9033B9C714C1B11300551445 /* ZETPrefsController.m */; };
 		9068FE4C14D31ADD0089EF06 /* LaunchAtLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9068FE4A14D31ADD0089EF06 /* LaunchAtLoginController.m */; };
 		9068FE4D14D31ADD0089EF06 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9068FE4B14D31ADD0089EF06 /* README.md */; };
+		90D59E7314D58230000343B2 /* NSStringPaddingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 90D59E7214D58230000343B2 /* NSStringPaddingTests.m */; };
 		90EA691E14AF8AFC00547F20 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90EA691D14AF8AFC00547F20 /* Cocoa.framework */; };
 		90EA692814AF8AFC00547F20 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 90EA692614AF8AFC00547F20 /* InfoPlist.strings */; };
 		90EA692A14AF8AFC00547F20 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 90EA692914AF8AFC00547F20 /* main.m */; };
@@ -52,6 +53,7 @@
 		90EA699A14B0170800547F20 /* ZETYkTOTP.m in Sources */ = {isa = PBXBuildFile; fileRef = 90EA699914B0170600547F20 /* ZETYkTOTP.m */; };
 		90F668B614D493F000EA9D34 /* ZETYkKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 90F668B514D493F000EA9D34 /* ZETYkKey.m */; };
 		90F668BB14D4A78500EA9D34 /* NSData+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 90F668BA14D4A78400EA9D34 /* NSData+Hex.m */; };
+		90F668BE14D5781E00EA9D34 /* NSString+Padding.m in Sources */ = {isa = PBXBuildFile; fileRef = 90F668BD14D5781E00EA9D34 /* NSString+Padding.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +83,8 @@
 		9068FE4914D31ADD0089EF06 /* LaunchAtLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchAtLoginController.h; sourceTree = "<group>"; };
 		9068FE4A14D31ADD0089EF06 /* LaunchAtLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchAtLoginController.m; sourceTree = "<group>"; };
 		9068FE4B14D31ADD0089EF06 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		90D59E7114D58230000343B2 /* NSStringPaddingTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSStringPaddingTests.h; sourceTree = "<group>"; };
+		90D59E7214D58230000343B2 /* NSStringPaddingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringPaddingTests.m; sourceTree = "<group>"; };
 		90EA691914AF8AFC00547F20 /* totpyk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = totpyk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90EA691D14AF8AFC00547F20 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		90EA692014AF8AFC00547F20 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -133,8 +137,10 @@
 		90EA699914B0170600547F20 /* ZETYkTOTP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZETYkTOTP.m; sourceTree = "<group>"; };
 		90F668B414D493F000EA9D34 /* ZETYkKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZETYkKey.h; sourceTree = "<group>"; };
 		90F668B514D493F000EA9D34 /* ZETYkKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZETYkKey.m; sourceTree = "<group>"; };
-		90F668B914D4A78400EA9D34 /* NSData+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; path = "NSData+Hex.h"; sourceTree = "<group>"; };
+		90F668B914D4A78400EA9D34 /* NSData+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Hex.h"; sourceTree = "<group>"; };
 		90F668BA14D4A78400EA9D34 /* NSData+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Hex.m"; sourceTree = "<group>"; };
+		90F668BC14D5781E00EA9D34 /* NSString+Padding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Padding.h"; sourceTree = "<group>"; };
+		90F668BD14D5781E00EA9D34 /* NSString+Padding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Padding.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,6 +271,8 @@
 				90F668B514D493F000EA9D34 /* ZETYkKey.m */,
 				90F668B914D4A78400EA9D34 /* NSData+Hex.h */,
 				90F668BA14D4A78400EA9D34 /* NSData+Hex.m */,
+				90F668BC14D5781E00EA9D34 /* NSString+Padding.h */,
+				90F668BD14D5781E00EA9D34 /* NSString+Padding.m */,
 			);
 			path = totpyk;
 			sourceTree = "<group>";
@@ -288,6 +296,8 @@
 			children = (
 				90EA694614AF8AFC00547F20 /* totpykTests.h */,
 				90EA694714AF8AFC00547F20 /* totpykTests.m */,
+				90D59E7114D58230000343B2 /* NSStringPaddingTests.h */,
+				90D59E7214D58230000343B2 /* NSStringPaddingTests.m */,
 				90EA694114AF8AFC00547F20 /* Supporting Files */,
 			);
 			path = totpykTests;
@@ -503,6 +513,7 @@
 				9068FE4C14D31ADD0089EF06 /* LaunchAtLoginController.m in Sources */,
 				90F668B614D493F000EA9D34 /* ZETYkKey.m in Sources */,
 				90F668BB14D4A78500EA9D34 /* NSData+Hex.m in Sources */,
+				90F668BE14D5781E00EA9D34 /* NSString+Padding.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,6 +522,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				90EA694814AF8AFC00547F20 /* totpykTests.m in Sources */,
+				90D59E7314D58230000343B2 /* NSStringPaddingTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
