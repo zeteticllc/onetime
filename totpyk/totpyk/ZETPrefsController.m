@@ -108,52 +108,7 @@
 }
 
 - (IBAction)writeConfig:(id)sender
-{   YK_KEY *yk = 0;
-	ykp_errno = 0;
-	yk_errno = 0;
-    int res =0;
-    YKP_CONFIG *cfg = ykp_create_config();
-    YK_STATUS *st = ykds_alloc();
-    
-    if (yk_init() && (yk = yk_open_first_key())) {
-        if (check_firmware(yk, 0)) {
-            if (!yk_get_status(yk, st)) 
-            {
-                printf("failed");
-            }
-            struct config_st *ycfg = (struct config_st *) ykp_core_config(cfg);
-            ycfg->tktFlags = 0;
-            ycfg->cfgFlags = 0;
-            ycfg->extFlags = 0;
-            
-            ykp_configure_for(cfg, 2, st);
-            ykp_set_tktflag_CHAL_RESP(cfg, true);
-            ykp_set_cfgflag_CHAL_HMAC(cfg, true);
-            ykp_set_cfgflag_HMAC_LT64(cfg, true);
-            ykp_set_cfgflag_CHAL_BTN_TRIG(cfg, false);
-            res = ykp_HMAC_key_from_hex(cfg, "0000000000000000000000000000000000000000");
-            if (yk_write_config(yk, ykp_core_config(cfg), ykp_config_num(cfg), NULL))
-            {
-                printf("success");
-            } else {
-                printf("failure");
-            }
-            free(cfg);
-            free(st);
-        } else {
-            //return @"incorrect firmware version";
-        }
-	} else {
-        //return @"unable to open key";
-    }
-    
-	if (yk && !yk_close_key(yk)) {
-        //return @"close failed";
-	}
-    
-    if(!yk_release()) {
-        //return @"release failed";
-    }
+{   
     
 }
 

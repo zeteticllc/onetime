@@ -9,9 +9,11 @@
 #include "totp.h"
 #import "ZETYkTOTP.h"
 
+//                            0 1  2   3    4     5      6       7        8
+const int digits_power[9] = { 1,10,100,1000,10000,100000,1000000,10000000,100000000 };
+
 @implementation ZETYkTOTP
 @synthesize key, digits, step, mayBlock, verbose;
-@synthesize result = _result;
 
 - (void)dealloc {
     [key release];
@@ -20,6 +22,7 @@
 
 - (id)init {
     self = [super init];
+    key = [[ZETYkKey alloc] init];
     digits = 6;
     step = 30;
     mayBlock = 1;
@@ -27,38 +30,36 @@
     return self;
 }
 
-- (NSString*) totpChallenge{
-    YK_KEY *yk = 0;
-    NSString *otpFormat = @"%%0%uu";
-	unsigned int rawResult;
-	ykp_errno = 0;
-	yk_errno = 0;
-        
-	if (yk_init() && (yk = yk_open_first_key())) {
-        if (check_firmware(yk, verbose)) {
-            if (totp_challenge(yk, (int)key.slot, (int)digits, (int)step,
-                                 (int)mayBlock, (int)verbose, &rawResult)) {
-                _result = rawResult;
-            } else {
-               return @"totp failed"; 
-            }
-            
-        } else {
-            return @"incorrect firmware version";
-        }
-	} else {
-        return @"unable to open key";
-    }
-    
-	if (yk && !yk_close_key(yk)) {
-        return @"close failed";
-	}
-    
-    if(!yk_release()) {
-        return @"release failed";
-    }
+- (NSString *) totpChallenge {
+    time_t t = time(NULL);
+    unsigned long moving_factor = t / step;
+    unsigned long be_moving_factor = [ZETYkKey toBigEndian:moving_factor];
+    return [self totpChallengeWithData:[NSData dataWithBytes:&be_moving_factor length:sizeof(be_moving_factor)]];
+}
 
-    return [NSString stringWithFormat:[NSString stringWithFormat:otpFormat, digits], rawResult];
+- (NSString *) totpChallengeWithData:(NSData *)timeData {
+    NSString *otpFormat = @"%%0%uu";
+	unsigned int offset, raw_otp, otp;
+
+    NSData *responseData;
+    unsigned char* response;
+    
+    responseData = [key hmacChallenge:timeData challengeLength:timeData.length];
+    
+    if(responseData && !key.error) {
+        response = (unsigned char*) [responseData bytes];
+        offset = response[responseData.length-1] & 0xf;
+        raw_otp =  (
+                    (response[offset]&0x7f) << 24 |
+                    (response[offset+1]&0xff) << 16 |
+                    (response[offset+2]&0xff) << 8 |
+                    (response[offset+3]&0xff));
+        
+        otp = raw_otp % digits_power[digits];
+        
+        return [NSString stringWithFormat:[NSString stringWithFormat:otpFormat, digits], otp];
+    }
+    return nil;
 }
 
 @end

@@ -15,9 +15,6 @@
     NSInteger step;
     NSInteger mayBlock;
     NSInteger verbose;
-    
-@private
-    NSUInteger _result;
 }
 
 @property (nonatomic,retain) ZETYkKey *key;
@@ -25,8 +22,8 @@
 @property (nonatomic) NSInteger step;
 @property (nonatomic) NSInteger mayBlock;
 @property (nonatomic) NSInteger verbose;
-@property (nonatomic,readonly) NSUInteger result;
 
 - (NSString*) totpChallenge;
+- (NSString *) totpChallengeWithData:(NSData *)timeData;
 
 @end

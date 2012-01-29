@@ -17,6 +17,7 @@
 		9068FE4C14D31ADD0089EF06 /* LaunchAtLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9068FE4A14D31ADD0089EF06 /* LaunchAtLoginController.m */; };
 		9068FE4D14D31ADD0089EF06 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9068FE4B14D31ADD0089EF06 /* README.md */; };
 		90A92B7B14D58A880078E2E5 /* NSDataHexTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 90A92B7A14D58A880078E2E5 /* NSDataHexTests.m */; };
+		90A92B7F14D5939B0078E2E5 /* ZETYkTOTPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 90A92B7E14D5939B0078E2E5 /* ZETYkTOTPTests.m */; };
 		90D59E7314D58230000343B2 /* NSStringPaddingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 90D59E7214D58230000343B2 /* NSStringPaddingTests.m */; };
 		90EA691E14AF8AFC00547F20 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90EA691D14AF8AFC00547F20 /* Cocoa.framework */; };
 		90EA692814AF8AFC00547F20 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 90EA692614AF8AFC00547F20 /* InfoPlist.strings */; };
@@ -50,7 +51,6 @@
 		90EA698F14B00DF900547F20 /* libyubikey.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90EA698E14B00DF900547F20 /* libyubikey.a */; };
 		90EA699114B00E3000547F20 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90EA699014B00E3000547F20 /* IOKit.framework */; };
 		90EA699314B00E3E00547F20 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90EA699214B00E3E00547F20 /* CoreFoundation.framework */; };
-		90EA699714B0130A00547F20 /* totp.c in Sources */ = {isa = PBXBuildFile; fileRef = 90EA699514B0130A00547F20 /* totp.c */; };
 		90EA699A14B0170800547F20 /* ZETYkTOTP.m in Sources */ = {isa = PBXBuildFile; fileRef = 90EA699914B0170600547F20 /* ZETYkTOTP.m */; };
 		90F668B614D493F000EA9D34 /* ZETYkKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 90F668B514D493F000EA9D34 /* ZETYkKey.m */; };
 		90F668BB14D4A78500EA9D34 /* NSData+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 90F668BA14D4A78400EA9D34 /* NSData+Hex.m */; };
@@ -86,6 +86,8 @@
 		9068FE4B14D31ADD0089EF06 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		90A92B7914D58A880078E2E5 /* NSDataHexTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataHexTests.h; sourceTree = "<group>"; };
 		90A92B7A14D58A880078E2E5 /* NSDataHexTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataHexTests.m; sourceTree = "<group>"; };
+		90A92B7D14D5939B0078E2E5 /* ZETYkTOTPTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZETYkTOTPTests.h; sourceTree = "<group>"; };
+		90A92B7E14D5939B0078E2E5 /* ZETYkTOTPTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZETYkTOTPTests.m; sourceTree = "<group>"; };
 		90D59E7114D58230000343B2 /* NSStringPaddingTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSStringPaddingTests.h; sourceTree = "<group>"; };
 		90D59E7214D58230000343B2 /* NSStringPaddingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringPaddingTests.m; sourceTree = "<group>"; };
 		90EA691914AF8AFC00547F20 /* totpyk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = totpyk.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,8 +136,6 @@
 		90EA698E14B00DF900547F20 /* libyubikey.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libyubikey.a; path = ../libyubikey.a; sourceTree = "<group>"; };
 		90EA699014B00E3000547F20 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		90EA699214B00E3E00547F20 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
-		90EA699514B0130A00547F20 /* totp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = totp.c; sourceTree = "<group>"; };
-		90EA699614B0130A00547F20 /* totp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = totp.h; sourceTree = "<group>"; };
 		90EA699814B0170500547F20 /* ZETYkTOTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZETYkTOTP.h; sourceTree = "<group>"; };
 		90EA699914B0170600547F20 /* ZETYkTOTP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZETYkTOTP.m; sourceTree = "<group>"; };
 		90F668B414D493F000EA9D34 /* ZETYkKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZETYkKey.h; sourceTree = "<group>"; };
@@ -214,7 +214,6 @@
 				90EA699014B00E3000547F20 /* IOKit.framework */,
 				90EA698E14B00DF900547F20 /* libyubikey.a */,
 				9068FE4814D31ADD0089EF06 /* LaunchAtLoginController */,
-				90EA699414B012C800547F20 /* totp */,
 				90EA696414AFF0DA00547F20 /* SGHotKeysLib */,
 				90EA697114B00B3700547F20 /* yubikey-personalization */,
 				9033B9B514C1AF7600551445 /* ShortcutRecorder */,
@@ -303,6 +302,8 @@
 				90D59E7214D58230000343B2 /* NSStringPaddingTests.m */,
 				90A92B7914D58A880078E2E5 /* NSDataHexTests.h */,
 				90A92B7A14D58A880078E2E5 /* NSDataHexTests.m */,
+				90A92B7D14D5939B0078E2E5 /* ZETYkTOTPTests.h */,
+				90A92B7E14D5939B0078E2E5 /* ZETYkTOTPTests.m */,
 				90EA694114AF8AFC00547F20 /* Supporting Files */,
 			);
 			path = totpykTests;
@@ -366,16 +367,6 @@
 			);
 			name = rfc4634;
 			sourceTree = "<group>";
-		};
-		90EA699414B012C800547F20 /* totp */ = {
-			isa = PBXGroup;
-			children = (
-				90EA699514B0130A00547F20 /* totp.c */,
-				90EA699614B0130A00547F20 /* totp.h */,
-			);
-			name = totp;
-			path = ..;
-			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -507,7 +498,6 @@
 				90EA698B14B00CA700547F20 /* sha224-256.c in Sources */,
 				90EA698C14B00CA700547F20 /* sha1.c in Sources */,
 				90EA698D14B00CA700547F20 /* hmac.c in Sources */,
-				90EA699714B0130A00547F20 /* totp.c in Sources */,
 				90EA699A14B0170800547F20 /* ZETYkTOTP.m in Sources */,
 				9033B9C114C1AFB600551445 /* SRCommon.m in Sources */,
 				9033B9C214C1AFB600551445 /* SRKeyCodeTransformer.m in Sources */,
@@ -529,6 +519,7 @@
 				90EA694814AF8AFC00547F20 /* totpykTests.m in Sources */,
 				90D59E7314D58230000343B2 /* NSStringPaddingTests.m in Sources */,
 				90A92B7B14D58A880078E2E5 /* NSDataHexTests.m in Sources */,
+				90A92B7F14D5939B0078E2E5 /* ZETYkTOTPTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
