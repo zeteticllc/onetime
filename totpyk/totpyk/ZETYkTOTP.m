@@ -33,7 +33,11 @@ const int digits_power[9] = { 1,10,100,1000,10000,100000,1000000,10000000,100000
 - (NSString *) totpChallenge {
     time_t t = time(NULL);
     unsigned long moving_factor = t / step;
-    unsigned long be_moving_factor = [ZETYkKey toBigEndian:moving_factor];
+    return [self totpChallengeWithMovingFactor:moving_factor];
+}
+
+- (NSString *) totpChallengeWithMovingFactor:(unsigned long)movingfactor {
+    unsigned long be_moving_factor = [ZETYkKey toBigEndian:movingfactor];
     return [self totpChallengeWithData:[NSData dataWithBytes:&be_moving_factor length:sizeof(be_moving_factor)]];
 }
 

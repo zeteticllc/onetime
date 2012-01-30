@@ -25,5 +25,6 @@
 
 - (NSString*) totpChallenge;
 - (NSString *) totpChallengeWithData:(NSData *)timeData;
+- (NSString *) totpChallengeWithMovingFactor:(unsigned long)movingfactor;
 
 @end
