@@ -18,6 +18,8 @@
 		9068FE4D14D31ADD0089EF06 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9068FE4B14D31ADD0089EF06 /* README.md */; };
 		90A92B7B14D58A880078E2E5 /* NSDataHexTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 90A92B7A14D58A880078E2E5 /* NSDataHexTests.m */; };
 		90A92B7F14D5939B0078E2E5 /* ZETYkTOTPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 90A92B7E14D5939B0078E2E5 /* ZETYkTOTPTests.m */; };
+		90BE933514D645D000E9C226 /* NSData+Base32.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BE933414D645D000E9C226 /* NSData+Base32.m */; };
+		90BE933914D6466500E9C226 /* NSDataBase32Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BE933814D6466500E9C226 /* NSDataBase32Tests.m */; };
 		90D59E7314D58230000343B2 /* NSStringPaddingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 90D59E7214D58230000343B2 /* NSStringPaddingTests.m */; };
 		90EA691E14AF8AFC00547F20 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90EA691D14AF8AFC00547F20 /* Cocoa.framework */; };
 		90EA692814AF8AFC00547F20 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 90EA692614AF8AFC00547F20 /* InfoPlist.strings */; };
@@ -88,6 +90,10 @@
 		90A92B7A14D58A880078E2E5 /* NSDataHexTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataHexTests.m; sourceTree = "<group>"; };
 		90A92B7D14D5939B0078E2E5 /* ZETYkTOTPTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZETYkTOTPTests.h; sourceTree = "<group>"; };
 		90A92B7E14D5939B0078E2E5 /* ZETYkTOTPTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZETYkTOTPTests.m; sourceTree = "<group>"; };
+		90BE933314D645D000E9C226 /* NSData+Base32.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base32.h"; sourceTree = "<group>"; };
+		90BE933414D645D000E9C226 /* NSData+Base32.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base32.m"; sourceTree = "<group>"; };
+		90BE933714D6466500E9C226 /* NSDataBase32Tests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataBase32Tests.h; sourceTree = "<group>"; };
+		90BE933814D6466500E9C226 /* NSDataBase32Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataBase32Tests.m; sourceTree = "<group>"; };
 		90D59E7114D58230000343B2 /* NSStringPaddingTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSStringPaddingTests.h; sourceTree = "<group>"; };
 		90D59E7214D58230000343B2 /* NSStringPaddingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringPaddingTests.m; sourceTree = "<group>"; };
 		90EA691914AF8AFC00547F20 /* totpyk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = totpyk.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -275,6 +281,8 @@
 				90F668BA14D4A78400EA9D34 /* NSData+Hex.m */,
 				90F668BC14D5781E00EA9D34 /* NSString+Padding.h */,
 				90F668BD14D5781E00EA9D34 /* NSString+Padding.m */,
+				90BE933314D645D000E9C226 /* NSData+Base32.h */,
+				90BE933414D645D000E9C226 /* NSData+Base32.m */,
 			);
 			path = totpyk;
 			sourceTree = "<group>";
@@ -302,6 +310,8 @@
 				90D59E7214D58230000343B2 /* NSStringPaddingTests.m */,
 				90A92B7914D58A880078E2E5 /* NSDataHexTests.h */,
 				90A92B7A14D58A880078E2E5 /* NSDataHexTests.m */,
+				90BE933714D6466500E9C226 /* NSDataBase32Tests.h */,
+				90BE933814D6466500E9C226 /* NSDataBase32Tests.m */,
 				90A92B7D14D5939B0078E2E5 /* ZETYkTOTPTests.h */,
 				90A92B7E14D5939B0078E2E5 /* ZETYkTOTPTests.m */,
 				90EA694114AF8AFC00547F20 /* Supporting Files */,
@@ -509,6 +519,7 @@
 				90F668B614D493F000EA9D34 /* ZETYkKey.m in Sources */,
 				90F668BB14D4A78500EA9D34 /* NSData+Hex.m in Sources */,
 				90F668BE14D5781E00EA9D34 /* NSString+Padding.m in Sources */,
+				90BE933514D645D000E9C226 /* NSData+Base32.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,6 +531,7 @@
 				90D59E7314D58230000343B2 /* NSStringPaddingTests.m in Sources */,
 				90A92B7B14D58A880078E2E5 /* NSDataHexTests.m in Sources */,
 				90A92B7F14D5939B0078E2E5 /* ZETYkTOTPTests.m in Sources */,
+				90BE933914D6466500E9C226 /* NSDataBase32Tests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
