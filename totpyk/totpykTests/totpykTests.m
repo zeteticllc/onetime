@@ -35,12 +35,16 @@
 
 - (void)testYkWriteHmacCRConfig
 {
-    //
+    
     ZETYkKey *ykKey = [[ZETYkKey alloc] init];
-    [ykKey writeHmacCRConfig:@"0000000000000000000000000000000000000000" buttonTrigger:false];
-    STAssertFalse(ykKey.error, @"error opening key");
-    STAssertNil(ykKey.errorMessage, @"errorMessage should be nil");
+    for(int i=1; i<=2; i++) {
+        ykKey.slot = i;
+        [ykKey writeHmacCRConfig:@"0000000000000000000000000000000000000000" buttonTrigger:false];
+        STAssertFalse(ykKey.error, @"error opening key");
+        STAssertNil(ykKey.errorMessage, @"errorMessage should be nil");
+    }
     [ykKey release];
+    
 }
 
 - (void)testYkHMACSha1TestVector1

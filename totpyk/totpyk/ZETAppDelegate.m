@@ -7,39 +7,45 @@
 //
 
 #import "ZETAppDelegate.h"
+#import "ZETOneBasedIndexValueTransformer.h"
 #import "SGKeyCombo.h"
 #import "SGHotKeyCenter.h"
 #import "SRCommon.h"
 
-
 @implementation ZETAppDelegate
 
-@synthesize menuController,hotKey;
+@synthesize menuController,hotKey, prefs;
 - (void)dealloc
 {
     [menuController release];
+    [prefs release];
     [hotKey release];
     [super dealloc];
 }
 
+- (void) initialize {
+    ZETOneBasedIndexValueTransformer *obit = [[[ZETOneBasedIndexValueTransformer alloc] init]
+                                              autorelease];
+    [NSValueTransformer setValueTransformer:obit
+                                    forName:@"ZETOneBasedIndexValueTransformer"];
+}
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    prefs = [[ZETPrefs alloc]init];
+    menuController = [[ZETMenuController alloc] init];
     
-    [self.menuController = [[ZETMenuController alloc] init] release];
-    
-    id hotKeyPlist = [defaults objectForKey:kGlobalHotKey];
-    if(hotKeyPlist) {
-        [self registerHotKeyCombo:[[[SGKeyCombo alloc] initWithPlistRepresentation:hotKeyPlist] autorelease]];
-    } else {
+    if(!prefs.hotKeyCombo) {
         // first run no preferences set
+        prefs.timeStep = 30;
+        prefs.digits = 6;
+        prefs.keySlot = 2;
+        prefs.launchAtLogin = YES;
+        prefs.hotKeyCombo = [SGKeyCombo keyComboWithKeyCode:kVK_ANSI_Y modifiers:(kCommandUnicode|kShiftUnicode)];
         
-        [defaults setInteger:30 forKey:kTimeStep];
-        [defaults setInteger:6 forKey:kDigits];
-        [defaults setInteger:2 forKey:kKeySlot];
-        
-        [self registerHotKey:kVK_Space modifiers:(kCommandUnicode|kShiftUnicode)];
+        [menuController showPrefWindow:nil];
     }
+    [self registerHotKeyCombo:prefs.hotKeyCombo];
 }
 
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender
@@ -47,18 +53,12 @@
     self.menuController = nil;
     return NSTerminateNow;
 }
-
-- (void) registerHotKey:(NSInteger)theKeyCode modifiers:(NSUInteger)theModifiers {
-    [self registerHotKeyCombo:[SGKeyCombo keyComboWithKeyCode:theKeyCode modifiers:theModifiers]];
-}
        
 - (void) registerHotKeyCombo:(SGKeyCombo *)keyCombo {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [[SGHotKeyCenter sharedCenter] unregisterHotKey:hotKey];	
     self.hotKey = [[SGHotKey alloc] initWithIdentifier:kGlobalHotKey 
                                              keyCombo:keyCombo target:menuController action:@selector(insertHotKey:)];
     [[SGHotKeyCenter sharedCenter] registerHotKey:hotKey];
-    [defaults setObject:[keyCombo plistRepresentation] forKey:kGlobalHotKey];
 }
 
 @end

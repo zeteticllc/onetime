@@ -8,21 +8,18 @@
 
 #import <Cocoa/Cocoa.h>
 #import "SGHotKey.h"
+#import "ZETPrefs.h"
 #import "ZETMenuController.h"
-
-#define kGlobalHotKey @"GlobalHotKey"
-#define kTimeStep @"TimeStep"
-#define kDigits @"Digits"
-#define kKeySlot @"KeySlot"
 
 @interface ZETAppDelegate : NSObject <NSApplicationDelegate> {
     ZETMenuController *menuController;
     SGHotKey *hotKey;
+    ZETPrefs *prefs;
 }
 
 @property (nonatomic, retain) ZETMenuController *menuController;
 @property (nonatomic, retain) SGHotKey *hotKey;
+@property (nonatomic, retain) ZETPrefs *prefs;
 
-- (void) registerHotKey:(NSInteger)theKeyCode modifiers:(NSUInteger)theModifiers;
 - (void) registerHotKeyCombo:(SGKeyCombo *)keyCombo;
 @end

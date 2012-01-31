@@ -8,23 +8,22 @@
 
 #import <Cocoa/Cocoa.h>
 #import "SRRecorderControl.h"
+#import "ZETPrefs.h"
  
 @interface ZETPrefsController : NSWindowController <NSWindowDelegate>{
     @private
     IBOutlet SRRecorderControl *recorderControl;
-    IBOutlet NSTextField *stepTextField;
-    IBOutlet NSTextField *digitsTextField;
-    IBOutlet NSStepper *digitsStepper;
-    IBOutlet NSPopUpButton *keySlotPopUp;
-    BOOL requireKeyPress;
+    ZETPrefs *prefs;
+    NSString *writeKey;
+    NSInteger writeKeySlot;
+    BOOL writeKeyPress;
 }
 
 @property (nonatomic, retain) IBOutlet SRRecorderControl *recorderControl;
-@property (nonatomic, retain) IBOutlet NSTextField *stepTextField;
-@property (nonatomic, retain) IBOutlet NSTextField *digitsTextField;
-@property (nonatomic, retain) IBOutlet NSStepper *digitsStepper;
-@property (nonatomic, retain) IBOutlet NSPopUpButton *keySlotPopUp;
-@property (nonatomic) BOOL requireKeyPress;
+@property (nonatomic, retain) ZETPrefs *prefs;
+@property (nonatomic, retain) NSString *writeKey;
+@property (nonatomic) NSInteger writeKeySlot;
+@property (nonatomic) BOOL writeKeyPress;
 
 - (BOOL) shortcutRecorder:(SRRecorderControl *)aRecorder 
                 isKeyCode:(signed short)keyCode 
@@ -32,11 +31,6 @@
                    reason:(NSString **)aReason;
 
 - (void) shortcutRecorder:(SRRecorderControl *)aRecorder keyComboDidChange:(KeyCombo)newKeyCombo;
-- (IBAction)digitsChanged:(id)sender;
-- (IBAction)preferenceChanged:(id)sender;
-
-- (void) loadUserDefaults;
-- (void) saveUserDefaults;
 
 - (IBAction)writeConfig:(id)sender;
 @end

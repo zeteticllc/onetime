@@ -18,6 +18,8 @@
 		9068FE4D14D31ADD0089EF06 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9068FE4B14D31ADD0089EF06 /* README.md */; };
 		90A92B7B14D58A880078E2E5 /* NSDataHexTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 90A92B7A14D58A880078E2E5 /* NSDataHexTests.m */; };
 		90A92B7F14D5939B0078E2E5 /* ZETYkTOTPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 90A92B7E14D5939B0078E2E5 /* ZETYkTOTPTests.m */; };
+		90BE606314D827B9005D3693 /* ZETPrefs.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BE606214D827B9005D3693 /* ZETPrefs.m */; };
+		90BE606714D82C2B005D3693 /* ZETOneBasedIndexValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BE606614D82C2B005D3693 /* ZETOneBasedIndexValueTransformer.m */; };
 		90BE933514D645D000E9C226 /* NSData+Base32.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BE933414D645D000E9C226 /* NSData+Base32.m */; };
 		90BE933914D6466500E9C226 /* NSDataBase32Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BE933814D6466500E9C226 /* NSDataBase32Tests.m */; };
 		90D59E7314D58230000343B2 /* NSStringPaddingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 90D59E7214D58230000343B2 /* NSStringPaddingTests.m */; };
@@ -90,6 +92,10 @@
 		90A92B7A14D58A880078E2E5 /* NSDataHexTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataHexTests.m; sourceTree = "<group>"; };
 		90A92B7D14D5939B0078E2E5 /* ZETYkTOTPTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZETYkTOTPTests.h; sourceTree = "<group>"; };
 		90A92B7E14D5939B0078E2E5 /* ZETYkTOTPTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZETYkTOTPTests.m; sourceTree = "<group>"; };
+		90BE606114D827B9005D3693 /* ZETPrefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZETPrefs.h; sourceTree = "<group>"; };
+		90BE606214D827B9005D3693 /* ZETPrefs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZETPrefs.m; sourceTree = "<group>"; };
+		90BE606514D82C2B005D3693 /* ZETOneBasedIndexValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZETOneBasedIndexValueTransformer.h; sourceTree = "<group>"; };
+		90BE606614D82C2B005D3693 /* ZETOneBasedIndexValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZETOneBasedIndexValueTransformer.m; sourceTree = "<group>"; };
 		90BE933314D645D000E9C226 /* NSData+Base32.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base32.h"; sourceTree = "<group>"; };
 		90BE933414D645D000E9C226 /* NSData+Base32.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base32.m"; sourceTree = "<group>"; };
 		90BE933714D6466500E9C226 /* NSDataBase32Tests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataBase32Tests.h; sourceTree = "<group>"; };
@@ -275,6 +281,8 @@
 				9033B9B314C1ADED00551445 /* ZETPrefsController.xib */,
 				9033B9C614C1B11300551445 /* ZETPrefsController.h */,
 				9033B9C714C1B11300551445 /* ZETPrefsController.m */,
+				90BE606114D827B9005D3693 /* ZETPrefs.h */,
+				90BE606214D827B9005D3693 /* ZETPrefs.m */,
 				90F668B414D493F000EA9D34 /* ZETYkKey.h */,
 				90F668B514D493F000EA9D34 /* ZETYkKey.m */,
 				90F668B914D4A78400EA9D34 /* NSData+Hex.h */,
@@ -283,6 +291,8 @@
 				90F668BD14D5781E00EA9D34 /* NSString+Padding.m */,
 				90BE933314D645D000E9C226 /* NSData+Base32.h */,
 				90BE933414D645D000E9C226 /* NSData+Base32.m */,
+				90BE606514D82C2B005D3693 /* ZETOneBasedIndexValueTransformer.h */,
+				90BE606614D82C2B005D3693 /* ZETOneBasedIndexValueTransformer.m */,
 			);
 			path = totpyk;
 			sourceTree = "<group>";
@@ -520,6 +530,8 @@
 				90F668BB14D4A78500EA9D34 /* NSData+Hex.m in Sources */,
 				90F668BE14D5781E00EA9D34 /* NSString+Padding.m in Sources */,
 				90BE933514D645D000E9C226 /* NSData+Base32.m in Sources */,
+				90BE606314D827B9005D3693 /* ZETPrefs.m in Sources */,
+				90BE606714D82C2B005D3693 /* ZETOneBasedIndexValueTransformer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

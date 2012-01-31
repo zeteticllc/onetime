@@ -1,4 +1,4 @@
-//
+    //
 //  ZETPrefsController.m
 //  totpyk
 //
@@ -8,46 +8,50 @@
 
 #import "ZETPrefsController.h"
 #import "ZETAppDelegate.h"
+#import "NSData+Hex.h"
+#import "NSData+Base32.h"
+#import "NSString+Padding.h"
+#import "ZETYkKey.h"
 #include <ykpers.h>
 #include <ykdef.h>
 #include <totp.h>
 
 @implementation ZETPrefsController
 
-@synthesize recorderControl, stepTextField, digitsTextField, digitsStepper, keySlotPopUp, requireKeyPress;
+@synthesize recorderControl, writeKeyPress, writeKey, writeKeySlot, prefs;
 
 - (void)dealloc
 {
     [recorderControl release];
-    [stepTextField release];
-    [digitsTextField release];
-    [digitsStepper release];
-    [keySlotPopUp release];
+    [writeKey release];
+    [prefs release];
     [super dealloc];
 }
 
 - (id)init
 {
     self = [super initWithWindowNibName:@"ZETPrefsController"];
+    prefs = [[ZETPrefs alloc] init];
     return self;
 }
 
 - (id)initWithWindow:(NSWindow *)window
 {
     self = [super initWithWindow:window];
-    if (self) { }
+    if (self) { 
+        writeKeySlot = 2;
+    }
     return self;
 }
 
 - (void)windowDidLoad
 {
     [super windowDidLoad];
-    [self loadUserDefaults];
 }
 
 - (void) windowWillClose:(NSNotification *)notification
 {
-    [self saveUserDefaults];
+    //
 }
 
 - (BOOL)shortcutRecorder:(SRRecorderControl *)aRecorder 
@@ -62,54 +66,20 @@
 - (void)shortcutRecorder:(SRRecorderControl *)aRecorder keyComboDidChange:(KeyCombo)newKeyCombo 
 {
     NSLog(@"shortcutRecorder keyComboDidChange");
-    ZETAppDelegate *delegate = (ZETAppDelegate *)[NSApp delegate];
-    NSUInteger flags = [aRecorder cocoaToCarbonFlags:newKeyCombo.flags];
-    [delegate registerHotKey:newKeyCombo.code modifiers:flags];
-}
-
-- (IBAction)preferenceChanged:(id)sender
-{
-    [self saveUserDefaults];
-}
-
-- (IBAction)digitsChanged:(id)sender
-{
-    int value = [sender intValue];
-    [digitsTextField setIntValue:value];
-    [digitsStepper setIntValue:value];
-    [self preferenceChanged:sender];
-}
-
-- (void) loadUserDefaults
-{
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [stepTextField setIntValue:(int)[defaults integerForKey:kTimeStep]];
-    [digitsTextField setIntValue:(int)[defaults integerForKey:kDigits]];
-    [digitsStepper setIntValue:(int)[defaults integerForKey:kDigits]];
-    [keySlotPopUp selectItemAtIndex:(int)([defaults integerForKey:kKeySlot] - 1)];
-}
-
-- (void) saveUserDefaults
-{
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
-    int value = [digitsTextField intValue];
-    if(value > 0 && value < 9) {
-        [defaults setInteger:value forKey:kDigits];
-    }
-    
-    value = [stepTextField intValue];
-    if(value > 0 && value < 3600) {
-        [defaults setInteger:value forKey:kTimeStep];
-    }
-    
-    [defaults setInteger:[keySlotPopUp indexOfSelectedItem]+1 forKey:kKeySlot];
-    [self loadUserDefaults]; // load back settings we just saved, in case there were any preference changes that were ignored
+    prefs.hotKeyCombo = [SGKeyCombo keyComboWithKeyCode:newKeyCombo.code modifiers:[aRecorder cocoaToCarbonFlags:newKeyCombo.flags]];
+    [((ZETAppDelegate *)[NSApp delegate]) registerHotKeyCombo:prefs.hotKeyCombo];
 }
 
 - (IBAction)writeConfig:(id)sender
 {   
+    NSString *hexKey = [[[NSData dataWithBase32String:
+                          [writeKey uppercaseString]] dataToHex] stringByPaddingRight:@"0" length:40];
     
+    ZETYkKey *ykKey = [[ZETYkKey alloc] init];
+    ykKey.slot = (int) writeKeySlot;
+    [ykKey writeHmacCRConfig:hexKey buttonTrigger:writeKeyPress];
+    
+    [ykKey release];
 }
 
 @end

@@ -98,7 +98,10 @@
 - (IBAction)showPrefWindow:(id)sender {
     [prefsController release];
 	prefsController = [[ZETPrefsController alloc] init];
-    [prefsController showWindow:nil];
+    
+    NSApplication *thisApp = [NSApplication sharedApplication];
+    [thisApp activateIgnoringOtherApps:YES];
+    [prefsController.window makeKeyAndOrderFront:nil];
 }
 
 - (void)dealloc
