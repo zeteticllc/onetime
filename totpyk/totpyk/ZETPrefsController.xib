@@ -393,6 +393,7 @@ A</string>
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{220, 15}, {133, 18}}</string>
 												<reference key="NSSuperview" ref="235241748"/>
+												<reference key="NSNextKeyView"/>
 												<string key="NSReuseIdentifierKey">_NS:771</string>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="961647008">
@@ -679,7 +680,7 @@ A</string>
 			<object class="NSUserDefaultsController" id="936337381">
 				<bool key="NSSharedInstance">YES</bool>
 			</object>
-			<object class="NSObjectController" id="771120658">
+			<object class="NSObjectController" id="195471168">
 				<bool key="NSEditable">YES</bool>
 				<object class="_NSManagedProxy" key="_NSManagedProxy"/>
 			</object>
@@ -720,14 +721,6 @@ A</string>
 					<int key="connectionID">74</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">keySlotPopUp</string>
-						<reference key="source" ref="1001"/>
-						<reference key="destination" ref="628596487"/>
-					</object>
-					<int key="connectionID">90</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
 						<string key="label">writeConfig:</string>
 						<reference key="source" ref="1001"/>
@@ -739,7 +732,7 @@ A</string>
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">objectController</string>
 						<reference key="source" ref="1001"/>
-						<reference key="destination" ref="771120658"/>
+						<reference key="destination" ref="195471168"/>
 					</object>
 					<int key="connectionID">188</int>
 				</object>
@@ -753,19 +746,23 @@ A</string>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: prefs.timeStep</string>
+						<string key="label">value: selection.prefs.timeStep</string>
 						<reference key="source" ref="534436584"/>
-						<reference key="destination" ref="1001"/>
+						<reference key="destination" ref="195471168"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="534436584"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">value: prefs.timeStep</string>
+							<reference key="NSDestination" ref="195471168"/>
+							<string key="NSLabel">value: selection.prefs.timeStep</string>
 							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">prefs.timeStep</string>
+							<string key="NSKeyPath">selection.prefs.timeStep</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValidatesImmediately</string>
+								<boolean value="YES" key="NS.object.0"/>
+							</object>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
-					<int key="connectionID">152</int>
+					<int key="connectionID">232</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -777,47 +774,55 @@ A</string>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: self.prefs.digits</string>
+						<string key="label">value: selection.prefs.digits</string>
 						<reference key="source" ref="942371008"/>
-						<reference key="destination" ref="1001"/>
+						<reference key="destination" ref="195471168"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="942371008"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">value: self.prefs.digits</string>
+							<reference key="NSDestination" ref="195471168"/>
+							<string key="NSLabel">value: selection.prefs.digits</string>
 							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">self.prefs.digits</string>
+							<string key="NSKeyPath">selection.prefs.digits</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValidatesImmediately</string>
+								<boolean value="YES" key="NS.object.0"/>
+							</object>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
-					<int key="connectionID">156</int>
+					<int key="connectionID">231</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: self.prefs.digits</string>
+						<string key="label">value: selection.prefs.digits</string>
 						<reference key="source" ref="928949751"/>
-						<reference key="destination" ref="1001"/>
+						<reference key="destination" ref="195471168"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="928949751"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">value: self.prefs.digits</string>
+							<reference key="NSDestination" ref="195471168"/>
+							<string key="NSLabel">value: selection.prefs.digits</string>
 							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">self.prefs.digits</string>
+							<string key="NSKeyPath">selection.prefs.digits</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValidatesImmediately</string>
+								<boolean value="YES" key="NS.object.0"/>
+							</object>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
-					<int key="connectionID">159</int>
+					<int key="connectionID">230</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">selectedIndex: self.prefs.keySlot</string>
+						<string key="label">selectedIndex: selection.prefs.keySlot</string>
 						<reference key="source" ref="628596487"/>
-						<reference key="destination" ref="1001"/>
+						<reference key="destination" ref="195471168"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="628596487"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">selectedIndex: self.prefs.keySlot</string>
+							<reference key="NSDestination" ref="195471168"/>
+							<string key="NSLabel">selectedIndex: selection.prefs.keySlot</string>
 							<string key="NSBinding">selectedIndex</string>
-							<string key="NSKeyPath">self.prefs.keySlot</string>
+							<string key="NSKeyPath">selection.prefs.keySlot</string>
 							<object class="NSDictionary" key="NSOptions">
 								<bool key="EncodedWithXMLCoder">YES</bool>
 								<object class="NSArray" key="dict.sortedKeys">
@@ -834,7 +839,7 @@ A</string>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
-					<int key="connectionID">177</int>
+					<int key="connectionID">219</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -858,28 +863,28 @@ A</string>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: self.prefs.launchAtLogin</string>
+						<string key="label">value: selection.prefs.launchAtLogin</string>
 						<reference key="source" ref="686390425"/>
-						<reference key="destination" ref="1001"/>
+						<reference key="destination" ref="195471168"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="686390425"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">value: self.prefs.launchAtLogin</string>
+							<reference key="NSDestination" ref="195471168"/>
+							<string key="NSLabel">value: selection.prefs.launchAtLogin</string>
 							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">self.prefs.launchAtLogin</string>
+							<string key="NSKeyPath">selection.prefs.launchAtLogin</string>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
-					<int key="connectionID">186</int>
+					<int key="connectionID">234</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: selection.writeKey</string>
 						<reference key="source" ref="211416096"/>
-						<reference key="destination" ref="771120658"/>
+						<reference key="destination" ref="195471168"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="211416096"/>
-							<reference key="NSDestination" ref="771120658"/>
+							<reference key="NSDestination" ref="195471168"/>
 							<string key="NSLabel">value: selection.writeKey</string>
 							<string key="NSBinding">value</string>
 							<string key="NSKeyPath">selection.writeKey</string>
@@ -892,10 +897,10 @@ A</string>
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: selection.writeKeyPress</string>
 						<reference key="source" ref="811843561"/>
-						<reference key="destination" ref="771120658"/>
+						<reference key="destination" ref="195471168"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="811843561"/>
-							<reference key="NSDestination" ref="771120658"/>
+							<reference key="NSDestination" ref="195471168"/>
 							<string key="NSLabel">value: selection.writeKeyPress</string>
 							<string key="NSBinding">value</string>
 							<string key="NSKeyPath">selection.writeKeyPress</string>
@@ -908,10 +913,10 @@ A</string>
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">selectedIndex: selection.writeKeySlot</string>
 						<reference key="source" ref="345204114"/>
-						<reference key="destination" ref="771120658"/>
+						<reference key="destination" ref="195471168"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="345204114"/>
-							<reference key="NSDestination" ref="771120658"/>
+							<reference key="NSDestination" ref="195471168"/>
 							<string key="NSLabel">selectedIndex: selection.writeKeySlot</string>
 							<string key="NSBinding">selectedIndex</string>
 							<string key="NSKeyPath">selection.writeKeySlot</string>
@@ -927,10 +932,10 @@ A</string>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">contentObject: self</string>
-						<reference key="source" ref="771120658"/>
+						<reference key="source" ref="195471168"/>
 						<reference key="destination" ref="1001"/>
 						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="771120658"/>
+							<reference key="NSSource" ref="195471168"/>
 							<reference key="NSDestination" ref="1001"/>
 							<string key="NSLabel">contentObject: self</string>
 							<string key="NSBinding">contentObject</string>
@@ -1204,6 +1209,7 @@ A</string>
 							<reference ref="395565698"/>
 						</object>
 						<reference key="parent" ref="235241748"/>
+						<string key="objectName">digitsStepper</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">65</int>
@@ -1218,6 +1224,7 @@ A</string>
 							<reference ref="566262014"/>
 						</object>
 						<reference key="parent" ref="235241748"/>
+						<string key="objectName">keySlotPopUp</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">84</int>
@@ -1256,6 +1263,7 @@ A</string>
 							<reference ref="961647008"/>
 						</object>
 						<reference key="parent" ref="235241748"/>
+						<string key="objectName">launchAtLoginCheckbox</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">105</int>
@@ -1270,6 +1278,7 @@ A</string>
 							<reference ref="366194985"/>
 						</object>
 						<reference key="parent" ref="93797951"/>
+						<string key="objectName">writeKeyTextField</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">116</int>
@@ -1298,6 +1307,7 @@ A</string>
 							<reference ref="930910940"/>
 						</object>
 						<reference key="parent" ref="93797951"/>
+						<string key="objectName">writeKeyPressCheckbox</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">128</int>
@@ -1363,6 +1373,7 @@ A</string>
 							<reference ref="184267828"/>
 						</object>
 						<reference key="parent" ref="93797951"/>
+						<string key="objectName">writeKeySlotPopUp</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">144</int>
@@ -1400,7 +1411,7 @@ A</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">187</int>
-						<reference key="object" ref="771120658"/>
+						<reference key="object" ref="195471168"/>
 						<reference key="parent" ref="1002"/>
 					</object>
 				</object>
@@ -1550,7 +1561,7 @@ A</string>
 				<reference key="dict.values" ref="1002"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">215</int>
+			<int key="maxID">234</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">

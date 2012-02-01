@@ -52,7 +52,7 @@
 
 - (void) windowWillClose:(NSNotification *)notification
 {
-    //
+    [objectController commitEditing];
 }
 
 - (BOOL)shortcutRecorder:(SRRecorderControl *)aRecorder 
