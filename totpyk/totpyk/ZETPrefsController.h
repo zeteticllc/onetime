@@ -35,5 +35,8 @@
 
 - (void) shortcutRecorder:(SRRecorderControl *)aRecorder keyComboDidChange:(KeyCombo)newKeyCombo;
 
++ (NSString *)normalizeKey:(NSString *)value;
++ (BOOL)isKeyValid:(NSString *)value;
+    
 - (IBAction)writeConfig:(id)sender;
 @end

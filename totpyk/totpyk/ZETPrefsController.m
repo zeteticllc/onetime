@@ -71,17 +71,60 @@
     [((ZETAppDelegate *)[NSApp delegate]) registerHotKeyCombo:prefs.hotKeyCombo];
 }
 
+
+- (BOOL) validateWriteKey:(id *)ioValue error:(NSError **)outError
+{
+    if (*ioValue == nil) return NO;
+    
+    NSString *value = [ZETPrefsController normalizeKey:(NSString *)*ioValue];
+    
+    if([ZETPrefsController isKeyValid:value]) return YES;
+    
+    *outError = [NSError errorWithDomain:@"ZETDomain" 
+                                    code:100 
+                                userInfo:[NSMutableDictionary 
+                                          dictionaryWithObject:@"Key must be a Base 32 or Hex string"
+                                          forKey:NSLocalizedDescriptionKey]];
+    return NO;
+}
+
++ (NSString *)normalizeKey:(NSString *)value {
+    return [[value stringByReplacingOccurrencesOfString:@" " withString:@""] uppercaseString];
+}
+
++ (BOOL)isKeyValid:(NSString *)value {
+    
+    if(value == nil) return NO;
+    
+    NSCharacterSet *hexSet = [NSCharacterSet characterSetWithCharactersInString:@"0123456789ABCDEF"];
+    NSCharacterSet *base32Set = [NSCharacterSet characterSetWithCharactersInString:@"ABCDEFGHIJKLMNOPQRSTUVWXYZ234567"];
+    NSCharacterSet *valueSet = [NSCharacterSet characterSetWithCharactersInString:value];
+    
+    if(
+       ((value.length == 16 || value.length == 32) && [base32Set isSupersetOfSet:valueSet]) || 
+       ((value.length == 20 || value.length == 40)  && [hexSet isSupersetOfSet:valueSet])) {
+        return YES;
+    }
+    return NO;
+}
+
 - (IBAction)writeConfig:(id)sender
 {   
-    [objectController commitEditing];
-    NSString *hexKey = [[[NSData dataWithBase32String:
-                          [writeKey uppercaseString]] dataToHex] stringByPaddingRight:@"0" length:40];
-    
-    ZETYkKey *ykKey = [[ZETYkKey alloc] init];
-    ykKey.slot = (int) writeKeySlot;
-    [ykKey writeHmacCRConfig:hexKey buttonTrigger:writeKeyPress];
-    
-    [ykKey release];
+    if([objectController commitEditing]) 
+    {
+        NSString *keyString = [ZETPrefsController normalizeKey:writeKey];
+        
+        if([ZETPrefsController isKeyValid:keyString]){
+            NSString *hexKey = [[[NSData dataWithBase32String:keyString] dataToHex] stringByPaddingRight:@"0" length:40];
+            
+            ZETYkKey *ykKey = [[ZETYkKey alloc] init];
+            ykKey.slot = (int) writeKeySlot;
+            [ykKey writeHmacCRConfig:hexKey buttonTrigger:writeKeyPress];
+            
+            [ykKey release];
+        }
+    }
 }
+                                        
 
 @end
