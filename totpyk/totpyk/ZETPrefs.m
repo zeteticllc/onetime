@@ -21,7 +21,6 @@
     }
 }
 
-
 - (NSInteger) digits {
     return [[NSUserDefaults standardUserDefaults] integerForKey:kDigits];
 }

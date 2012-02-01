@@ -18,13 +18,14 @@
 
 @implementation ZETPrefsController
 
-@synthesize recorderControl, writeKeyPress, writeKey, writeKeySlot, prefs;
+@synthesize recorderControl, writeKeyPress, writeKey, writeKeySlot, prefs, objectController;
 
 - (void)dealloc
 {
     [recorderControl release];
     [writeKey release];
     [prefs release];
+    [objectController release];
     [super dealloc];
 }
 
@@ -72,6 +73,7 @@
 
 - (IBAction)writeConfig:(id)sender
 {   
+    [objectController commitEditing];
     NSString *hexKey = [[[NSData dataWithBase32String:
                           [writeKey uppercaseString]] dataToHex] stringByPaddingRight:@"0" length:40];
     
