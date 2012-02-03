@@ -55,7 +55,7 @@
     ZETYkKey *ykKey = [[ZETYkKey alloc] init];
     for(int i=1; i<=2; i++) {
         ykKey.slot = i;
-        [ykKey writeHmacCRConfig:@"0000000000000000000000000000000000000000" buttonTrigger:false];
+        [ykKey writeHmacCRConfigWithHexKey:@"0000000000000000000000000000000000000000" buttonTrigger:false];
         STAssertFalse(ykKey.error, @"error opening key");
         STAssertNil(ykKey.errorMessage, @"errorMessage should be nil");
     }
@@ -81,7 +81,7 @@
     
     ZETYkKey *ykKey = [[ZETYkKey alloc] init];
     
-    [ykKey writeHmacCRConfig:hexKey buttonTrigger:false];
+    [ykKey writeHmacCRConfigWithHexKey:hexKey buttonTrigger:false];
     
     STAssertFalse(ykKey.error, @"error opening key: %@", ykKey.errorMessage);
         
@@ -114,7 +114,7 @@
     
     ZETYkKey *ykKey = [[ZETYkKey alloc] init];
     
-    [ykKey writeHmacCRConfig:hexKey buttonTrigger:false];
+    [ykKey writeHmacCRConfigWithHexKey:hexKey buttonTrigger:false];
     
     STAssertFalse(ykKey.error, @"error opening key: %@", ykKey.errorMessage);
     
@@ -147,7 +147,7 @@
     
     ZETYkKey *ykKey = [[ZETYkKey alloc] init];
     
-    [ykKey writeHmacCRConfig:hexKey buttonTrigger:false];
+    [ykKey writeHmacCRConfigWithHexKey:hexKey buttonTrigger:false];
     
     STAssertFalse(ykKey.error, @"error opening key: %@", ykKey.errorMessage);
     

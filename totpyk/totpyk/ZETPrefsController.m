@@ -16,9 +16,12 @@
 #include <ykdef.h>
 #include <totp.h>
 
+#define KEY_ENCODING_BASE32 0
+#define KEY_ENCODING_HEX 1
+
 @implementation ZETPrefsController
 
-@synthesize recorderControl, writeKeyPress, writeKey, writeKeySlot, prefs, objectController;
+@synthesize recorderControl, writeKeyPress, writeKey, writeKeySlot, prefs, objectController, keyEncoding;
 
 - (void)dealloc
 {
@@ -32,7 +35,6 @@
 - (id)init
 {
     self = [super initWithWindowNibName:@"ZETPrefsController"];
-    prefs = [[ZETPrefs alloc] init];
     return self;
 }
 
@@ -41,6 +43,8 @@
     self = [super initWithWindow:window];
     if (self) { 
         writeKeySlot = 2;
+        keyEncoding = KEY_ENCODING_BASE32;
+        prefs = [[ZETPrefs alloc] init];
     }
     return self;
 }
@@ -76,34 +80,24 @@
 {
     if (*ioValue == nil) return NO;
     
-    NSString *value = [ZETPrefsController normalizeKey:(NSString *)*ioValue];
+    NSString *value = (NSString *)*ioValue;
     
-    if([ZETPrefsController isKeyValid:value]) return YES;
+    if([ZETYkKey isBase32KeyValid:value]) return YES;
     
-    *outError = [NSError errorWithDomain:@"ZETDomain" 
-                                    code:100 
-                                userInfo:[NSMutableDictionary 
-                                          dictionaryWithObject:@"Key must be a Base 32 or Hex string"
-                                          forKey:NSLocalizedDescriptionKey]];
-    return NO;
-}
-
-+ (NSString *)normalizeKey:(NSString *)value {
-    return [[value stringByReplacingOccurrencesOfString:@" " withString:@""] uppercaseString];
-}
-
-+ (BOOL)isKeyValid:(NSString *)value {
-    
-    if(value == nil) return NO;
-    
-    NSCharacterSet *hexSet = [NSCharacterSet characterSetWithCharactersInString:@"0123456789ABCDEF"];
-    NSCharacterSet *base32Set = [NSCharacterSet characterSetWithCharactersInString:@"ABCDEFGHIJKLMNOPQRSTUVWXYZ234567"];
-    NSCharacterSet *valueSet = [NSCharacterSet characterSetWithCharactersInString:value];
-    
-    if(
-       ((value.length == 16 || value.length == 32) && [base32Set isSupersetOfSet:valueSet]) || 
-       ((value.length == 20 || value.length == 40)  && [hexSet isSupersetOfSet:valueSet])) {
-        return YES;
+    if(keyEncoding == KEY_ENCODING_BASE32) {
+        *outError = [NSError errorWithDomain:@"ZETDomain" 
+                                        code:100 
+                                    userInfo:[NSMutableDictionary 
+                                              dictionaryWithObject:@"Key must be a Base32 string of 32 characters or less"
+                                              forKey:NSLocalizedDescriptionKey]];
+    } else if (keyEncoding == KEY_ENCODING_HEX) {
+        if([ZETYkKey isHexKeyValid:value]) return YES;
+        
+        *outError = [NSError errorWithDomain:@"ZETDomain" 
+                                        code:100 
+                                    userInfo:[NSMutableDictionary 
+                                              dictionaryWithObject:@"Key must be a Hex string of 40 characters or less"
+                                              forKey:NSLocalizedDescriptionKey]];
     }
     return NO;
 }
@@ -112,17 +106,40 @@
 {   
     if([objectController commitEditing]) 
     {
-        NSString *keyString = [ZETPrefsController normalizeKey:writeKey];
+        ZETYkKey *ykKey = [[ZETYkKey alloc] init];
+        ykKey.slot = (int) writeKeySlot;
         
-        if([ZETPrefsController isKeyValid:keyString]){
-            NSString *hexKey = [[[NSData dataWithBase32String:keyString] dataToHex] stringByPaddingRight:@"0" length:40];
-            
-            ZETYkKey *ykKey = [[ZETYkKey alloc] init];
-            ykKey.slot = (int) writeKeySlot;
-            [ykKey writeHmacCRConfig:hexKey buttonTrigger:writeKeyPress];
-            
-            [ykKey release];
+        BOOL result = false;
+        
+        if(keyEncoding == KEY_ENCODING_BASE32) {
+            result = [ykKey writeHmacCRConfigWithBase32Key:writeKey buttonTrigger:writeKeyPress];
+        } else if(keyEncoding == KEY_ENCODING_HEX) {
+            result = [ykKey writeHmacCRConfigWithHexKey:writeKey buttonTrigger:writeKeyPress];
         }
+        
+        NSAlert * alert;
+        if(result) {
+            alert= [NSAlert alertWithMessageText:@"Success!"
+                                   defaultButton:@"OK"
+                                 alternateButton:nil
+                                     otherButton:nil
+                       informativeTextWithFormat:[NSString stringWithFormat:@"Wrote configuration to Yubikey slot %d", ykKey.slot]];
+        }
+        else {
+             alert= [NSAlert alertWithMessageText:@"Configuration Error"
+                                             defaultButton:@"OK"
+                                           alternateButton:nil
+                                               otherButton:nil
+                                  informativeTextWithFormat:[NSString stringWithFormat:@"Error occurred writing configuration to Yubikey: %@", ykKey.errorMessage]];
+        }
+        
+        [alert beginSheetModalForWindow:self.window
+                          modalDelegate:self
+                         didEndSelector:nil
+                            contextInfo:nil];
+        
+        [ykKey release];
+        
     }
 }
                                         

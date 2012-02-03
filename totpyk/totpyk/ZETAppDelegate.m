@@ -41,6 +41,7 @@
         prefs.digits = 6;
         prefs.keySlot = 2;
         prefs.launchAtLogin = YES;
+        prefs.typeReturnKey = YES;
         prefs.hotKeyCombo = [SGKeyCombo keyComboWithKeyCode:kVK_ANSI_Y modifiers:(kCommandUnicode|kShiftUnicode)];
         
         [menuController showPrefWindow:nil];

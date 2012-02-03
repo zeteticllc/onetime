@@ -7,6 +7,9 @@
 //
 
 #import "ZETYkKey.h"
+#import "NSData+Hex.h"
+#import "NSData+Base32.h"
+#import "NSString+Padding.h"
 
 @implementation ZETYkKey
 
@@ -78,8 +81,57 @@
     return [NSData dataWithBytes:response length:response_len];
 }
 
--(BOOL)writeHmacCRConfig:(NSString *)key buttonTrigger:(BOOL)buttonTrigger {
-	ykp_errno = yk_errno = 0;
++ (NSString *)normalizeKey:(NSString *)value {
+    return [[value stringByReplacingOccurrencesOfString:@" " withString:@""] uppercaseString];
+}
+
++ (BOOL)isHexKeyValid:(NSString *)value {
+    if(value == nil) return NO;
+        
+    value = [self normalizeKey:value];
+    
+    NSCharacterSet *hexSet = [NSCharacterSet characterSetWithCharactersInString:@"0123456789ABCDEF"];
+    NSCharacterSet *valueSet = [NSCharacterSet characterSetWithCharactersInString:value];
+    
+    if(value.length % 2 == 0 && value.length <= 40 && [hexSet isSupersetOfSet:valueSet]) return YES;
+    
+    return NO;
+}
+
++ (BOOL)isBase32KeyValid:(NSString *)value {
+    if(value == nil) return NO;
+    
+    value = [self normalizeKey:value];
+    
+    NSCharacterSet *base32Set = [NSCharacterSet characterSetWithCharactersInString:@"ABCDEFGHIJKLMNOPQRSTUVWXYZ234567"];
+    NSCharacterSet *valueSet = [NSCharacterSet characterSetWithCharactersInString:value];
+    
+    if(value.length % 8 == 0 && value.length <= 32 && [base32Set isSupersetOfSet:valueSet]) return YES;
+    
+    return NO;
+}
+
+
+-(BOOL)writeHmacCRConfigWithBase32Key:(NSString *)key buttonTrigger:(BOOL)buttonTrigger {
+    key = [ZETYkKey normalizeKey:key];
+    
+    if(key == nil || ![ZETYkKey isBase32KeyValid:key]) {
+        [self setErrorState:@"invalid Base32 key"];
+    }
+    
+    return [self writeHmacCRConfigWithHexKey:[[NSData dataWithBase32String:key] dataToHex] buttonTrigger:buttonTrigger];
+}
+    
+-(BOOL)writeHmacCRConfigWithHexKey:(NSString *)key buttonTrigger:(BOOL)buttonTrigger {
+    key = [ZETYkKey normalizeKey:key];
+    
+    if(key == nil || ![ZETYkKey isHexKeyValid:key]) {
+        [self setErrorState:@"invalid Hex Key"];
+    }
+    
+    key = [key stringByPaddingRight:@"0" length:40];
+    
+    ykp_errno = yk_errno = 0;
     YKP_CONFIG *cfg = ykp_create_config();
     
     if(!yk || error) return false;
@@ -101,7 +153,7 @@
         ykp_set_cfgflag_CHAL_BTN_TRIG(cfg, 1);
     }
     
-    if(ykp_HMAC_key_from_hex(cfg, [key UTF8String])) {
+    if(ykp_HMAC_key_from_hex(cfg, [[key lowercaseString] UTF8String])) { // yubikey wants it lowercased
         [self setErrorState:@"invalid key data provided"];
     } else  {
         if (!yk_write_config(yk, ykp_core_config(cfg), ykp_config_num(cfg), NULL)) {
@@ -110,7 +162,7 @@
     }
     
     free(cfg);
-    return error;
+    return !error;
 }
 
 +(unsigned long) toBigEndian:(unsigned long)value

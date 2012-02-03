@@ -31,10 +31,13 @@
 
 
 -(NSData *)hmacChallenge:(NSData *)challenge challengeLength:(NSInteger)length;
--(BOOL)writeHmacCRConfig:(NSString *)key buttonTrigger:(BOOL)buttonTrigger;
-
+-(BOOL)writeHmacCRConfigWithBase32Key:(NSString *)key buttonTrigger:(BOOL)buttonTrigger;
+-(BOOL)writeHmacCRConfigWithHexKey:(NSString *)key buttonTrigger:(BOOL)buttonTrigger;
 -(void)setErrorState:(NSString *)message;
 
 +(unsigned long) toBigEndian:(unsigned long)value;
++(NSString *)normalizeKey:(NSString *)value;
++(BOOL)isHexKeyValid:(NSString *)value;
++(BOOL)isBase32KeyValid:(NSString *)value;
 
 @end

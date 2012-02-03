@@ -45,6 +45,14 @@
     [[NSUserDefaults standardUserDefaults] setInteger:digits forKey:kDigits];
 }
 
+- (BOOL) typeReturnKey {
+    return [[NSUserDefaults standardUserDefaults] integerForKey:kTypeReturnKey];
+}
+
+- (void) setTypeReturnKey:(BOOL)typeReturnKey {
+    [[NSUserDefaults standardUserDefaults] setBool:typeReturnKey forKey:kTypeReturnKey];
+}
+
 - (BOOL) validateDigits:(id *)ioValue error:(NSError **)outError
 {
     if (*ioValue == nil) return NO;

@@ -53,10 +53,12 @@
     
     
     ZETYkTOTP *totp = [[[ZETYkTOTP alloc] init] autorelease];
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    totp.step = [defaults integerForKey:kTimeStep];
-    totp.digits = [defaults integerForKey:kDigits];
-    totp.key.slot = [defaults integerForKey:kKeySlot];
+    
+    ZETPrefs *prefs = [[[ZETPrefs alloc] init] autorelease];
+    
+    totp.step = prefs.timeStep;
+    totp.digits = prefs.digits;
+    totp.key.slot = prefs.keySlot;
     
     NSString *otp = [totp totpChallenge];
     // set the new data into the pasteboard
@@ -74,15 +76,15 @@
     err = AXUIElementPostKeyboardEvent(axSystemWideElement, 0, kVK_ANSI_V, NO);
     err = AXUIElementPostKeyboardEvent(axSystemWideElement, 0, kVK_Command, NO);
     
-    usleep(100000);// sleep for a bit to give the paste time to process
     
-    // press enter to submit form
-    err = AXUIElementPostKeyboardEvent(axSystemWideElement, 0, kVK_Return, YES);
-    err = AXUIElementPostKeyboardEvent(axSystemWideElement, 0, kVK_Return, NO);
+    usleep(10000);// sleep for a bit to give the paste time to process
+    if(prefs.typeReturnKey) {
+        // press enter to submit form
+        err = AXUIElementPostKeyboardEvent(axSystemWideElement, 0, kVK_Return, YES);
+        err = AXUIElementPostKeyboardEvent(axSystemWideElement, 0, kVK_Return, NO);
+    }
     
-    // clear OTP from clipboard
-    
-    [pb clearContents];
+    [pb clearContents]; // clear OTP from clipboardand restore data
     
     for (NSString *type in [saved keyEnumerator]) {
         [pb setData:[saved objectForKey:type] forType:type];

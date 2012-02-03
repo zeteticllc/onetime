@@ -16,6 +16,7 @@
     ZETPrefs *prefs;
     NSString *writeKey;
     NSInteger writeKeySlot;
+    NSInteger keyEncoding;
     BOOL writeKeyPress;
     IBOutlet NSObjectController *objectController;
 }
@@ -24,7 +25,7 @@
 @property (nonatomic, retain) ZETPrefs *prefs;
 @property (nonatomic, retain) NSString *writeKey;
 @property (nonatomic) NSInteger writeKeySlot;
-
+@property (nonatomic) NSInteger keyEncoding;
 @property (nonatomic) BOOL writeKeyPress;
 @property (nonatomic, retain) IBOutlet NSObjectController *objectController;
 
@@ -35,8 +36,5 @@
 
 - (void) shortcutRecorder:(SRRecorderControl *)aRecorder keyComboDidChange:(KeyCombo)newKeyCombo;
 
-+ (NSString *)normalizeKey:(NSString *)value;
-+ (BOOL)isKeyValid:(NSString *)value;
-    
 - (IBAction)writeConfig:(id)sender;
 @end

@@ -13,6 +13,7 @@
 #define kTimeStep @"TimeStep"
 #define kDigits @"Digits"
 #define kKeySlot @"KeySlot"
+#define kTypeReturnKey @"TypeReturnKey"
 
 @interface ZETPrefs : NSObject
 
@@ -20,6 +21,7 @@
 @property (nonatomic) NSInteger digits;
 @property (nonatomic) NSInteger keySlot;
 @property (nonatomic) BOOL launchAtLogin;
+@property (nonatomic) BOOL typeReturnKey;
 @property (nonatomic, assign) SGKeyCombo *hotKeyCombo;
 
 @end

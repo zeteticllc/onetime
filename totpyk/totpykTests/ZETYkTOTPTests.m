@@ -33,7 +33,7 @@
     
     STAssertFalse(totp.key.error, @"error opening key: %@", totp.key.errorMessage);
     
-    [totp.key writeHmacCRConfig:hexKey buttonTrigger:false];
+    [totp.key writeHmacCRConfigWithHexKey:hexKey buttonTrigger:false];
     STAssertFalse(totp.key.error, @"error writing config: %@", totp.key.errorMessage);
     
     for(NSArray *item in tests) {
@@ -64,7 +64,7 @@
     
     totp.digits = 6;
     
-    [totp.key writeHmacCRConfig:hexKey buttonTrigger:false];
+    [totp.key writeHmacCRConfigWithHexKey:hexKey buttonTrigger:false];
     STAssertFalse(totp.key.error, @"error writing config: %@", totp.key.errorMessage);
     
     int i = 0;
