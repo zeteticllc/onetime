@@ -12,10 +12,6 @@
 #import "ZETMenuController.h"
 #import "ZETAppDelegate.h"
 
-/*
-#define kVK_Command 0x37
-#define kVK_ANSI_V 0x09
-*/
 
 @implementation ZETMenuController
 @synthesize statusMenu, statusItem, prefsController;
@@ -39,21 +35,7 @@
 }
 
 - (IBAction)insert:(id)sender {
-    NSPasteboard *pb = [NSPasteboard generalPasteboard];
-    
-    NSMutableDictionary *saved = [NSMutableDictionary dictionary];
-    for (NSString *type in [pb types]) {
-        NSData *data = [pb dataForType:type];
-        if (data) {
-            [saved setObject:data forKey:type]; 
-        }
-    }
-    
-    [pb clearContents];
-    
-    
     ZETYkTOTP *totp = [[[ZETYkTOTP alloc] init] autorelease];
-    
     ZETPrefs *prefs = [[[ZETPrefs alloc] init] autorelease];
     
     totp.step = prefs.timeStep;
@@ -61,39 +43,42 @@
     totp.key.slot = prefs.keySlot;
     
     NSString *otp = [totp totpChallenge];
-    // set the new data into the pasteboard
-    [pb setString:otp forType:NSStringPboardType];
-    
-    // post virtual keyboard events for command-v to paste in current location
-    // http://classicteck.com/rbarticles/mackeyboard.php
-    // /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/Headers/Events.h
-    // see also AXUIElement.h, CGKeyCode
-    AXUIElementRef axSystemWideElement = AXUIElementCreateSystemWide();
-    AXError err;
-    
-    err = AXUIElementPostKeyboardEvent(axSystemWideElement, 0, kVK_Command, YES);
-    err = AXUIElementPostKeyboardEvent(axSystemWideElement, 0, kVK_ANSI_V, YES);
-    err = AXUIElementPostKeyboardEvent(axSystemWideElement, 0, kVK_ANSI_V, NO);
-    err = AXUIElementPostKeyboardEvent(axSystemWideElement, 0, kVK_Command, NO);
-    
-    
-    usleep(10000);// sleep for a bit to give the paste time to process
-    if(prefs.typeReturnKey) {
-        // press enter to submit form
-        err = AXUIElementPostKeyboardEvent(axSystemWideElement, 0, kVK_Return, YES);
-        err = AXUIElementPostKeyboardEvent(axSystemWideElement, 0, kVK_Return, NO);
-    }
-    
-    [pb clearContents]; // clear OTP from clipboardand restore data
-    
-    for (NSString *type in [saved keyEnumerator]) {
-        [pb setData:[saved objectForKey:type] forType:type];
+    if(otp != nil && !totp.key.error) {
+        
+        CGEventSourceRef eventSource = CGEventSourceCreate(kCGEventSourceStateHIDSystemState); 
+        CGEventRef event = CGEventCreateKeyboardEvent(eventSource, 0, true); 
+
+        for(int i = 0; i < otp.length; i++) {
+            unichar c = [otp characterAtIndex:i];
+            event = CGEventCreateKeyboardEvent(eventSource, 1, true);
+            CGEventKeyboardSetUnicodeString(event, 1, &c);
+            CGEventPost(kCGHIDEventTap, event);
+            CFRelease(event);
+        }
+
+        if(prefs.typeReturnKey) {
+            CGEventCreateKeyboardEvent(NULL, 76, true); // 76 is RETURN key (extracted from SRKeyCodeTransformer)
+            CGEventPost(kCGHIDEventTap, event);
+            CFRelease(event);
+        }
+        
+        CFRelease(eventSource);
+    } else {
+        NSAlert *alert= [NSAlert alertWithMessageText:@"Error"
+                               defaultButton:@"OK"
+                             alternateButton:nil
+                                 otherButton:nil
+                   informativeTextWithFormat:[NSString stringWithFormat:@"Unable to challenge Yubikey: %@", totp.key.errorMessage]];
+        
+        NSApplication *thisApp = [NSApplication sharedApplication];
+        [thisApp activateIgnoringOtherApps:YES];
+        [alert runModal];
     }
     
 }
 
 - (void) insertHotKey:(id)sender {
-    usleep(1000000);
+    usleep(500000); // sleep to allow hotkey press to release
     [self insert:sender];
 }
 
