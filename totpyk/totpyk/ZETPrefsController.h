@@ -19,6 +19,7 @@
     NSInteger keyEncoding;
     BOOL writeKeyPress;
     IBOutlet NSObjectController *objectController;
+    NSString *hotKeyDescription;
 }
 
 @property (nonatomic, retain) IBOutlet SRRecorderControl *recorderControl;
@@ -28,6 +29,7 @@
 @property (nonatomic) NSInteger keyEncoding;
 @property (nonatomic) BOOL writeKeyPress;
 @property (nonatomic, retain) IBOutlet NSObjectController *objectController;
+@property (nonatomic, retain) NSString *hotKeyDescription;
 
 - (BOOL) shortcutRecorder:(SRRecorderControl *)aRecorder 
                 isKeyCode:(signed short)keyCode 

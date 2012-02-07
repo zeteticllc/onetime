@@ -21,7 +21,7 @@
 
 @implementation ZETPrefsController
 
-@synthesize recorderControl, writeKeyPress, writeKey, writeKeySlot, prefs, objectController, keyEncoding;
+@synthesize recorderControl, writeKeyPress, writeKey, writeKeySlot, prefs, objectController, keyEncoding, hotKeyDescription;
 
 - (void)dealloc
 {
@@ -29,6 +29,7 @@
     [writeKey release];
     [prefs release];
     [objectController release];
+    [hotKeyDescription release];
     [super dealloc];
 }
 
@@ -45,6 +46,7 @@
         writeKeySlot = 2;
         keyEncoding = KEY_ENCODING_BASE32;
         prefs = [[ZETPrefs alloc] init];
+        self.hotKeyDescription = [prefs.hotKeyCombo description];
     }
     return self;
 }
@@ -70,9 +72,13 @@
 
 - (void)shortcutRecorder:(SRRecorderControl *)aRecorder keyComboDidChange:(KeyCombo)newKeyCombo 
 {
-    NSLog(@"shortcutRecorder keyComboDidChange");
-    prefs.hotKeyCombo = [SGKeyCombo keyComboWithKeyCode:newKeyCombo.code modifiers:[aRecorder cocoaToCarbonFlags:newKeyCombo.flags]];
-    [((ZETAppDelegate *)[NSApp delegate]) registerHotKeyCombo:prefs.hotKeyCombo];
+    SGKeyCombo *combo = [SGKeyCombo keyComboWithKeyCode:newKeyCombo.code modifiers:[aRecorder cocoaToCarbonFlags:newKeyCombo.flags]];
+    if([combo isValidHotKeyCombo]) {
+        NSLog(@"shortcutRecorder keyComboDidChange");
+        prefs.hotKeyCombo = combo;
+        [((ZETAppDelegate *)[NSApp delegate]) registerHotKeyCombo:prefs.hotKeyCombo];
+        self.hotKeyDescription = [prefs.hotKeyCombo description];
+    }
 }
 
 
@@ -142,6 +148,6 @@
         
     }
 }
-                                        
+                                    
 
 @end

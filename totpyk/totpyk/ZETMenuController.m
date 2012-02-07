@@ -83,12 +83,18 @@
 }
 
 - (IBAction)showPrefWindow:(id)sender {
-    [prefsController release];
-	prefsController = [[ZETPrefsController alloc] init];
-    
+    [[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
+    if(prefsController == nil) {
+        self.prefsController = [[ZETPrefsController alloc] init];
+    }
+    [prefsController.window makeKeyAndOrderFront:sender];
+}
+
+- (IBAction)showAboutWindow:(id)sender {
     NSApplication *thisApp = [NSApplication sharedApplication];
+    // since this is a menu app, we need to activate it to bring up the about panel in front
     [thisApp activateIgnoringOtherApps:YES];
-    [prefsController.window makeKeyAndOrderFront:nil];
+    [thisApp orderFrontStandardAboutPanel:sender];
 }
 
 - (void)dealloc

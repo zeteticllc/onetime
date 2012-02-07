@@ -22,6 +22,7 @@
 		90BE606714D82C2B005D3693 /* ZETOneBasedIndexValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BE606614D82C2B005D3693 /* ZETOneBasedIndexValueTransformer.m */; };
 		90BE933514D645D000E9C226 /* NSData+Base32.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BE933414D645D000E9C226 /* NSData+Base32.m */; };
 		90BE933914D6466500E9C226 /* NSDataBase32Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BE933814D6466500E9C226 /* NSDataBase32Tests.m */; };
+		90C642CC14E1726B0087B731 /* SGKeyCodes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90C642CB14E1726B0087B731 /* SGKeyCodes.plist */; };
 		90D59E7314D58230000343B2 /* NSStringPaddingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 90D59E7214D58230000343B2 /* NSStringPaddingTests.m */; };
 		90EA691E14AF8AFC00547F20 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90EA691D14AF8AFC00547F20 /* Cocoa.framework */; };
 		90EA692814AF8AFC00547F20 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 90EA692614AF8AFC00547F20 /* InfoPlist.strings */; };
@@ -100,6 +101,7 @@
 		90BE933414D645D000E9C226 /* NSData+Base32.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base32.m"; sourceTree = "<group>"; };
 		90BE933714D6466500E9C226 /* NSDataBase32Tests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataBase32Tests.h; sourceTree = "<group>"; };
 		90BE933814D6466500E9C226 /* NSDataBase32Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataBase32Tests.m; sourceTree = "<group>"; };
+		90C642CB14E1726B0087B731 /* SGKeyCodes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SGKeyCodes.plist; sourceTree = "<group>"; };
 		90D59E7114D58230000343B2 /* NSStringPaddingTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSStringPaddingTests.h; sourceTree = "<group>"; };
 		90D59E7214D58230000343B2 /* NSStringPaddingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringPaddingTests.m; sourceTree = "<group>"; };
 		90EA691914AF8AFC00547F20 /* totpyk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = totpyk.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -300,6 +302,7 @@
 		90EA692414AF8AFC00547F20 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				90C642CB14E1726B0087B731 /* SGKeyCodes.plist */,
 				90EA695614AF8C0700547F20 /* MenuHighlighted.png */,
 				90EA695714AF8C0700547F20 /* Menu.png */,
 				90EA692514AF8AFC00547F20 /* totpyk-Info.plist */,
@@ -442,6 +445,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				English,
 			);
 			mainGroup = 90EA690E14AF8AFC00547F20;
 			productRefGroup = 90EA691A14AF8AFC00547F20 /* Products */;
@@ -467,6 +471,7 @@
 				90EA695914AF8C0700547F20 /* Menu.png in Resources */,
 				9033B9B414C1ADED00551445 /* ZETPrefsController.xib in Resources */,
 				9068FE4D14D31ADD0089EF06 /* README.md in Resources */,
+				90C642CC14E1726B0087B731 /* SGKeyCodes.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

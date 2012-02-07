@@ -24,5 +24,6 @@
 - (IBAction)insert:(id)sender;
 - (void)insertHotKey:(id)sender;
 - (IBAction)showPrefWindow:(id)sender;
+- (IBAction)showAboutWindow:(id)sender;
 
 @end
