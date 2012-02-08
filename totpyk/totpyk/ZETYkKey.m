@@ -30,6 +30,7 @@
 }
 
 - (id) init {
+    yk_errno = 0;
     self = [super init];
     if(self) {
         slot = 2;
@@ -39,7 +40,7 @@
         
         if (yk_init() && (yk = yk_open_first_key())) {
             if (!yk_get_status(yk, st)) {
-                [self setErrorState:@"Unable to get status from Yubikey"];
+                [self setErrorState:[NSString stringWithFormat:@"Unable to get status from Yubikey: error %d (%s)", yk_errno, yk_strerror(yk_errno)]];
             } else {
                 versionMajor = ykds_version_major(st);
                 versionMinor = ykds_version_minor(st);
@@ -50,7 +51,7 @@
                 }
             }
         } else {
-            [self setErrorState:@"Unable to get status from Yubikey"];
+            [self setErrorState:[NSString stringWithFormat:@"Unable to open Yubikey: code %d (%s)", yk_errno, yk_strerror(yk_errno)]];
         }
     }
     return self;
@@ -71,8 +72,7 @@
 	if (!yk_read_response_from_key(
             yk, slot, YK_FLAG_MAYBLOCK, // use selected slot and allow the yubikey to block for button press
             &response, sizeof(response), expect_bytes, &response_len)) {
-        error = YES;
-        errorMessage = @"Error reading HMAC response from Yubikey";
+        [self setErrorState:[NSString stringWithFormat:@"Error reading HMAC response from Yubikey: code %d (%s)", yk_errno, yk_strerror(yk_errno)]];
     } else {
         /* HMAC responses are 160 bits */
         if (response_len > expect_bytes) response_len = expect_bytes;
@@ -157,7 +157,7 @@
         [self setErrorState:@"invalid key data provided"];
     } else  {
         if (!yk_write_config(yk, ykp_core_config(cfg), ykp_config_num(cfg), NULL)) {
-            [self setErrorState:@"failed to write from Yubikey before configuration write"];
+            [self setErrorState:[NSString stringWithFormat:@"failed to write from Yubikey before configuration write: error %d (%s)", ykp_errno, ykp_strerror(ykp_errno)]];
         }
     }
     

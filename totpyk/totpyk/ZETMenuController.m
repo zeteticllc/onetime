@@ -35,7 +35,7 @@
 }
 
 - (IBAction)insert:(id)sender {
-    ZETYkTOTP *totp = [[[ZETYkTOTP alloc] init] autorelease];
+    ZETYkTOTP *totp = [[ZETYkTOTP alloc] init];
     ZETPrefs *prefs = [[[ZETPrefs alloc] init] autorelease];
     
     totp.step = prefs.timeStep;
@@ -74,6 +74,7 @@
         [thisApp activateIgnoringOtherApps:YES];
         [alert runModal];
     }
+    [totp release];
     
 }
 
