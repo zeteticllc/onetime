@@ -57,7 +57,7 @@
         }
 
         if(prefs.typeReturnKey) {
-            CGEventCreateKeyboardEvent(NULL, 76, true); // 76 is RETURN key (extracted from SRKeyCodeTransformer)
+            event = CGEventCreateKeyboardEvent(eventSource, 76, true); // 76 is RETURN key (extracted from SRKeyCodeTransformer)
             CGEventPost(kCGHIDEventTap, event);
             CFRelease(event);
         }
