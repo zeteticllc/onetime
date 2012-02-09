@@ -43,10 +43,11 @@
     totp.key.slot = prefs.keySlot;
     
     NSString *otp = [totp totpChallenge];
+    
     if(otp != nil && !totp.key.error) {
         
         CGEventSourceRef eventSource = CGEventSourceCreate(kCGEventSourceStateHIDSystemState); 
-        CGEventRef event = CGEventCreateKeyboardEvent(eventSource, 0, true); 
+        CGEventRef event; //= CGEventCreateKeyboardEvent(eventSource, 0, true); 
 
         for(int i = 0; i < otp.length; i++) {
             unichar c = [otp characterAtIndex:i];
@@ -75,7 +76,6 @@
         [alert runModal];
     }
     [totp release];
-    
 }
 
 - (void) insertHotKey:(id)sender {

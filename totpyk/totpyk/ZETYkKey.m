@@ -19,9 +19,10 @@
     free(st);
     if (yk) { // close and release handle to yubikey
         yk_close_key(yk);
-        yk_release();
     }
+    yk_release();
     [errorMessage release];
+    [super dealloc];
 }
 
 -(void)setErrorState:(NSString *)message {
@@ -30,9 +31,9 @@
 }
 
 - (id) init {
-    yk_errno = 0;
     self = [super init];
     if(self) {
+        yk_errno = 0;
         slot = 2;
         st = ykds_alloc();
         error = NO;

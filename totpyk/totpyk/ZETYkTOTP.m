@@ -1,3 +1,4 @@
+
 //
 //  ZETTOTP.m
 //  totpyk
@@ -15,7 +16,7 @@ const int digits_power[9] = { 1,10,100,1000,10000,100000,1000000,10000000,100000
 @implementation ZETYkTOTP
 @synthesize key, digits, step, mayBlock, verbose;
 
-- (void)dealloc {
+- (void) dealloc {
     [key release];
     [super dealloc];
 }
