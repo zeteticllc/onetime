@@ -110,7 +110,7 @@
 
 - (IBAction)writeConfig:(id)sender
 {   
-    if([objectController commitEditing]) 
+    if([objectController commitEditing] && writeKey != nil && writeKey.length > 0) 
     {
         ZETYkKey *ykKey = [[ZETYkKey alloc] init];
         ykKey.slot = (int) writeKeySlot;
