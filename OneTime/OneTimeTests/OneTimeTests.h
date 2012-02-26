@@ -8,6 +8,6 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 
-@interface totpykTests : SenTestCase
+@interface OneTimeTests : SenTestCase
 
 @end

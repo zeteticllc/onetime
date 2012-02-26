@@ -1,6 +1,6 @@
 //
 //  NSData+Base32.h
-//  totpyk
+//  OneTime
 //
 //  Extracted from the Amber Framework
 //  http://code.google.com/p/amber-framework

@@ -7,12 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "totpykTests.h"
+#import "OneTimeTests.h"
 #import "ZETYkKey.h"
 #import "NSData+Hex.h"
 #import "NSString+Padding.h"
 
-@implementation totpykTests
+@implementation OneTimeTests
 
 - (void)setUp
 {
