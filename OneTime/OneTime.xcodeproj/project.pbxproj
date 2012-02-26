@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9015C47A14F9DB3600F910C9 /* YubikeyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9015C47914F9DB3600F910C9 /* YubikeyTests.m */; };
 		9033B9B414C1ADED00551445 /* ZETPrefsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9033B9B314C1ADED00551445 /* ZETPrefsController.xib */; };
 		9033B9C114C1AFB600551445 /* SRCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 9033B9B814C1AFB600551445 /* SRCommon.m */; };
 		9033B9C214C1AFB600551445 /* SRKeyCodeTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9033B9BA14C1AFB600551445 /* SRKeyCodeTransformer.m */; };
@@ -74,6 +75,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9015C47814F9DB3500F910C9 /* YubikeyTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YubikeyTests.h; sourceTree = "<group>"; };
+		9015C47914F9DB3600F910C9 /* YubikeyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YubikeyTests.m; sourceTree = "<group>"; };
 		9033B9B314C1ADED00551445 /* ZETPrefsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZETPrefsController.xib; sourceTree = "<group>"; };
 		9033B9B714C1AFB600551445 /* SRCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRCommon.h; sourceTree = "<group>"; };
 		9033B9B814C1AFB600551445 /* SRCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRCommon.m; sourceTree = "<group>"; };
@@ -331,6 +334,8 @@
 				90A92B7D14D5939B0078E2E5 /* ZETYkTOTPTests.h */,
 				90A92B7E14D5939B0078E2E5 /* ZETYkTOTPTests.m */,
 				90EA694114AF8AFC00547F20 /* Supporting Files */,
+				9015C47814F9DB3500F910C9 /* YubikeyTests.h */,
+				9015C47914F9DB3600F910C9 /* YubikeyTests.m */,
 			);
 			path = OneTimeTests;
 			sourceTree = "<group>";
@@ -553,6 +558,7 @@
 				90A92B7B14D58A880078E2E5 /* NSDataHexTests.m in Sources */,
 				90A92B7F14D5939B0078E2E5 /* ZETYkTOTPTests.m in Sources */,
 				90BE933914D6466500E9C226 /* NSDataBase32Tests.m in Sources */,
+				9015C47A14F9DB3600F910C9 /* YubikeyTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
