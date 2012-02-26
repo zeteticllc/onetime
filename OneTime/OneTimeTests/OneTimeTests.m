@@ -1,6 +1,6 @@
 //
-//  totpykTests.m
-//  totpykTests
+//  OneTimeTests.m
+//  OneTimeTests
 //
 //  Created by Stephen Lombardo on 12/31/11.
 //  Copyright (c) 2011 Zetetic LLC. All rights reserved.

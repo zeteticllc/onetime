@@ -1,6 +1,6 @@
 //
 //  ZETMenuController.m
-//  totpyk
+//  OneTimeTests
 //
 //  Created by Stephen Lombardo on 12/31/11.
 //  Copyright (c) 2011 Zetetic LLC. All rights reserved.
@@ -22,7 +22,6 @@
     if (self) {
         statusItem = [[[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength] retain];
         statusItem.highlightMode = YES;
-        //statusItem.title = @"TOTPYk";
         statusItem.enabled = YES;
         statusItem.image = [NSImage imageNamed:@"Menu"];
         statusItem.alternateImage = [NSImage imageNamed:@"MenuHighlighted"];

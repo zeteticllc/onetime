@@ -1,6 +1,6 @@
 //
 //  ZETAppDelegate.h
-//  totpyk
+//  OneTimeTests
 //
 //  Created by Stephen Lombardo on 12/30/11.
 //  Copyright (c) 2011 Zetetic LLC. All rights reserved.

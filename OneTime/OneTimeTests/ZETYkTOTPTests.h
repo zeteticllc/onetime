@@ -1,6 +1,6 @@
 //
 //  ZETYkTOTPTests.h
-//  totpyk
+//  OneTimeTests
 //
 //  Created by Stephen Lombardo on 1/29/12.
 //  Copyright (c) 2012 Zetetic LLC. All rights reserved.
