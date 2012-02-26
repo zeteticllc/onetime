@@ -77,6 +77,7 @@
 /* Begin PBXFileReference section */
 		9015C47814F9DB3500F910C9 /* YubikeyTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YubikeyTests.h; sourceTree = "<group>"; };
 		9015C47914F9DB3600F910C9 /* YubikeyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YubikeyTests.m; sourceTree = "<group>"; };
+		9015C47C14F9DC7400F910C9 /* OneTime.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = OneTime.entitlements; sourceTree = "<group>"; };
 		9033B9B314C1ADED00551445 /* ZETPrefsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZETPrefsController.xib; sourceTree = "<group>"; };
 		9033B9B714C1AFB600551445 /* SRCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRCommon.h; sourceTree = "<group>"; };
 		9033B9B814C1AFB600551445 /* SRCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRCommon.m; sourceTree = "<group>"; };
@@ -276,6 +277,7 @@
 		90EA692314AF8AFC00547F20 /* OneTime */ = {
 			isa = PBXGroup;
 			children = (
+				9015C47C14F9DC7400F910C9 /* OneTime.entitlements */,
 				90EA693214AF8AFC00547F20 /* MainMenu.xib */,
 				90EA692414AF8AFC00547F20 /* Supporting Files */,
 				90EA692F14AF8AFC00547F20 /* ZETAppDelegate.h */,
