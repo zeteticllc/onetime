@@ -125,6 +125,7 @@
         
         NSAlert * alert;
         if(result) {
+            self.writeKey = @""; //clear write key box after commit;
             alert= [NSAlert alertWithMessageText:@"Success!"
                                    defaultButton:@"OK"
                                  alternateButton:nil
