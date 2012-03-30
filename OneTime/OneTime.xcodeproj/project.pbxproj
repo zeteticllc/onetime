@@ -55,7 +55,6 @@
 		90EA698B14B00CA700547F20 /* sha224-256.c in Sources */ = {isa = PBXBuildFile; fileRef = 90EA698414B00CA700547F20 /* sha224-256.c */; };
 		90EA698C14B00CA700547F20 /* sha1.c in Sources */ = {isa = PBXBuildFile; fileRef = 90EA698514B00CA700547F20 /* sha1.c */; };
 		90EA698D14B00CA700547F20 /* hmac.c in Sources */ = {isa = PBXBuildFile; fileRef = 90EA698814B00CA700547F20 /* hmac.c */; };
-		90EA698F14B00DF900547F20 /* libyubikey.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90EA698E14B00DF900547F20 /* libyubikey.a */; };
 		90EA699114B00E3000547F20 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90EA699014B00E3000547F20 /* IOKit.framework */; };
 		90EA699314B00E3E00547F20 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90EA699214B00E3E00547F20 /* CoreFoundation.framework */; };
 		90EA699A14B0170800547F20 /* ZETYkTOTP.m in Sources */ = {isa = PBXBuildFile; fileRef = 90EA699914B0170600547F20 /* ZETYkTOTP.m */; };
@@ -153,7 +152,6 @@
 		90EA698414B00CA700547F20 /* sha224-256.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "sha224-256.c"; path = "rfc4634/sha224-256.c"; sourceTree = "<group>"; };
 		90EA698514B00CA700547F20 /* sha1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = sha1.c; path = rfc4634/sha1.c; sourceTree = "<group>"; };
 		90EA698814B00CA700547F20 /* hmac.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = hmac.c; path = rfc4634/hmac.c; sourceTree = "<group>"; };
-		90EA698E14B00DF900547F20 /* libyubikey.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libyubikey.a; path = ../libyubikey.a; sourceTree = "<group>"; };
 		90EA699014B00E3000547F20 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		90EA699214B00E3E00547F20 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		90EA699814B0170500547F20 /* ZETYkTOTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZETYkTOTP.h; sourceTree = "<group>"; };
@@ -173,7 +171,6 @@
 			files = (
 				90EA699314B00E3E00547F20 /* CoreFoundation.framework in Frameworks */,
 				90EA699114B00E3000547F20 /* IOKit.framework in Frameworks */,
-				90EA698F14B00DF900547F20 /* libyubikey.a in Frameworks */,
 				90EA696314AFEA9A00547F20 /* Carbon.framework in Frameworks */,
 				90EA691E14AF8AFC00547F20 /* Cocoa.framework in Frameworks */,
 			);
@@ -232,7 +229,6 @@
 			children = (
 				90EA699214B00E3E00547F20 /* CoreFoundation.framework */,
 				90EA699014B00E3000547F20 /* IOKit.framework */,
-				90EA698E14B00DF900547F20 /* libyubikey.a */,
 				9068FE4814D31ADD0089EF06 /* LaunchAtLoginController */,
 				90EA696414AFF0DA00547F20 /* SGHotKeysLib */,
 				90EA697114B00B3700547F20 /* yubikey-personalization */,
@@ -446,7 +442,7 @@
 		90EA691014AF8AFC00547F20 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0430;
 				ORGANIZATIONNAME = "Zetetic LLC";
 			};
 			buildConfigurationList = 90EA691314AF8AFC00547F20 /* Build configuration list for PBXProject "OneTime" */;
@@ -639,6 +635,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "$(LIBYUBIKEY)";
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -665,6 +662,7 @@
 					"../yubikey-personalization/rfc4634",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				OTHER_LDFLAGS = "$(LIBYUBIKEY)";
 				SDKROOT = macosx;
 			};
 			name = Release;
