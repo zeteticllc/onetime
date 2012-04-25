@@ -7,3 +7,6 @@
 [submodule "OneTime/LaunchAtLoginController"]
 	path = OneTime/LaunchAtLoginController
 	url = https://github.com/Mozketo/LaunchAtLoginController.git
+[submodule "yubico-c"]
+	path = yubico-c
+	url = git://github.com/Yubico/yubico-c.git
