@@ -637,7 +637,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "$(LIBYUBIKEY)";
+				OTHER_LDFLAGS = "$(SRCROOT)/../yubico-c/.libs/libyubikey.a";
 				SDKROOT = macosx;
 				TEST_AFTER_BUILD = NO;
 			};
@@ -665,7 +665,7 @@
 					"../yubikey-personalization/rfc4634",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				OTHER_LDFLAGS = "$(LIBYUBIKEY)";
+				OTHER_LDFLAGS = "$(SRCROOT)/../yubico-c/.libs/libyubikey.a";
 				SDKROOT = macosx;
 				TEST_AFTER_BUILD = NO;
 			};
@@ -674,15 +674,22 @@
 		90EA694C14AF8AFC00547F20 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
+				CODE_SIGN_IDENTITY = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OneTime/OneTime-Prefix.pch";
+				IBC_OTHER_FLAGS = "";
 				INFOPLIST_FILE = "OneTime/OneTime-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/..\"",
 				);
+				"LIBRARY_SEARCH_PATHS[arch=*]" = (
+					"$(inherited)",
+					"\"$(SRCROOT)/..\"",
+				);
+				"OTHER_LDFLAGS[arch=*]" = "$(SRCROOT)/../yubico-c/.libs/libyubikey.a";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(inherited) \"$(SRCROOT)/..\"";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -690,15 +697,22 @@
 		90EA694D14AF8AFC00547F20 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
+				CODE_SIGN_IDENTITY = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OneTime/OneTime-Prefix.pch";
+				IBC_OTHER_FLAGS = "";
 				INFOPLIST_FILE = "OneTime/OneTime-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/..\"",
 				);
+				"LIBRARY_SEARCH_PATHS[arch=*]" = (
+					"$(inherited)",
+					"\"$(SRCROOT)/..\"",
+				);
+				"OTHER_LDFLAGS[arch=*]" = "$(SRCROOT)/../yubico-c/.libs/libyubikey.a";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(inherited) \"$(SRCROOT)/..\"";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

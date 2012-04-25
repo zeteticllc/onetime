@@ -1,41 +1,25 @@
-## $Id: Makefile.in,v 1.5 2001/08/21 13:36:27 lombards Exp $
+.DEFAULT_GOAL := all
 
-YKPDIR = yubikey-personalization
-APP = main
-TARGET = $(APP)
+YUBICOC := yubico-c
+SRCDIR := OneTime
+TARGET := OneTimeTests
+CONFIGURATION := Debug
+BUILD_TARGETS := clean build
+CLEAN_TARGETS := clean
 
-LIBS = libyubikey.a
-INCS = -I$(YKPDIR) -I$(YKPDIR)/ykcore -I$(YKPDIR)/rfc4634
-CFLAGS = -g -O2  
-#DEFS = 
-LDFLAGS = -framework IOKit -framework CoreFoundation 
-CC = gcc 
+init:
+	git submodule update --init --recursive
 
-SRC = $(APP).c \
-	totp.c \
-	$(YKPDIR)/ykcore/ykcore_osx.c \
-	$(YKPDIR)/ykcore/ykcore.c \
-	$(YKPDIR)/ykcore/ykstatus.c \
-	$(YKPDIR)/rfc4634/sha1.c \
-	$(YKPDIR)/rfc4634/sha224-256.c \
-	$(YKPDIR)/rfc4634/sha384-512.c \
-	$(YKPDIR)/rfc4634/usha.c \
-	$(YKPDIR)/rfc4634/hmac.c \
-	$(YKPDIR)/ykpers.c \
-	$(YKPDIR)/ykpbkdf2.c
-
-OBJS = ${SRC:.c=.o}
-
-%.o: %.c
-	$(CC) $(INCS) $(CFLAGS) -c -o $@ $<
-
-#$(OBJS): $(SRC)
-#	$(CC) $(INCS) $(DEFS) $(LIBS) $(LDFLAGS) $(CFLAGS) -o $@ $^
-
-$(TARGET): $(OBJS) 
-	$(CC) $(INCS) $(DEFS) $(LIBS) $(CFLAGS) $(LDFLAGS) $(OBJS) -o $@
-
-all: $(TARGET)
+all:
+	cd ${YUBICOC} && \
+	autoreconf --install && \
+	./configure && \
+	make
+	cd ${SRCDIR} && \
+	xcodebuild -project OneTime.xcodeproj -target ${TARGET} -configuration ${CONFIGURATION} ${BUILD_TARGETS}
 
 clean:
-	rm -rf $(OBJS) $(TARGET) $(OBJS) *.o 
+	cd ${YUBICOC} && \
+	make clean
+	cd ${SRCDIR} && \
+	xcodebuild -project OneTime.xcodeproj -target ${TARGET} -configuration ${CONFIGURATION} ${CLEAN_TARGETS}
