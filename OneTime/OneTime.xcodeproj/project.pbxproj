@@ -677,6 +677,14 @@
 				CODE_SIGN_IDENTITY = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OneTime/OneTime-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					..,
+					../SGHotKeysLib/SGHotKeysLib,
+					"../yubikey-personalization",
+					"../yubikey-personalization/ykcore",
+					"../yubikey-personalization/rfc4634",
+					"../yubico-c",
+				);
 				IBC_OTHER_FLAGS = "";
 				INFOPLIST_FILE = "OneTime/OneTime-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
@@ -700,6 +708,14 @@
 				CODE_SIGN_IDENTITY = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OneTime/OneTime-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					..,
+					../SGHotKeysLib/SGHotKeysLib,
+					"../yubikey-personalization",
+					"../yubikey-personalization/ykcore",
+					"../yubikey-personalization/rfc4634",
+					"../yubico-c",
+				);
 				IBC_OTHER_FLAGS = "";
 				INFOPLIST_FILE = "OneTime/OneTime-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
@@ -724,10 +740,19 @@
 				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OneTime/OneTime-Prefix.pch";
+				"HEADER_SEARCH_PATHS[arch=*]" = (
+					..,
+					../SGHotKeysLib/SGHotKeysLib,
+					"../yubikey-personalization",
+					"../yubikey-personalization/ykcore",
+					"../yubikey-personalization/rfc4634",
+					"../yubico-c",
+				);
 				INFOPLIST_FILE = "OneTimeTests/OneTimeTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_AFTER_BUILD = YES;
 				TEST_HOST = "$(BUNDLE_LOADER)";
+				USER_HEADER_SEARCH_PATHS = ".. ../SGHotKeysLib/SGHotKeysLib ../yubikey-personalization ../yubikey-personalization/ykcore ../yubikey-personalization/rfc4634 ../yubico-c";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
@@ -739,10 +764,18 @@
 				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OneTime/OneTime-Prefix.pch";
+				"HEADER_SEARCH_PATHS[arch=*]" = (
+					..,
+					../SGHotKeysLib/SGHotKeysLib,
+					"../yubikey-personalization",
+					"../yubikey-personalization/ykcore",
+					"../yubikey-personalization/rfc4634",
+				);
 				INFOPLIST_FILE = "OneTimeTests/OneTimeTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_AFTER_BUILD = YES;
 				TEST_HOST = "$(BUNDLE_LOADER)";
+				USER_HEADER_SEARCH_PATHS = ".. ../SGHotKeysLib/SGHotKeysLib ../yubikey-personalization ../yubikey-personalization/ykcore ../yubikey-personalization/rfc4634 ../yubico-c";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
