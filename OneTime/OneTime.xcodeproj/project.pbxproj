@@ -25,6 +25,7 @@
 		90BE933914D6466500E9C226 /* NSDataBase32Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BE933814D6466500E9C226 /* NSDataBase32Tests.m */; };
 		90C642CC14E1726B0087B731 /* SGKeyCodes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90C642CB14E1726B0087B731 /* SGKeyCodes.plist */; };
 		90CE17C514E2F2EE00FC1FEF /* Icons.icns in Resources */ = {isa = PBXBuildFile; fileRef = 90CE17C414E2F2EE00FC1FEF /* Icons.icns */; };
+		90D3E18D1548504F007802B0 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90EA699014B00E3000547F20 /* IOKit.framework */; };
 		90D59E7314D58230000343B2 /* NSStringPaddingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 90D59E7214D58230000343B2 /* NSStringPaddingTests.m */; };
 		90EA691E14AF8AFC00547F20 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90EA691D14AF8AFC00547F20 /* Cocoa.framework */; };
 		90EA692814AF8AFC00547F20 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 90EA692614AF8AFC00547F20 /* InfoPlist.strings */; };
@@ -180,6 +181,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90D3E18D1548504F007802B0 /* IOKit.framework in Frameworks */,
 				90EA693C14AF8AFC00547F20 /* SenTestingKit.framework in Frameworks */,
 				90EA693D14AF8AFC00547F20 /* Cocoa.framework in Frameworks */,
 			);
@@ -637,6 +639,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "$(LIBYUBIKEY)";
 				SDKROOT = macosx;
+				TEST_AFTER_BUILD = NO;
 			};
 			name = Debug;
 		};
@@ -664,6 +667,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				OTHER_LDFLAGS = "$(LIBYUBIKEY)";
 				SDKROOT = macosx;
+				TEST_AFTER_BUILD = NO;
 			};
 			name = Release;
 		};
@@ -708,6 +712,7 @@
 				GCC_PREFIX_HEADER = "OneTime/OneTime-Prefix.pch";
 				INFOPLIST_FILE = "OneTimeTests/OneTimeTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_AFTER_BUILD = YES;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -722,6 +727,7 @@
 				GCC_PREFIX_HEADER = "OneTime/OneTime-Prefix.pch";
 				INFOPLIST_FILE = "OneTimeTests/OneTimeTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_AFTER_BUILD = YES;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
