@@ -1,9 +1,9 @@
 [submodule "yubikey-personalization"]
 	path = yubikey-personalization
 	url = https://github.com/Yubico/yubikey-personalization.git
-[submodule "totpyk/SGHotKeysLib"]
-	path = totpyk/SGHotKeysLib
+[submodule "OneTime/SGHotKeysLib"]
+	path = OneTime/SGHotKeysLib
 	url = https://github.com/secondgear/SGHotKeysLib.git
-[submodule "totpyk/LaunchAtLoginController"]
-	path = totpyk/LaunchAtLoginController
+[submodule "OneTime/LaunchAtLoginController"]
+	path = OneTime/LaunchAtLoginController
 	url = https://github.com/Mozketo/LaunchAtLoginController.git
