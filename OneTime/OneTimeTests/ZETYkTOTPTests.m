@@ -14,6 +14,11 @@
 
 @implementation ZETYkTOTPTests
 
+- (void) setUp
+{
+    sleep(1);
+}
+
 - (void)testRfc6238
 {   
     NSString *hexKey = [[@"12345678901234567890" dataUsingEncoding:NSASCIIStringEncoding] dataToHex];
