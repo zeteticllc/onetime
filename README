@@ -1,0 +1,25 @@
+OneTime for Yubikey
+http://zetetic.net/software-onetime
+
+OneTime makes it easy to use a Yubikey USB device with Google 2-step verification and other OATH-TOTP applications on your Mac. Unlike Google Authenticator or SMS delivery, a Yubikey with OneTime is super portable and doesn't require a smartphone, cell coverage, or SMS service. 
+
+Best of all, OneTime does not make you re-type passwords from your device into login fields on the computer!
+
+Key Features
+
+- Works with GMail - Setup Google 2-step verification "out of the box" in 5 minutes
+- Global Hotkey - Insert One Time Passwords at cursor location and submit, all without touching the mouse or typing a password
+- Always On - Automatically starts-up on login and runs in the background in the Mac OSX Task Bar
+- Yubikey Personalization - Program your Yubikey directly in the preference panel, no separate applications or conversion tools required.
+- Full OATH-TOTP support - Not using GMail? OneTime can use a custom number of digits and time-step to support virtually any OATH-TOTP application
+
+Note: This product requires a Yubikey hardware token. Buy one from Yubico to use OneTime.
+
+Licensing
+
+Copyright (c) 2012, Zetetic LLC. All rights reserved.
+
+OneTime is for sale from Zetetic at http://zetetic.net/software-onetime. The source code is also available on Github and dual licensed under the terms of GNU General Public License, Version 3. 
+
+This arrangment allows you, as a developer to audit the code, see how it works, and build from source yourself. However, we respectfully ask that you do not create clones, sell, distribute, or otherwise compete with OneTime. We really appreciate your support by buying OneTime from http://zetetic.net/software-onetime.
+
