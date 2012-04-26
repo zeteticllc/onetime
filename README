@@ -23,3 +23,6 @@ OneTime is for sale from Zetetic at http://zetetic.net/software-onetime. The sou
 
 This arrangment allows you, as a developer to audit the code, see how it works, and build from source yourself. However, we respectfully ask that you do not create clones, sell, distribute, or otherwise compete with OneTime. We really appreciate your support by buying OneTime from http://zetetic.net/software-onetime.
 
+Important Note about Tests
+
+This project contains unit tests that require a Yubikey to be plugged in. These tests are run automatically when the OneTimeTest project is built. If you have an unlocked Yubikey plugged in when the tests run it WILL BE OVERWRITTEN with test keys. Please do not build and run tests for this software while you have a "production" Yubikey plugged in!
