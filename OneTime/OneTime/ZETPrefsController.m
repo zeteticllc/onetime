@@ -31,7 +31,6 @@
 #import "ZETYkKey.h"
 #include <ykpers.h>
 #include <ykdef.h>
-#include <totp.h>
 
 #define KEY_ENCODING_BASE32 0
 #define KEY_ENCODING_HEX 1
