@@ -103,6 +103,13 @@
     return [[value stringByReplacingOccurrencesOfString:@" " withString:@""] uppercaseString];
 }
 
++ (NSString *)normalizeBase32Key:(NSString *)value {
+    NSString *norm = [ZETYkKey normalizeKey:value];
+    NSUInteger len = (norm.length % 8 == 0) ? norm.length : ((norm.length / 8) + 1) * 8;
+    return [norm stringByPaddingRight:@"=" length:len];
+}
+
+
 + (BOOL)isHexKeyValid:(NSString *)value {
     if(value == nil) return NO;
         
@@ -119,7 +126,7 @@
 + (BOOL)isBase32KeyValid:(NSString *)value {
     if(value == nil) return NO;
     
-    value = [self normalizeKey:value];
+    value = [self normalizeBase32Key:value];
     
     NSCharacterSet *base32Set = [NSCharacterSet characterSetWithCharactersInString:@"ABCDEFGHIJKLMNOPQRSTUVWXYZ234567="];
     NSCharacterSet *valueSet = [NSCharacterSet characterSetWithCharactersInString:value];
@@ -131,7 +138,7 @@
 
 
 -(BOOL)writeHmacCRConfigWithBase32Key:(NSString *)key buttonTrigger:(BOOL)buttonTrigger {
-    key = [ZETYkKey normalizeKey:key];
+    key = [ZETYkKey normalizeBase32Key:key];
     
     if(key == nil || ![ZETYkKey isBase32KeyValid:key]) {
         [self setErrorState:@"invalid Base32 key"];

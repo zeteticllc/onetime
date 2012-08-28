@@ -25,6 +25,7 @@
 
 #import <Foundation/Foundation.h>
 #import "OneTimeTests.h"
+#import "ZETYkKey.h"
 
 @implementation OneTimeTests
 
@@ -50,6 +51,28 @@
     STAssertTrue([set2 isSupersetOfSet:set3], @"set2 should be superset of a reduced set");
     STAssertFalse([set3 isSupersetOfSet:set4], @"set3 should NOT be superset of a set with other characters");
     STAssertTrue([set4 isSupersetOfSet:set3], @"set4 should be superset of a reduced set");
+}
+
+- (void) testBase32Normalize
+{
+    
+    NSArray *tests = [NSArray arrayWithObjects:
+                      @"00000000", @"000000000", @"0000000000", @"00000000000",
+                      @"000000000000", @"0000000000000", @"00000000000000", @"000000000000000",
+                      @"0000000000000000",
+                      nil];
+    
+    NSArray *responses = [NSArray arrayWithObjects:
+                      @"00000000", @"000000000=======", @"0000000000======", @"00000000000=====",
+                      @"000000000000====", @"0000000000000===", @"00000000000000==", @"000000000000000=",
+                      @"0000000000000000",
+                      nil];
+    
+    int i = 0;
+    for(NSString *item in tests) {
+        STAssertEqualObjects(responses[i], [ZETYkKey normalizeBase32Key:item], @"mismatch");
+        i++;
+    }
 }
 
 @end

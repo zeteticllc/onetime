@@ -53,6 +53,7 @@
 -(void)setErrorState:(NSString *)message;
 
 +(unsigned long) toBigEndian:(unsigned long)value;
++(NSString *)normalizeBase32Key:(NSString *)value;
 +(NSString *)normalizeKey:(NSString *)value;
 +(BOOL)isHexKeyValid:(NSString *)value;
 +(BOOL)isBase32KeyValid:(NSString *)value;
