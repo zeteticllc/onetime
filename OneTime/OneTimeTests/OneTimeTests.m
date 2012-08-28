@@ -70,7 +70,7 @@
     
     int i = 0;
     for(NSString *item in tests) {
-        STAssertEqualObjects(responses[i], [ZETYkKey normalizeBase32Key:item], @"mismatch");
+        STAssertEqualObjects([responses objectAtIndex:i], [ZETYkKey normalizeBase32Key:item], @"mismatch");
         i++;
     }
 }
