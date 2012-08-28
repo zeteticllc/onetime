@@ -82,6 +82,37 @@
     [totp release];
 }
 
+- (void)testDropbox
+{
+    // from test site http://google-authenticator.googlecode.com/hg/libpam/totp.html
+    
+    // convert base32 to data, then to hex, then right pad to 40 characters
+    
+    NSString *hexKey = [[[NSData dataWithBase32String:
+                          [@"xkyfzjpjfirbxqdbtxv5wdz5bu======" uppercaseString]] dataToHex] stringByPaddingRight:@"0" length:40];
+    
+    unsigned long movingfactors[4] = {44870775, 44870794, 44870799};
+    
+    NSArray *tests = [NSArray arrayWithObjects: @"664770", @"167536", @"950853", nil];
+    
+    ZETYkTOTP *totp = [[ZETYkTOTP alloc] init];
+    STAssertFalse(totp.key.error, @"error opening key: %@", totp.key.errorMessage);
+    
+    totp.digits = 6;
+    
+    [totp.key writeHmacCRConfigWithHexKey:hexKey buttonTrigger:false];
+    STAssertFalse(totp.key.error, @"error writing config: %@", totp.key.errorMessage);
+    
+    int i = 0;
+    for(NSString *item in tests) {
+        STAssertEqualObjects([totp totpChallengeWithMovingFactor:movingfactors[i]], item, @"mismatch");
+        STAssertFalse(totp.key.error, @"error with TOTP challenge: %@", totp.key.errorMessage);
+        i++;
+    }
+    
+    [totp release];
+}
+
 
 
 @end

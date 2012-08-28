@@ -121,7 +121,7 @@
     
     value = [self normalizeKey:value];
     
-    NSCharacterSet *base32Set = [NSCharacterSet characterSetWithCharactersInString:@"ABCDEFGHIJKLMNOPQRSTUVWXYZ234567"];
+    NSCharacterSet *base32Set = [NSCharacterSet characterSetWithCharactersInString:@"ABCDEFGHIJKLMNOPQRSTUVWXYZ234567="];
     NSCharacterSet *valueSet = [NSCharacterSet characterSetWithCharactersInString:value];
     
     if(value.length % 8 == 0 && value.length <= 32 && [base32Set isSupersetOfSet:valueSet]) return YES;
