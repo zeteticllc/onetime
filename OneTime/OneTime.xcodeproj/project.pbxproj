@@ -15,6 +15,8 @@
 		9033B9C414C1AFB600551445 /* SRRecorderControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9033B9BE14C1AFB600551445 /* SRRecorderControl.m */; };
 		9033B9C514C1AFB600551445 /* SRValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9033B9C014C1AFB600551445 /* SRValidator.m */; };
 		9033B9C814C1B11300551445 /* ZETPrefsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9033B9C714C1B11300551445 /* ZETPrefsController.m */; };
+		9055C9F91892BAFC00841106 /* ykpers_lcl.c in Sources */ = {isa = PBXBuildFile; fileRef = 9055C9F71892BAFC00841106 /* ykpers_lcl.c */; };
+		9055C9FA1892BAFC00841106 /* ykpers-nojson.c in Sources */ = {isa = PBXBuildFile; fileRef = 9055C9F81892BAFC00841106 /* ykpers-nojson.c */; };
 		9068FE4C14D31ADD0089EF06 /* LaunchAtLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9068FE4A14D31ADD0089EF06 /* LaunchAtLoginController.m */; };
 		9068FE4D14D31ADD0089EF06 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9068FE4B14D31ADD0089EF06 /* README.md */; };
 		90A92B7B14D58A880078E2E5 /* NSDataHexTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 90A92B7A14D58A880078E2E5 /* NSDataHexTests.m */; };
@@ -91,6 +93,8 @@
 		9033B9C014C1AFB600551445 /* SRValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRValidator.m; sourceTree = "<group>"; };
 		9033B9C614C1B11300551445 /* ZETPrefsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZETPrefsController.h; sourceTree = "<group>"; };
 		9033B9C714C1B11300551445 /* ZETPrefsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZETPrefsController.m; sourceTree = "<group>"; };
+		9055C9F71892BAFC00841106 /* ykpers_lcl.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ykpers_lcl.c; sourceTree = "<group>"; };
+		9055C9F81892BAFC00841106 /* ykpers-nojson.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "ykpers-nojson.c"; sourceTree = "<group>"; };
 		9068FE4914D31ADD0089EF06 /* LaunchAtLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchAtLoginController.h; sourceTree = "<group>"; };
 		9068FE4A14D31ADD0089EF06 /* LaunchAtLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchAtLoginController.m; sourceTree = "<group>"; };
 		9068FE4B14D31ADD0089EF06 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
@@ -148,11 +152,11 @@
 		90EA697A14B00C0B00547F20 /* ykstatus.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ykstatus.c; path = ykcore/ykstatus.c; sourceTree = "<group>"; };
 		90EA697C14B00C0B00547F20 /* ykcore.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ykcore.c; path = ykcore/ykcore.c; sourceTree = "<group>"; };
 		90EA697D14B00C0B00547F20 /* ykcore_osx.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ykcore_osx.c; path = ykcore/ykcore_osx.c; sourceTree = "<group>"; };
-		90EA698214B00CA700547F20 /* usha.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = usha.c; path = rfc4634/usha.c; sourceTree = "<group>"; };
-		90EA698314B00CA700547F20 /* sha384-512.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "sha384-512.c"; path = "rfc4634/sha384-512.c"; sourceTree = "<group>"; };
-		90EA698414B00CA700547F20 /* sha224-256.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "sha224-256.c"; path = "rfc4634/sha224-256.c"; sourceTree = "<group>"; };
-		90EA698514B00CA700547F20 /* sha1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = sha1.c; path = rfc4634/sha1.c; sourceTree = "<group>"; };
-		90EA698814B00CA700547F20 /* hmac.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = hmac.c; path = rfc4634/hmac.c; sourceTree = "<group>"; };
+		90EA698214B00CA700547F20 /* usha.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = usha.c; sourceTree = "<group>"; };
+		90EA698314B00CA700547F20 /* sha384-512.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "sha384-512.c"; sourceTree = "<group>"; };
+		90EA698414B00CA700547F20 /* sha224-256.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "sha224-256.c"; sourceTree = "<group>"; };
+		90EA698514B00CA700547F20 /* sha1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sha1.c; sourceTree = "<group>"; };
+		90EA698814B00CA700547F20 /* hmac.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = hmac.c; sourceTree = "<group>"; };
 		90EA699014B00E3000547F20 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		90EA699214B00E3E00547F20 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		90EA699814B0170500547F20 /* ZETYkTOTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZETYkTOTP.h; sourceTree = "<group>"; };
@@ -368,7 +372,13 @@
 		90EA697114B00B3700547F20 /* yubikey-personalization */ = {
 			isa = PBXGroup;
 			children = (
-				90EA698114B00C7800547F20 /* rfc4634 */,
+				9055C9F71892BAFC00841106 /* ykpers_lcl.c */,
+				9055C9F81892BAFC00841106 /* ykpers-nojson.c */,
+				90EA698214B00CA700547F20 /* usha.c */,
+				90EA698314B00CA700547F20 /* sha384-512.c */,
+				90EA698414B00CA700547F20 /* sha224-256.c */,
+				90EA698514B00CA700547F20 /* sha1.c */,
+				90EA698814B00CA700547F20 /* hmac.c */,
 				90EA697414B00BDC00547F20 /* ykpers.c */,
 				90EA697614B00BDC00547F20 /* ykpbkdf2.c */,
 				90EA697214B00B9900547F20 /* ykcore */,
@@ -385,18 +395,6 @@
 				90EA697D14B00C0B00547F20 /* ykcore_osx.c */,
 			);
 			name = ykcore;
-			sourceTree = "<group>";
-		};
-		90EA698114B00C7800547F20 /* rfc4634 */ = {
-			isa = PBXGroup;
-			children = (
-				90EA698214B00CA700547F20 /* usha.c */,
-				90EA698314B00CA700547F20 /* sha384-512.c */,
-				90EA698414B00CA700547F20 /* sha224-256.c */,
-				90EA698514B00CA700547F20 /* sha1.c */,
-				90EA698814B00CA700547F20 /* hmac.c */,
-			);
-			name = rfc4634;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -523,6 +521,7 @@
 				90EA696F14AFF0DA00547F20 /* SGKeyCodeTranslator.m in Sources */,
 				90EA697014AFF0DA00547F20 /* SGKeyCombo.m in Sources */,
 				90EA697714B00BDC00547F20 /* ykpers.c in Sources */,
+				9055C9FA1892BAFC00841106 /* ykpers-nojson.c in Sources */,
 				90EA697814B00BDC00547F20 /* ykpbkdf2.c in Sources */,
 				90EA697E14B00C0B00547F20 /* ykstatus.c in Sources */,
 				90EA697F14B00C0B00547F20 /* ykcore.c in Sources */,
@@ -536,6 +535,7 @@
 				9033B9C114C1AFB600551445 /* SRCommon.m in Sources */,
 				9033B9C214C1AFB600551445 /* SRKeyCodeTransformer.m in Sources */,
 				9033B9C314C1AFB600551445 /* SRRecorderCell.m in Sources */,
+				9055C9F91892BAFC00841106 /* ykpers_lcl.c in Sources */,
 				9033B9C414C1AFB600551445 /* SRRecorderControl.m in Sources */,
 				9033B9C514C1AFB600551445 /* SRValidator.m in Sources */,
 				9033B9C814C1B11300551445 /* ZETPrefsController.m in Sources */,
@@ -639,7 +639,6 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "$(SRCROOT)/../yubico-c/.libs/libyubikey.a";
 				SDKROOT = macosx;
-				TEST_AFTER_BUILD = NO;
 			};
 			name = Debug;
 		};
@@ -669,7 +668,6 @@
 				OTHER_LDFLAGS = "$(SRCROOT)/../yubico-c/.libs/libyubikey.a";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
-				TEST_AFTER_BUILD = NO;
 			};
 			name = Release;
 		};
@@ -752,7 +750,6 @@
 				);
 				INFOPLIST_FILE = "OneTimeTests/OneTimeTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_AFTER_BUILD = YES;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				USER_HEADER_SEARCH_PATHS = ".. ../SGHotKeysLib/SGHotKeysLib ../yubikey-personalization ../yubikey-personalization/ykcore ../yubikey-personalization/rfc4634 ../yubico-c";
 				WRAPPER_EXTENSION = octest;
@@ -775,7 +772,6 @@
 				);
 				INFOPLIST_FILE = "OneTimeTests/OneTimeTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_AFTER_BUILD = YES;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				USER_HEADER_SEARCH_PATHS = ".. ../SGHotKeysLib/SGHotKeysLib ../yubikey-personalization ../yubikey-personalization/ykcore ../yubikey-personalization/rfc4634 ../yubico-c";
 				WRAPPER_EXTENSION = octest;

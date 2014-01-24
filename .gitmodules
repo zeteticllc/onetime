@@ -3,7 +3,7 @@
 	url = https://github.com/Yubico/yubikey-personalization.git
 [submodule "OneTime/SGHotKeysLib"]
 	path = OneTime/SGHotKeysLib
-	url = https://github.com/secondgear/SGHotKeysLib.git
+	url = https://github.com/sjlombardo/SGHotKeysLib.git
 [submodule "OneTime/LaunchAtLoginController"]
 	path = OneTime/LaunchAtLoginController
 	url = https://github.com/Mozketo/LaunchAtLoginController.git
