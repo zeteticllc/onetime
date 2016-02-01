@@ -1,5 +1,6 @@
 OneTime for Yubikey
-http://zetetic.net/software-onetime
+
+Note: Commercial sales of OneTime for Yubikey have been discontinued. 
 
 OneTime makes it easy to use a Yubikey USB device with Google 2-step verification and other OATH-TOTP applications on your Mac. Unlike Google Authenticator or SMS delivery, a Yubikey with OneTime is super portable and doesn't require a smartphone, cell coverage, or SMS service. 
 
